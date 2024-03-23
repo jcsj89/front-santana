@@ -105,6 +105,11 @@ const Login = () => {
             </div>
           </div>
         </div>
+        <div className="flex mt-4 w-full justify-center items-center">
+          <Link className="text-blue-600" href={"/"}>
+            Clique aqui para voltar ao site.
+          </Link>
+        </div>
       </div>
     </div>
   );
