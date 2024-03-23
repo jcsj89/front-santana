@@ -15,7 +15,7 @@ const links: ILinks[] = [
 const NavBar = () => {
   function renderizarLinks() {
     return links?.map((link, i) => (
-      <li className="ml-3 sm:ml-9 first:ml-0" key={i * Math.random()}>
+      <li className="ml-3 sm:ml-6 md:ml-7  first:ml-0" key={i * Math.random()}>
         <ItemMenu name={link.name} href={link.href} />
       </li>
     ));

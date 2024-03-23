@@ -1,9 +1,8 @@
 import { IconMail, IconMobile, IconPhone } from "@/icons";
-import React from "react";
 
 const ContactTopHeader = () => {
   return (
-    <div className="flex flex-col sm:flex-row justify-center items-center bg-[#0F9D58] py-1 text-xs sm:text-sm text-white">
+    <div className="flex flex-col sm:flex-row justify-center items-center bg-[#0F9D58] py-1 text-xs sm:text-sm md:text-base text-white">
       <div className="flex px-4 py-1">
         <span className="">{IconPhone("w-5 h-5")}</span>
         <span className="px-2">17 - 32691200</span>

@@ -1,5 +1,4 @@
-import Color from "@/utils/colors";
-import { lato, open_Sans } from "@/utils/fonts";
+import { lato } from "@/utils/fonts";
 import Link from "next/link";
 
 interface ILinks {
@@ -10,7 +9,7 @@ interface ILinks {
 const ItemMenu = (props: ILinks) => {
   return (
     <Link
-      className={`${lato.className} antialiased text-gray-800 hover:text-[#DB4437] duration-150`}
+      className={`${lato.className} border sm:text-lg md:text-xl antialiased text-zinc-950  hover:text-[#004e98] duration-150`}
       href={props.href}
     >
       {props.name}
