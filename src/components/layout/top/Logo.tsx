@@ -5,13 +5,14 @@ interface LogoProps {
   size?: number;
   alt?: string;
   onlyLogo?: boolean;
+  className?: string;
 }
 
 const Logo = (props: LogoProps) => {
   return (
     <div className="flex justify-center items-center px-3 py-2">
       <Image
-        className=""
+        className={props.className}
         style={{}}
         width={props?.size || 80}
         height={props?.size || 80}

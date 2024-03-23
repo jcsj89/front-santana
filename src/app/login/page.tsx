@@ -15,24 +15,34 @@ const Login = () => {
   }
 
   return (
-    <div className="flex justify-center items-center w-full max-h-screen">
-      <div className="collapse md:w-1/3 lg:w-1/2 md:visible max-h-screen">
+    <div className="flex flex-col md:flex-row w-full  h-screen  flex-wrap">
+      {/* Left Side */}
+      <div className="hidden lg:block lg:w-1/2 2xl:w-1/3">
         <AleatoryImage />
       </div>
-      <div className="w-full md:w-2/3 lg:w-1/2">
-        <div className="flex flex-col justify-center items-center  p-10">
-          <span>
-            <Link href={"/"}>
-              <Logo onlyLogo size={120} />
-            </Link>
-          </span>
-          <h1 className="text-5xl m-3 text-center">Santana Quimica</h1>
-          <h2 className="text-gray-500 my-3">
-            Por favor faca login em sua conta!
-          </h2>
 
-          <div className="flex flex-col justify-start mt-10  w-full pt-2 mb-5">
-            <label className="mb-2 text-lg text-gray-600" htmlFor="email">
+      {/* Right Side */}
+      <div className="flex flex-col justify-center items-center p-2 w-full lg:w-1/2 2xl:w-2/3">
+        <div className="flex flex-col justify-center items-center ">
+          <Link className="lg:mb-4" href={"/"}>
+            <Logo onlyLogo className="w-20 sm:w-28 md:w-32 lg:w-40" />
+          </Link>
+
+          <h1 className="text-3xl md:text-4xl lg:text-5xl lg:m-2 text-center">
+            Santana Quimica
+          </h1>
+
+          <h2 className="text-gray-500 my-2">
+            Por favor use suas credenciais para fazer login em sua conta!
+          </h2>
+        </div>
+
+        <div className="flex flex-col w-full p-3 mt-2 md:px-8 lg:px-12">
+          <div className="flex flex-col justify-start w-full ">
+            <label
+              className="md:text-lg text-gray-600 dark:text-white"
+              htmlFor="email"
+            >
               Email Address
             </label>
             <input
@@ -47,8 +57,11 @@ const Login = () => {
             />
           </div>
 
-          <div className="flex flex-col justify-start w-full ">
-            <label className="mb-2 text-lg text-gray-600" htmlFor="password">
+          <div className="flex flex-col justify-start w-full mt-2 lg:mt-5">
+            <label
+              className="md:text-lg text-gray-600 dark:text-white"
+              htmlFor="password"
+            >
               Password
             </label>
             <input
@@ -61,25 +74,35 @@ const Login = () => {
               required
             />
           </div>
+        </div>
 
-          <div className="flex w-full justify-end my-3 pb-4">
-            <span className="text-sm text-[#DB4437]">Esqueceu a senha?</span>
-          </div>
-
-          <div className="flex w-full justify-center border-b pb-7">
+        <div className="flex flex-col md:flex-row w-full justify-between items-center my-1 lg:my-3 lg:pb-3 md:px-8 lg:px-12">
+          <div>
             <Button
-              className="my-4 text-lg border w-1/3 px-10 py-4 rounded-lg border-green-600 hover:bg-[#0F9D58] hover:text-white duration-200"
+              className="m-5 md:m-0 text-lg border w-full px-10 py-4 rounded-lg border-green-600 hover:bg-[#0F9D58] hover:text-white duration-200"
               label="Login"
             />
           </div>
 
-          <div className="flex flex-col md:flex-row justify-center items-center my-9">
-            <p className="mx-4">Nao tem uma conta ?</p>
-            <Button
-              className="my-4 text-lg border px-10 py-4 "
-              label="Criar Conta"
-              disabled
-            />
+          <div className="flex flex-col items-end w-full">
+            <div>
+              <span className="text-sm  mr-3">Esqueceu a senha?</span>
+              <Link
+                className="text-[#DB4437] hover:text-red-700 duration-200"
+                href={"/"}
+              >
+                Recuperar senha
+              </Link>
+            </div>
+            <div>
+              <span className="text-sm  mr-3">Nao tem uma conta ?</span>
+              <Link
+                className="text-[#4285F4] hover:text-blue-700 duration-200"
+                href={"/"}
+              >
+                Criar conta
+              </Link>
+            </div>
           </div>
         </div>
       </div>

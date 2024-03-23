@@ -20,7 +20,7 @@ const AleatoryImage = () => {
   return (
     <Image
       alt=""
-      style={{ width: "100%", height: "100vh" }}
+      style={{ height: "100vh", width: "100%" }}
       width={image?.width || 1000}
       height={image?.height || 1000}
       src={image?.src || ""}
