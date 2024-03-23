@@ -26,11 +26,13 @@ const Login = () => {
               <Logo onlyLogo size={120} />
             </Link>
           </span>
-          <h1 className="text-5xl m-3">Login</h1>
-          <h2 className="text-xl">Area de acesso interno</h2>
+          <h1 className="text-5xl m-3 text-center">Santana Quimica</h1>
+          <h2 className="text-gray-500 my-3">
+            Por favor faca login em sua conta!
+          </h2>
 
           <div className="flex flex-col justify-start mt-10  w-full pt-2 mb-5">
-            <label className="mb-2 text-lg" htmlFor="email">
+            <label className="mb-2 text-lg text-gray-600" htmlFor="email">
               Email Address
             </label>
             <input
@@ -46,7 +48,7 @@ const Login = () => {
           </div>
 
           <div className="flex flex-col justify-start w-full ">
-            <label className="mb-2 text-lg" htmlFor="password">
+            <label className="mb-2 text-lg text-gray-600" htmlFor="password">
               Password
             </label>
             <input
@@ -60,19 +62,23 @@ const Login = () => {
             />
           </div>
 
-          <div className="flex w-full justify-end my-3">
+          <div className="flex w-full justify-end my-3 pb-4">
             <span className="text-sm text-[#DB4437]">Esqueceu a senha?</span>
           </div>
 
-          <div className="flex w-full justify-between">
+          <div className="flex w-full justify-center border-b pb-7">
             <Button
-              className="my-4 text-lg border px-10 py-4 rounded-lg border-green-600 hover:bg-[#0F9D58] hover:text-white duration-200"
+              className="my-4 text-lg border w-1/3 px-10 py-4 rounded-lg border-green-600 hover:bg-[#0F9D58] hover:text-white duration-200"
               label="Login"
             />
+          </div>
 
+          <div className="flex flex-col md:flex-row justify-center items-center my-9">
+            <p className="mx-4">Nao tem uma conta ?</p>
             <Button
-              className="my-4 text-lg border px-10 py-4 rounded-lg border-green-600 hover:bg-[#0F9D58] hover:text-white duration-200"
+              className="my-4 text-lg border px-10 py-4 "
               label="Criar Conta"
+              disabled
             />
           </div>
         </div>
