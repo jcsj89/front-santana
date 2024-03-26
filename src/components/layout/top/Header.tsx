@@ -11,7 +11,7 @@ const Header = () => {
   const router = useRouter();
 
   return (
-    <div className="flex flex-col border-b mb-2 border-[#ece9c0] dark:bg-gray-700">
+    <div className="flex flex-col border-b border-[#ece9c0] dark:bg-gray-700">
       <ContactTopHeader />
       <div className="flex flex-col xl:flex-row justify-center sm:justify-evenly lg:justify-between items-center">
         <div className="lg:w-1/3">

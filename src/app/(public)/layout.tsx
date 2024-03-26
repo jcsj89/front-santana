@@ -16,7 +16,7 @@ export default function PublicLayout({
     <div className={`flex w-full flex-col min-h-screen mx-auto`}>
       <div className="flex-grow ">
         <Header />
-        <main className="my-1 dark:bg-gray-700">{children}</main>
+        <main className=" dark:bg-gray-700">{children}</main>
       </div>
       <Footer />
     </div>
