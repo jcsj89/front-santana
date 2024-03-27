@@ -1,18 +1,22 @@
 "use client";
 import AsideMenu from "@/components/layout/produtos/AsideMenu";
-import CategoryProductsModel from "@/core/CategoryProductsModel";
 import Product from "@/core/ProductModel";
-import { categoriesList } from "@/data/CategoryList";
-import { productsList } from "@/data/ProductsList";
+import {
+  getCategory,
+  getClassification,
+  productsList,
+} from "@/data/ProductsList";
 
 import { useEffect, useState } from "react";
 
 const Produtos = () => {
   const [produtos, setProdutos] = useState<Product[]>([]);
-  const [categorias, setCategorias] = useState<CategoryProductsModel[]>([]);
+  const [categorias, setCategorias] = useState<string[]>([]);
+  const [classificacao, setClassificacao] = useState<string[]>([]);
 
   useEffect(() => {
-    setCategorias(categoriesList);
+    setCategorias(getCategory());
+    setClassificacao(getClassification());
     setProdutos(productsList.filter((p) => p.showInWeb && p.active));
   }, []);
 
@@ -21,7 +25,7 @@ const Produtos = () => {
       <div className="flex lg:container border  w-full">
         {/* Left Side */}
         <div className="w-1/3 text-xs sm:text-sm md:text-base">
-          <AsideMenu categories={categorias.sort()} products={produtos} />
+          <AsideMenu classification={classificacao} categories={categorias.sort()} products={produtos} />
         </div>
 
         {/* Right Side */}
@@ -29,9 +33,7 @@ const Produtos = () => {
           <h1>Produtos</h1>
           {categorias?.map((i) => (
             <p key={Math.random()}>
-              {i.classification.map((i) => (
                 <p key={Math.random()}>{i}</p>
-              ))}
             </p>
           ))}
         </div>

@@ -1,48 +1,53 @@
 "use client";
 import Product from "@/core/ProductModel";
-import { productsList } from "@/data/ProductsList";
-import { useEffect } from "react";
+import Link from "next/link";
 
 interface AsideGroupProps {
-  title: string;
-  subTitle?: string;
-  items?: string[];
-  titleClassName?: string;
-  subTitleClassName?: string;
-  item?: string;
   products?: Product[];
+  classification?: string[];
 }
 
 const AsideGroup = (props: AsideGroupProps) => {
-  
-  useEffect(() => {
-    console.log(productsList);
-    console.log("productsList");
-  }, []);
+  function renderizarLinksProdutos(classificacao: string) {
+    return props.products?.map((prod) =>
+      prod.classification === classificacao && prod.showInWeb && prod.active ? (
+        <li className="text-[#4285F4] hover:text-[#004e98]" key={Math.random()}>
+          <Link href={`/produtos/${prod.id}`}>{prod.description}</Link>
+        </li>
+      ) : (
+        false
+      )
+    );
+  }
+
+  function renderizarDiluicao(classificacao: string) {
+    const className = "text-sm text-[#fb8500]";
+    if (classificacao === "COMUM")
+      return <h2 className={className}>Diluicao 1:10</h2>;
+    if (classificacao === "CONCENTRADA")
+      return <h2 className={className}>Diluicao 1:40</h2>;
+    if (classificacao === "SUPER")
+      return <h2 className={className}>Diluicao 1:100</h2>;
+  }
 
   return (
     <div>
-      {productsList.map((product) => (
-        <h1 key={Math.random()}>{product.description}</h1>
-      ))}
+      {props?.classification?.map((classificacao) => (
+        <>
+          <h1
+            className="text-sm md:text-base"
+            key={Math.random() * Math.random()}
+          >
+            <span>CATEGORIA</span> {classificacao}
+          </h1>
 
-      <h2 className={`lg:text-lg text-gray-800 ${props.titleClassName}`}>
-        {props.title}
-      </h2>
-      <h3 className={`text-gray-600 ${props.subTitleClassName}`}>
-        {props.subTitle}
-      </h3>
-      {props.items ? (
-        <ul>
-          {props.items?.map((link) => (
-            <li className="uppercase" key={Math.random() * Math.random()}>
-              {link}
-            </li>
-          ))}
-        </ul>
-      ) : (
-        false
-      )}
+          {renderizarDiluicao(classificacao)}
+
+          <div className="mt-2 mb-3 md:mt-3 md:mb-4 text-sm md:text-base ">
+            {renderizarLinksProdutos(classificacao)}
+          </div>
+        </>
+      ))}
     </div>
   );
 };
