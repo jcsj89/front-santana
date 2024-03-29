@@ -22,10 +22,10 @@ const AsideMenu = (props: AsideMenuProps) => {
       <div key={Math.random() * Math.random()}>
         <ul className="border-b pb-3 mb-3">
           <div
-            className="text-sm sm:text-base text-zinc-950 capitalize mb-3"
+            className=" lg:text-base text-zinc-950 capitalize mb-3"
             key={Math.random() * Math.random()}
           >
-            Linha - {category}
+            LINHA - {category}
           </div>
           <div>
             <AsideGroup
@@ -38,7 +38,7 @@ const AsideMenu = (props: AsideMenuProps) => {
     ));
   }
   return (
-    <div className="h-screen px-2 border-r mr-2 text-right ">
+    <div className="h-screen px-2 border-r mr-2 text-right sm:text-center">
       {loading ? <span>carregando...</span> : renderizarMenu()}
     </div>
   );

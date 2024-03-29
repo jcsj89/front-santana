@@ -9,7 +9,7 @@ const PaletaCores = (props: CoresProps) => {
       <h3 className="flex w-20 h-20 flex-wrap justify-center items-center">
         {props.nome}
       </h3>
-      <div className={` ${props.cor} w-20 h-32`}></div>
+      <div className={`${props.cor} w-20 h-32`}></div>
     </div>
   );
 };
