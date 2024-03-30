@@ -1,8 +1,6 @@
 import Product from "@/core/ProductModel";
 
 const productsList: Product[] = [];
-const categoryList: string[] = [];
-const classificationList: string[] = [];
 
 const prod1 = Product.createEmpty();
 productsList.push(prod1);
@@ -89,10 +87,11 @@ prod8.dilutionPercent = 1;
 prod8.color = "amarelo";
 prod8.showInWeb = Product.STATUS.SHOW;
 prod8.tags = ["azul", "bau", "chassis"];
-prod8.classification = "SUPER";
+prod8.classification = "";
 prod8.category = "INDUSTRIAL";
 
-function getCategory() {
+function getCategory(productsList: Product[]) {
+  const categoryList: string[] = [];
   productsList.map((p) => {
     if (p.category !== undefined && p.showInWeb) {
       !categoryList.includes(p.category) ? categoryList.push(p.category) : null;
@@ -101,7 +100,8 @@ function getCategory() {
   return categoryList;
 }
 
-function getClassification() {
+function getClassification(productsList: Product[]) {
+  const classificationList: string[] = [];
   productsList.map((p) => {
     if (p.classification !== undefined && p.showInWeb) {
       !classificationList.includes(p.classification)

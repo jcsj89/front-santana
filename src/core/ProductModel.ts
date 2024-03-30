@@ -48,8 +48,8 @@ interface IProduct {
   separando os produtos por embalagem
 */
 
-type CLASSIFICATION = "COMUM" | "CONCENTRADA" | "SUPER" | "ACABAMENTO";
-type CATEGORY = "AUTOMOTIVA" | "INDUSTRIAL";
+type CLASSIFICATION = "COMUM" | "CONCENTRADA" | "SUPER" | "ACABAMENTO" | "";
+type CATEGORY = "AUTOMOTIVA" | "INDUSTRIAL" | "";
 
 class Product {
   static STATUS = { ACTIVE: true, INACTIVE: false, SHOW: true, HIDE: false };
@@ -149,7 +149,7 @@ class Product {
     this.codeProd = codeProd;
     this.codeNCM = codeNCM;
     this.density = density;
-    this.classification = "COMUM";
+    // this.classification = "";
     this.dilution = "";
     this.dilutionPercent = 1;
   }

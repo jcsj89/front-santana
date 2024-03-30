@@ -16,8 +16,6 @@ const TagsProductCard = (props: TagsProductCardProps) => {
     "bg-[#264653] text-white",
   ];
 
-  
-
   function renderizarTags(tags: string[]) {
     return (
       <>

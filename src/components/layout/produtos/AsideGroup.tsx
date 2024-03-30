@@ -2,9 +2,10 @@
 import Product from "@/core/ProductModel";
 import Link from "next/link";
 
+import { getClassification } from "@/data/ProductsList";
+
 interface AsideGroupProps {
   products?: Product[];
-  classification?: string[];
 }
 
 const AsideGroup = (props: AsideGroupProps) => {
@@ -12,8 +13,17 @@ const AsideGroup = (props: AsideGroupProps) => {
     return props.products?.map((prod) =>
       prod.classification === classificacao ? (
         <li className="text-[#4285F4] hover:text-[#004e98]" key={Math.random()}>
-          <Link className="capitalize" href={`/produtos/${prod.id}`}>
+          <Link className="capitalize  " href={`/produtos/${prod.id}`}>
             {prod.description}
+          </Link>
+        </li>
+      ) : prod.classification && prod.classification?.length < 1 ? (
+        <li
+          className="text-[#4285F4] hover:text-[#004e98] "
+          key={Math.random()}
+        >
+          <Link className="capitalize" href={`/produtos/${prod.id}`}>
+            <span>{prod.description}</span>
           </Link>
         </li>
       ) : (
@@ -23,7 +33,7 @@ const AsideGroup = (props: AsideGroupProps) => {
   }
 
   function renderizarDiluicao(classificacao: string) {
-    const className = "text-xs text-[#fb8500]";
+    const className = "text-xs sm:text-sm text-gray-500";
     if (classificacao === "COMUM")
       return <h2 className={className}>Diluicao 1:10</h2>;
     if (classificacao === "CONCENTRADA")
@@ -34,22 +44,27 @@ const AsideGroup = (props: AsideGroupProps) => {
 
   return (
     <div>
-      {props?.classification?.map((classificacao) => (
-        <>
-          <h1
-            className="text-xs sm:text-sm lg:text-base text-slate-950"
-            key={Math.random() * Math.random()}
-          >
-            <span>CATEGORIA</span> {classificacao}
-          </h1>
+      {props.products &&
+        getClassification(props.products)?.map((classificacao) => (
+          <>
+            <h1
+              className="text-sm lg:text-base text-slate-950"
+              key={Math.random() * Math.random()}
+            >
+              {classificacao.length > 0 ? (
+                <span>CATEGORIA {classificacao}</span>
+              ) : (
+                false
+              )}
+            </h1>
 
-          {renderizarDiluicao(classificacao)}
+            {renderizarDiluicao(classificacao)}
 
-          <div className="mt-2 mb-3 md:mt-3 md:mb-4 text-xs sm:text-sm lg:text-base ">
-            {renderizarLinksProdutos(classificacao)}
-          </div>
-        </>
-      ))}
+            <div className="mt-2 mb-3 md:mt-3 md:mb-4  lg:text-base ">
+              {renderizarLinksProdutos(classificacao)}
+            </div>
+          </>
+        ))}
     </div>
   );
 };
