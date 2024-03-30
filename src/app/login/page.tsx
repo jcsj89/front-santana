@@ -1,7 +1,7 @@
 "use client";
 import Button from "@/components/UI/Button";
-import AleatoryImage from "@/components/layout/login/AleatoryImage";
-import Logo from "@/components/layout/top/Logo";
+import AleatoryImage from "@/components/site/login/AleatoryImage";
+import Logo from "@/components/site/top/Logo";
 import Link from "next/link";
 import { useState } from "react";
 

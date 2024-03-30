@@ -1,8 +1,7 @@
 import Product from "@/core/ProductModel";
-import { getCategory } from "@/data/ProductsList";
+import { roboto } from "@/utils/fonts";
 import { useEffect, useState } from "react";
 import AsideGroup from "./AsideGroup";
-import { open_Sans, roboto, truculenta } from "@/utils/fonts";
 
 interface AsideMenuProps {
   products: Product[];
@@ -14,11 +13,11 @@ const AsideMenu = (props: AsideMenuProps) => {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 1000);
+    }, 500);
   }, []);
 
   function renderizarMenu() {
-    return getCategory(props.products)?.map((category) => (
+    return Product.getCategory(props.products)?.map((category) => (
       <div key={Math.random() * Math.random()}>
         <ul className="border-b pb-3 mb-3">
           <div

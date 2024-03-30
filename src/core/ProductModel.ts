@@ -457,6 +457,31 @@ class Product {
       photos,
     });
   }
+
+  // Funcoes help para connstruir menu no  site
+  static getCategory(productsList: Product[]) {
+    const categoryList: string[] = [];
+    productsList.map((p) => {
+      if (p.category !== undefined && p.showInWeb) {
+        !categoryList.includes(p.category)
+          ? categoryList.push(p.category)
+          : null;
+      }
+    });
+    return categoryList;
+  }
+
+  static getClassification(productsList: Product[]) {
+    const classificationList: string[] = [];
+    productsList.map((p) => {
+      if (p.classification !== undefined && p.showInWeb) {
+        !classificationList.includes(p.classification)
+          ? classificationList.push(p.classification)
+          : null;
+      }
+    });
+    return classificationList;
+  }
 }
 
 export default Product;

@@ -1,0 +1,65 @@
+COLORS BY BRAND
+GOOGLE
+blue : #4285F4
+red: #DB4437
+yellow: #F4B400
+green: #0F9D58
+
+AMAZON
+orange: #FF9900
+
+APPLE
+grey:#555555
+
+NETFLIX
+red:#E50914
+
+TWIITER
+blue:#1DA1F2
+black: #14171A
+dark grey: #657786
+light grey: #AAB8C2
+light grey 2:#E1E8ED
+light grey 3: #F5F8FA
+
+
+azul #4285F4
+vermelho #DB4437
+amarelo #F4B400
+verde #0F9D58
+cinza claro #c3d5cc
+bege #ece9c0
+----------------------------------------------
+
+3f3d56
+6c63ff
+
+texto sobre produtos
+
+Na nossa empresa, a valorização da qualidade do nosso produto é um dos princípios fundamentais que norteiam todas as nossas atividades. Reconhecemos que a excelência e a satisfação do cliente são essenciais para o sucesso do nosso negócio, e é por isso que dedicamos recursos significativos para garantir que nossos produtos atendam aos mais altos padrões de qualidade.
+
+Desde a concepção até a entrega do produto final, adotamos uma abordagem minuciosa e meticulosa em todas as etapas do processo. Nossa equipe é composta por profissionais altamente qualificados e comprometidos, que são especialistas em suas respectivas áreas. Eles estão constantemente atualizados sobre as melhores práticas e tendências do setor, o que nos permite incorporar inovação e melhoria contínua em todos os aspectos de nosso produto.
+
+Além disso, investimos em tecnologia de ponta e em equipamentos de última geração para garantir que nossa linha de produção opere com máxima eficiência e precisão. Realizamos rigorosos testes e controles de qualidade em todas as fases do processo, desde a seleção de matérias-primas até a embalagem final. Isso nos permite identificar qualquer desvio ou não conformidade e corrigi-los prontamente, garantindo que apenas produtos de alta qualidade cheguem às mãos de nossos clientes.
+
+Valorizamos o feedback dos nossos clientes e o utilizamos como uma ferramenta valiosa para aprimorar constantemente nossos produtos. Realizamos pesquisas de satisfação, conduzimos análises de mercado e estamos sempre abertos a sugestões e críticas construtivas. Acreditamos que essa interação direta com nossos clientes nos permite entender melhor suas necessidades e expectativas, possibilitando que aprimoremos continuamente nosso produto para atender e superar suas expectativas.
+
+Nossa dedicação à qualidade se reflete não apenas na excelência do produto em si, mas também no atendimento ao cliente. Nossa equipe de suporte está pronta para ajudar em todas as etapas, fornecendo orientações e solucionando quaisquer dúvidas ou problemas que possam surgir. Acreditamos que um relacionamento próximo com nossos clientes é essencial para construir confiança e fidelidade.
+
+Em resumo, a valorização da qualidade do nosso produto é um pilar fundamental na nossa empresa. Através de investimentos em recursos humanos, tecnologia e controle rigoroso de qualidade, estamos comprometidos em oferecer produtos excepcionais que atendam às expectativas dos nossos clientes. Estamos sempre em busca de aprimoramento contínuo, e valorizamos a confiança que nossos clientes depositam em nós.
+
+
+
+texto sobre entrega
+
+Nosso compromisso com a entrega dos produtos é uma prioridade em nossa empresa. Reconhecemos a importância de cumprir prazos e garantir que nossos clientes recebam seus pedidos de forma pontual e eficiente. Nosso objetivo é proporcionar uma experiência de compra tranquila e satisfatória, desde o momento em que o pedido é realizado até a entrega final.
+
+Para garantir o cumprimento dos prazos, adotamos uma abordagem estratégica em nossa cadeia de suprimentos e logística. Trabalhamos em estreita colaboração com nossos fornecedores e parceiros de transporte para garantir que os materiais e produtos estejam disponíveis no momento certo. Mantemos um controle rigoroso do estoque e implementamos sistemas de gestão eficientes para minimizar atrasos e evitar interrupções na produção.
+
+Nossa equipe de logística é composta por profissionais altamente capacitados, que se dedicam a planejar e coordenar todas as etapas do processo de entrega. Eles estão atentos aos detalhes e são experientes em lidar com desafios logísticos, garantindo que cada pedido seja tratado com cuidado e eficiência. Além disso, mantemos parcerias estratégicas com empresas de transporte confiáveis e de confiança, para garantir que os produtos sejam entregues com segurança e dentro do prazo estipulado.
+
+A transparência e a comunicação aberta são elementos-chave em nosso compromisso de entrega. Mantemos nossos clientes informados sobre o status de seus pedidos, fornecendo atualizações regulares sobre o processo de produção e logística. Caso surjam imprevistos ou atrasos, nos esforçamos para notificar os clientes o mais rápido possível e trabalhar em conjunto para encontrar soluções adequadas.
+
+Acreditamos que a confiança é fundamental para construir relacionamentos sólidos com nossos clientes. Portanto, se enfrentarmos algum desafio ou contratempo que possa afetar a entrega dos produtos, nossa equipe está comprometida em oferecer soluções alternativas ou compensações adequadas. Estamos empenhados em garantir a satisfação do cliente e em superar suas expectativas em relação aos prazos de entrega.
+
+Em resumo, nosso compromisso com a entrega dos produtos é uma parte essencial de nossa filosofia de negócio. Trabalhamos arduamente para garantir que cada pedido seja processado, produzido e entregue com eficiência e dentro do prazo. Valorizamos a confiança que nossos clientes depositam em nós e estamos empenhados em oferecer uma experiência de compra excepcional, desde o momento do pedido até a entrega final.

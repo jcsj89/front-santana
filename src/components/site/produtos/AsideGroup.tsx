@@ -2,8 +2,6 @@
 import Product from "@/core/ProductModel";
 import Link from "next/link";
 
-import { getClassification } from "@/data/ProductsList";
-
 interface AsideGroupProps {
   products?: Product[];
 }
@@ -45,7 +43,7 @@ const AsideGroup = (props: AsideGroupProps) => {
   return (
     <div>
       {props.products &&
-        getClassification(props.products)?.map((classificacao) => (
+        Product.getClassification(props.products)?.map((classificacao) => (
           <>
             <h1
               className="text-sm lg:text-base text-slate-950"
