@@ -1,0 +1,58 @@
+"use client";
+import Product from "@/core/ProductModel";
+import { productsList } from "@/data/ProductsList";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+
+const Produto = ({ params }: { params: { id: string } }) => {
+  const [product, setProduct] = useState<Product>(Product.createEmpty());
+
+  useEffect(() => {
+    if (productsList.length > 1) {
+      const prod = productsList.find((prod) => prod.id === params.id);
+      prod && setProduct(prod);
+    }
+  }, [params.id]);
+
+  function calculateDiluicao(value: number) {
+    value > 0 && value < 100 ? value : 1;
+    const percent = 100 / value;
+    return "Percentual de diluicao: " + percent + "%";
+  }
+
+  return (
+    <div className="flex justify-center border h-screen  bg-gray-100">
+      <div className="lg:container border ">
+        <div className="border flex flex-col items-center justify-center ">
+          <div className="border  flex flex-col justify-center  items-center my-5 px-8">
+            <h1 className="capitalize text-2xl">{product.description}</h1>
+            <h2 className="capitalize">Categoria {product.classification}</h2>
+            <h2>Diluicao {product.dilution}</h2>
+            <h3>{calculateDiluicao(product.dilutionPercent || 1)}</h3>
+          </div>
+          <div className="flex my-7">
+            <div className="border-r p-6 m-6">
+              <Image
+                src={"/img/products/at.ls.300.png"}
+                width={150}
+                height={150}
+                alt="Imagem produto"
+              />
+            </div>
+            <div className="border">
+              <h1 className="capitalize text-2xl">{product.description}</h1>
+              <h2 className="capitalize">Categoria {product.classification}</h2>
+              <h2>Diluicao {product.dilution}</h2>
+              <h3>{calculateDiluicao(product.dilutionPercent || 1)}</h3>
+            </div>
+          </div>
+        </div>
+        {product.id}
+        {product.tags}
+        {product.description}
+      </div>
+    </div>
+  );
+};
+
+export default Produto;
