@@ -101,4 +101,15 @@ prod9.tags = ["azul", "bau", "chassis"];
 prod9.classification = "";
 prod9.category = "INDUSTRIAL";
 
+const prod10 = Product.createEmpty();
+productsList.push(prod10);
+prod10.description = "R2 168";
+prod10.dilution = "1:100";
+prod10.dilutionPercent = 1;
+prod10.color = "amarelo";
+prod10.showInWeb = Product.STATUS.SHOW;
+prod10.tags = ["azul", "bau", "chassis"];
+prod10.classification = "";
+prod10.category = "INDUSTRIAL";
+
 export { productsList };
