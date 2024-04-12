@@ -1,4 +1,7 @@
 "use client";
+import DilutionDescription from "@/components/site/produtos/DilutionDescription";
+import IndicacaoDeUso from "@/components/site/produtos/IndicacaoDeUso";
+import ModoDeUso from "@/components/site/produtos/ModoDeUso";
 import Product from "@/core/ProductModel";
 import { productsList } from "@/data/ProductsList";
 import Image from "next/image";
@@ -21,7 +24,7 @@ const Produto = ({ params }: { params: { id: string } }) => {
   }
 
   return (
-    <div className="flex justify-center border h-screen  bg-gray-100">
+    <div className="flex justify-center border h-screen">
       <div className="lg:container border ">
         <div className="border flex flex-col items-center justify-center ">
           <div className="border  flex flex-col justify-center  items-center my-5 px-8">
@@ -30,8 +33,8 @@ const Produto = ({ params }: { params: { id: string } }) => {
             <h2>Diluicao {product.dilution}</h2>
             <h3>{calculateDiluicao(product.dilutionPercent || 1)}</h3>
           </div>
-          <div className="flex my-7">
-            <div className="border-r p-6 m-6">
+          <div className="flex my-7 p-6">
+            <div className="border-r p-6 m-6 w-1/3">
               <Image
                 src={"/img/products/at.ls.300.png"}
                 width={150}
@@ -39,9 +42,11 @@ const Produto = ({ params }: { params: { id: string } }) => {
                 alt="Imagem produto"
               />
             </div>
-            <div className="border">
-              <h1 className="capitalize text-2xl">{product.description}</h1>
-              <h2 className="capitalize">Categoria {product.classification}</h2>
+            <div className="border w-2/3">
+              <ModoDeUso modoDeUso={product.modoDeUso || ""} />
+              <IndicacaoDeUso indicacaoDeUso={product.indicacaoDeUso || ""} />
+              <DilutionDescription dilution={product.dilution||''} />
+
               <h2>Diluicao {product.dilution}</h2>
               <h3>{calculateDiluicao(product.dilutionPercent || 1)}</h3>
             </div>

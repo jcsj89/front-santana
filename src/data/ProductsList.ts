@@ -23,6 +23,10 @@ prod2.showInWeb = Product.STATUS.SHOW;
 prod2.tags = ["azul", "limpa bau", "chassis", "alcalino"];
 prod2.classification = "COMUM";
 prod2.category = "AUTOMOTIVA";
+prod2.modoDeUso =
+  "Aplicar por pulverização sobre toda a superfície desejada. Esfregar-se necessário com o auxílio de um pano ou esfregão, em seguida enxaguar com jatos d'água em abundância até a remoção total dos resíduos. Recomenda-se o uso correto de EPI's.";
+prod2.indicacaoDeUso =
+  "Produto indicado para limpeza atravéz de desincrustação na linha automóveis, tendo como principal função, a remoção de incrustações aderidas em superfícies metálicas.";
 
 const prod3 = Product.createEmpty();
 productsList.push(prod3);
