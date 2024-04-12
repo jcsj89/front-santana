@@ -29,6 +29,8 @@ interface IProduct {
   classification?: string; // comum ou concentrado ou super concentrado
   dilution?: string; // 1:10
   dilutionPercent?: number; // 1:10
+  indicacaoDeUso?:string
+  modoDeUso?: string
   //
   // relacionamentos
   //
@@ -89,6 +91,8 @@ class Product {
   #category?: CATEGORY; // COMUM - CONCENTRADA
   #dilution?: string; // 1:10
   #dilutionPercent?: number; // 1%
+  #indicacaoDeUso?: string; //frase de inndic
+  #modoDeUso?: string; //frase  modo ded uso
 
   // FUTURE RELS
   #brand?: string; // marca
@@ -396,6 +400,22 @@ class Product {
 
   set photos(photos) {
     this.#photos = photos;
+  }
+
+  get indicacaoDeUso() {
+    return this.#indicacaoDeUso;
+  }
+
+  set indicacaoDeUso(indicacaoDeUso) {
+    this.#indicacaoDeUso = indicacaoDeUso;
+  }
+
+  get modoDeUso() {
+    return this.#modoDeUso;
+  }
+
+  set modoDeUso(modoDeUso) {
+    this.#modoDeUso = modoDeUso;
   }
 
   static createEmpty() {
