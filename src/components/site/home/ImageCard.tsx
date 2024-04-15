@@ -8,9 +8,9 @@ interface ImageCardProps {
 }
 
 const ImageCard = (props: ImageCardProps) => {
-  const size = 120;
+  const size = 100;
   return (
-    <div className="mx-6 p-8 border-2 border-green-700">
+    <div className="mx-6 p-8 border-2 rounded-full border-[#5d8aa8]">
       <Image
         src={props.src}
         alt={props.alt || "Imagem"}

@@ -5,16 +5,23 @@ import {
   Raleway,
   Roboto,
   Truculenta,
+  Zilla_Slab
 } from "next/font/google";
 
 export const roboto = Roboto({
-  weight: "400",
+  weight: ["400", "700"],
+  subsets: ["latin"],
+  display: "swap",
+});
+
+export const zilla_Slab = Zilla_Slab({
+  weight: ["400", "700"],
   subsets: ["latin"],
   display: "swap",
 });
 
 export const raleway = Raleway({
-  weight: ["400",'500','600','700'],
+  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
   display: "swap",
 });
