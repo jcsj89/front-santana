@@ -1,6 +1,7 @@
 import Button from "@/components/UI/Button";
+import LinkPage from "@/components/UI/LinkPage";
 import ImageCard from "@/components/site/home/ImageCard";
-import { raleway } from "@/utils/fonts";
+import { raleway, roboto, truculenta, zilla_Slab } from "@/utils/fonts";
 import Image from "next/image";
 
 export default function Home() {
@@ -50,10 +51,12 @@ export default function Home() {
         </div>
       </div>
 
-      {/* second section */}
-      <div className="flex border-b w-full bg-gray-200 py-14 text-[#282626]">
+      {/* second section - about kind of cars us worked */}
+      <div
+        className={`flex border-b w-full bg-gray-200 py-14 text-[#282626] ${zilla_Slab.className}`}
+      >
         <div className="flex flex-col justify-center items-center w-full">
-          <h1 className="text-4xl my-6 font-bold">
+          <h1 className="text-4xl my-6 font-bold uppercase text-[#5d8aa8]">
             Produtos de lavagem para todos os tipos de veiculos
           </h1>
 
@@ -64,6 +67,25 @@ export default function Home() {
             <ImageCard src="/img/motorbike-transport-svgrepo-com.svg" />
             <ImageCard src="/img/tractor-transport-svgrepo-com.svg" />
           </div>
+
+          <div className="w-3/6 p-10">
+            <p className="text-sm text-gray-400">
+              Na vanguarda da inovação na indústria química automotiva, estamos
+              orgulhosos de oferecer uma ampla gama de produtos de lavagem para
+              atender a todas as necessidades e tipos de veículos. Desde carros
+              de passeio até veículos pesados, nossa linha abrangente é
+              formulada para proporcionar resultados excepcionais em cada
+              lavagem. Confie na nossa expertise e eleve o padrão de limpeza do
+              seu veículo com nossos produtos de lavagem líderes da indústria.
+            </p>
+          </div>
+
+          <LinkPage
+            href="/produtos"
+            className="border-b border-blue-600 text-[#1DA1F2] hover:text-gray-600"
+          >
+            Conheca nosso produtos
+          </LinkPage>
         </div>
       </div>
 
@@ -76,8 +98,40 @@ export default function Home() {
       <div className="flex border my-4 justify-center items-center">
         <h1 className="text-3xl">clients</h1>
       </div>
-      <div className="flex border my-4 justify-center items-center">
-        <h1 className="text-3xl">about us</h1>
+
+      {/* section about us */}
+      <div
+        className={`flex flex-col justify-center items-center border-b w-full py-9 pb-14 bg-[#4682b4] ${roboto.className}`}
+      >
+        <h1 className="text-4xl text-black antialiased">
+          Conheça nossa história: A essência por trás da nossa jornada
+        </h1>
+
+        <div className="flex flex-col justify-center items-center my-5 px-3">
+          <span className={`text-7xl ${truculenta.className}`}>santana</span>
+          <h1 className="text-sm">Industria Quimica | desde 1994</h1>
+        </div>
+
+        <div className="flex flex-col justify-center items-center my-5 px-3 w-3/5">
+          <p className="text-justify">
+            Com mais de duas décadas de experiência no mercado, somos uma
+            indústria líder em produtos químicos, especializada na linha de
+            limpeza automotiva. Nossa trajetória é marcada pelo compromisso com
+            a excelência e pela busca contínua pela inovação. Contamos com uma
+            equipe altamente qualificada e dedicada, com vasta expertise em
+            fabricação e comercialização, o que nos permite garantir agilidade e
+            eficiência em todos os processos, desde a produção até a entrega dos
+            nossos produtos em suas mãos. Estamos constantemente atualizados com
+            as demandas do mercado, sempre atentos às últimas tendências e
+            necessidades dos clientes. Com uma linha completa de produtos,
+            estamos prontos para atender às exigências específicas da sua
+            empresa, oferecendo soluções sob medida para todas as suas
+            necessidades de limpeza automotiva.
+          </p>
+        </div>
+        <h1 className="text-3xl text-[#ff6347]">about us</h1>
+        <h1 className="text-3xl text-[#006400]">about us</h1>
+        <h1 className="text-3xl text-[#fa7f72]">Sobre Nos</h1>
       </div>
       <div className="flex border my-4 justify-center items-center">
         <h1 className="text-3xl">video</h1>
