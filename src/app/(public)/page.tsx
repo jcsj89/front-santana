@@ -1,5 +1,6 @@
 import Button from "@/components/UI/Button";
 import LinkPage from "@/components/UI/LinkPage";
+import ContactForm from "@/components/form/ContactForm";
 import ImageCard from "@/components/site/home/ImageCard";
 import { raleway, roboto, truculenta, zilla_Slab } from "@/utils/fonts";
 import Image from "next/image";
@@ -145,8 +146,13 @@ export default function Home() {
       <div className="flex border my-4 justify-center items-center">
         <h1 className="text-3xl">get in touch</h1>
       </div>
-      <div className="flex border my-4 justify-center items-center">
+
+      {/* section contact */}
+      <div
+        className={`flex flex-col justify-center items-center border-b w-full py-9 pb-14 ${roboto.className}`}
+      >
         <h1 className="text-3xl">contact form</h1>
+        <ContactForm />
       </div>
 
       <div className="flex ">
