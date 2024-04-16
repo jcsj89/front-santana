@@ -1,36 +1,41 @@
+"use client";
+import { IconMoon } from "@/icons";
 import * as React from "react";
 
 interface InputComponentProps {
-  className: string;
-  containerStyle: string;
-  errors: string;
-  icon: string;
-  inputStyle: string;
+  className?: string;
+  containerStyle?: string;
+  errors?: string;
+  icon?: React.ReactElement;
+  inputStyle?: string;
+  iconStyle?: string;
   name: string;
   placeholder: string;
-  required: string;
+  required?: string;
   type: string;
   value: string;
-  disabled: boolean;
-  readOnly: boolean;
+  disabled?: boolean;
+  readOnly?: boolean;
   onChange: () => void;
 }
 
 const InputComponent = (props: InputComponentProps) => {
   const [showPassword, setShowPassword] = React.useState(false);
+
+  const inputRef = React.useRef(null);
+
   const handleTogglePassword = () => {
     setShowPassword(!showPassword);
   };
-  const inputRef = React.useRef(null);
 
   const handleClick = () => {
-    if (inputRef && inputRef.current) inputRef.current.focus();
+    // if (inputRef && inputRef.current) inputRef.current.focus();
   };
 
   return (
     <div className={props.className}>
       <div onClick={handleClick} className={props.containerStyle}>
-        {props.icon && <Icon dataTestId={`icon-${name}`} type={icon} />}
+        <div className={props.iconStyle}>{props.icon && props.icon}</div>
         <input
           ref={inputRef}
           aria-label={props.name}
@@ -41,19 +46,20 @@ const InputComponent = (props: InputComponentProps) => {
           onChange={props.onChange}
           placeholder={props.placeholder}
           value={props.value}
-          style={props.inputStyle}
+          className={props.inputStyle}
           disabled={props.disabled || false}
           readOnly={props.readOnly || false}
         />
         {props.type === "password" && (
           <div className="input_icon" onClick={handleTogglePassword}>
-            {showPassword ? <AiOutlineEye /> : <AiOutlineEyeInvisible />}
+            {showPassword ? IconMoon("w-6 h-6") : "i"}
           </div>
         )}
       </div>
-      {errors && !value && required && (
-        <Errors data-testid="errors">Required!</Errors>
-      )}
+      {props.errors &&
+        !props.value &&
+        props.required &&
+        '<Errors data-testid="errors">Required!</Errors>'}
     </div>
   );
 };
