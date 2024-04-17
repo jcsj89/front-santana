@@ -3,6 +3,7 @@ import { IconMoon } from "@/icons";
 import * as React from "react";
 
 interface InputComponentProps {
+  label?: string;
   className?: string;
   containerStyle?: string;
   errors?: string;
@@ -10,6 +11,7 @@ interface InputComponentProps {
   inputStyle?: string;
   iconStyle?: string;
   name: string;
+  labelStyle?: string;
   placeholder: string;
   required?: string;
   type: string;
@@ -35,6 +37,7 @@ const InputComponent = (props: InputComponentProps) => {
   return (
     <div className={props.className}>
       <div onClick={handleClick} className={props.containerStyle}>
+        <div className={props.labelStyle}>{props.label && props.label}</div>
         <div className={props.iconStyle}>{props.icon && props.icon}</div>
         <input
           ref={inputRef}

@@ -149,10 +149,26 @@ export default function Home() {
 
       {/* section contact */}
       <div
-        className={`flex flex-col justify-center items-center border-b w-full py-9 pb-14 ${roboto.className}`}
+        className={`flex flex-col justify-center items-center border-b w-full py-9 pb-14 bg-gray-100 ${roboto.className}`}
       >
         <h1 className="text-3xl">contact form</h1>
-        <ContactForm />
+
+        <div className="flex justify-center items-center w-full p-5 bg-blue-500">
+          <div className="border p-7">
+            <p>nos mande uma mensagem</p>
+
+            <Image
+              width={200}
+              height={200}
+              alt=""
+              src={"/img/open-mail-svgrepo-com.svg"}
+            />
+            <p>Contate-nos!</p>
+          </div>
+          <div className="border p-7 w-1/3">
+            <ContactForm />
+          </div>
+        </div>
       </div>
 
       <div className="flex ">
