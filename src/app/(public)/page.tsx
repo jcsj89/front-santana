@@ -1,93 +1,23 @@
-import Button from "@/components/UI/Button";
-import LinkPage from "@/components/UI/LinkPage";
-import ContactForm from "@/components/form/ContactForm";
-import ImageCard from "@/components/site/home/ImageCard";
-import { raleway, roboto, truculenta, zilla_Slab } from "@/utils/fonts";
-import Image from "next/image";
+import AboutUsSection from "@/components/site/home/sections/AboutUsSection";
+import SectionContact from "@/components/site/home/sections/ContactSection";
+import HeroSection from "@/components/site/home/sections/HeroSection";
+import KindCarsSection from "@/components/site/home/sections/KindCarsSection";
+import { roboto, zilla_Slab } from "@/utils/fonts";
 
 export default function Home() {
   return (
     <main className="flex flex-col items-center justify-center">
       <div className="flex border-b w-full ">
-        {/* left side */}
-        <div className="flex flex-col justify-center items-center p-7 w-2/3 ">
-          <div className="flex flex-col justify-center items-center w-3/4 border-b pb-8">
-            <h1
-              className={`text-3xl uppercase font-bold mb-1 ${raleway.className}`}
-            >
-              Desfrute da excelência
-            </h1>
-            <h2
-              className={`text-2xl uppercase font-bold mb-2 ${raleway.className}`}
-            >
-              em limpeza <span className="text-red-700">automotiva</span> .
-            </h2>
-
-            <p className="lg:w-3/4">
-              Nossos produtos são a chave para um resultado profissional
-              incomparável, deixe seu veículo impecável, com brilho e proteção
-              de longa duração, descubra o segredo por trás de cada lavagem de
-              sucesso, experimente agora.
-            </p>
-          </div>
-
-          <div className="my-8">
-            <Button
-              label="Clique aqui e peca um orcamento"
-              className="border rounded-lg bg-green-700 hover:bg-green-800 duration-200 text-white p-5"
-            />
-          </div>
-        </div>
-
-        {/* right side - image */}
-        <div className="flex justify-end items-end w-1/3">
-          <div className="hidden lg:block">
-            <Image
-              src={"/img/12478079.jpg"}
-              width={600}
-              height={400}
-              alt="Lavando carro"
-            />
-          </div>
-        </div>
+        <HeroSection />
       </div>
 
       {/* second section - about kind of cars us worked */}
       <div
-        className={`flex border-b w-full bg-gray-200 py-14 text-[#282626] ${zilla_Slab.className}`}
+        className={`flex border-b w-full
+        bg-gray-200 py-14 text-[#282626]
+        ${zilla_Slab.className}`}
       >
-        <div className="flex flex-col justify-center items-center w-full">
-          <h1 className="text-4xl my-6 font-bold uppercase text-[#5d8aa8]">
-            Produtos de lavagem para todos os tipos de veiculos
-          </h1>
-
-          <div className="flex p-3 ">
-            <ImageCard src="/img/car-svgrepo-com.svg" />
-            <ImageCard src="/img/bus-svgrepo-com.svg" />
-            <ImageCard src="/img/truck-svgrepo-com.svg" />
-            <ImageCard src="/img/motorbike-transport-svgrepo-com.svg" />
-            <ImageCard src="/img/tractor-transport-svgrepo-com.svg" />
-          </div>
-
-          <div className="w-3/6 p-10">
-            <p className="text-sm text-gray-400">
-              Na vanguarda da inovação na indústria química automotiva, estamos
-              orgulhosos de oferecer uma ampla gama de produtos de lavagem para
-              atender a todas as necessidades e tipos de veículos. Desde carros
-              de passeio até veículos pesados, nossa linha abrangente é
-              formulada para proporcionar resultados excepcionais em cada
-              lavagem. Confie na nossa expertise e eleve o padrão de limpeza do
-              seu veículo com nossos produtos de lavagem líderes da indústria.
-            </p>
-          </div>
-
-          <LinkPage
-            href="/produtos"
-            className="border-b border-blue-600 text-[#1DA1F2] hover:text-gray-600"
-          >
-            Conheca nosso produtos
-          </LinkPage>
-        </div>
+        <KindCarsSection />
       </div>
 
       <div className="flex border my-4 justify-center items-center">
@@ -96,43 +26,24 @@ export default function Home() {
       <div className="flex border my-4 justify-center items-center">
         <h1 className="text-3xl">help</h1>
       </div>
-      <div className="flex border my-4 justify-center items-center">
-        <h1 className="text-3xl">clients</h1>
+      <div
+        className={`flex flex-col justify-center items-center border-b w-full
+        bg-amber-300 py-14 text-[#282626]
+        ${zilla_Slab.className}`}
+      >
+        <h1 className="text-3xl">Fornecedores</h1>
+        <p>usiquimica</p>
+        <p>mundial quimica</p>
+        <p>prolink quimica</p>
       </div>
 
       {/* section about us */}
       <div
-        className={`flex flex-col justify-center items-center border-b w-full py-9 pb-14 bg-[#4682b4] ${roboto.className}`}
+        className={`flex flex-col justify-center items-center
+        border-b w-full py-9 pb-14
+        bg-[#4682b4] ${roboto.className}`}
       >
-        <h1 className="text-4xl text-black antialiased">
-          Conheça nossa história: A essência por trás da nossa jornada
-        </h1>
-
-        <div className="flex flex-col justify-center items-center my-5 px-3">
-          <span className={`text-7xl ${truculenta.className}`}>santana</span>
-          <h1 className="text-sm">Industria Quimica | desde 1994</h1>
-        </div>
-
-        <div className="flex flex-col justify-center items-center my-5 px-3 w-3/5">
-          <p className="text-justify">
-            Com mais de duas décadas de experiência no mercado, somos uma
-            indústria líder em produtos químicos, especializada na linha de
-            limpeza automotiva. Nossa trajetória é marcada pelo compromisso com
-            a excelência e pela busca contínua pela inovação. Contamos com uma
-            equipe altamente qualificada e dedicada, com vasta expertise em
-            fabricação e comercialização, o que nos permite garantir agilidade e
-            eficiência em todos os processos, desde a produção até a entrega dos
-            nossos produtos em suas mãos. Estamos constantemente atualizados com
-            as demandas do mercado, sempre atentos às últimas tendências e
-            necessidades dos clientes. Com uma linha completa de produtos,
-            estamos prontos para atender às exigências específicas da sua
-            empresa, oferecendo soluções sob medida para todas as suas
-            necessidades de limpeza automotiva.
-          </p>
-        </div>
-        <h1 className="text-3xl text-[#ff6347]">about us</h1>
-        <h1 className="text-3xl text-[#006400]">about us</h1>
-        <h1 className="text-3xl text-[#fa7f72]">Sobre Nos</h1>
+        <AboutUsSection />
       </div>
       <div className="flex border my-4 justify-center items-center">
         <h1 className="text-3xl">video</h1>
@@ -140,8 +51,57 @@ export default function Home() {
       <div className="flex border my-4 justify-center items-center">
         <h1 className="text-3xl">why us?</h1>
       </div>
-      <div className="flex border my-4 justify-center items-center">
+      <div className="flex flex-col border my-4 justify-center items-center">
         <h1 className="text-3xl">quote</h1>
+        <h2>parabola do semeador Mateus 13:1-23 </h2>
+        <p>
+          Naquele mesmo dia Jesus saiu de casa, foi para a beira do lago da
+          Galileia, sentou-se ali e começou a ensinar. A multidão que se ajuntou
+          em volta dele era tão grande, que ele entrou num barco e sentou-se; e
+          o povo ficou em pé na praia. Jesus usou parábolas para ensinar muitas
+          coisas. Ele disse: — Escutem! Certo homem saiu para semear. Quando
+          estava espalhando as sementes, algumas caíram na beira do caminho, e
+          os passarinhos comeram tudo. Outra parte das sementes caiu num lugar
+          onde havia muitas pedras e pouca terra. As sementes brotaram logo
+          porque a terra não era funda. Mas, quando o sol apareceu, queimou as
+          plantas, e elas secaram porque não tinham raízes. Outras sementes
+          caíram no meio de espinhos, que cresceram e sufocaram as plantas. Mas
+          as sementes que caíram em terra boa produziram na base de cem, de
+          sessenta e de trinta grãos por um. E Jesus terminou, dizendo: — Se
+          vocês têm ouvidos para ouvir, então ouçam. Então os discípulos
+          chegaram perto de Jesus e perguntaram: — Por que é que o senhor usa
+          parábolas para falar com essas pessoas? Jesus respondeu: — A vocês
+          Deus mostra os segredos do Reino do Céu, mas, a elas, não. Pois quem
+          tem receberá mais, para que tenha mais ainda. Mas quem não tem, até o
+          pouco que tem lhe será tirado. É por isso que eu uso parábolas para
+          falar com essas pessoas. Porque elas olham e não enxergam; escutam e
+          não ouvem, nem entendem. E assim acontece com essas pessoas o que
+          disse o profeta Isaías: “Vocês ouvirão, mas não entenderão; olharão,
+          mas não enxergarão nada. Pois a mente deste povo está fechada: Eles
+          taparam os ouvidos e fecharam os olhos. Se eles não tivessem feito
+          isso, os seus olhos poderiam ver, e os seus ouvidos poderiam ouvir; a
+          sua mente poderia entender, e eles voltariam para mim, e eu os
+          curaria! — disse Deus.” Jesus continuou, dizendo: — Mas vocês, como
+          são felizes! Pois os seus olhos veem, e os seus ouvidos ouvem. Eu
+          afirmo a vocês que isto é verdade: muitos profetas e muitas outras
+          pessoas do povo de Deus gostariam de ver o que vocês estão vendo, mas
+          não puderam; e gostariam de ouvir o que vocês estão ouvindo, mas não
+          ouviram. — Então escutem e aprendam o que a parábola do semeador quer
+          dizer. As pessoas que ouvem a mensagem do Reino, mas não a entendem,
+          são como as sementes que foram semeadas na beira do caminho. O Maligno
+          vem e tira o que foi semeado no coração delas. As sementes que foram
+          semeadas onde havia muitas pedras são as pessoas que ouvem a mensagem
+          e a aceitam logo com alegria, mas duram pouco porque não têm raiz. E,
+          quando por causa da mensagem chegam os sofrimentos e as perseguições,
+          elas logo abandonam a sua fé. Outras pessoas são parecidas com as
+          sementes que foram semeadas no meio dos espinhos. Elas ouvem a
+          mensagem, mas as preocupações deste mundo e a ilusão das riquezas
+          sufocam a mensagem, e essas pessoas não produzem frutos. E as sementes
+          que foram semeadas em terra boa são aquelas pessoas que ouvem, e
+          entendem a mensagem, e produzem uma grande colheita: umas, cem;
+          outras, sessenta; e ainda outras, trinta vezes mais do que foi
+          semeado.
+        </p>
       </div>
       <div className="flex border my-4 justify-center items-center">
         <h1 className="text-3xl">get in touch</h1>
@@ -149,26 +109,11 @@ export default function Home() {
 
       {/* section contact */}
       <div
-        className={`flex flex-col justify-center items-center border-b w-full py-9 pb-14 bg-gray-100 ${roboto.className}`}
+        className={`flex flex-col justify-center items-center
+        border-b w-full py-9 pb-14
+         bg-gray-200 ${roboto.className}`}
       >
-        <h1 className="text-3xl">contact form</h1>
-
-        <div className="flex justify-center items-center w-full p-5 bg-blue-500">
-          <div className="border p-7">
-            <p>nos mande uma mensagem</p>
-
-            <Image
-              width={200}
-              height={200}
-              alt=""
-              src={"/img/open-mail-svgrepo-com.svg"}
-            />
-            <p>Contate-nos!</p>
-          </div>
-          <div className="border p-7 w-1/3">
-            <ContactForm />
-          </div>
-        </div>
+        <SectionContact />
       </div>
 
       <div className="flex ">
