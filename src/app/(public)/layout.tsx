@@ -1,4 +1,4 @@
-import Footer from "@/components/site/Footer";
+import Footer from "@/components/site/footer/Footer";
 import Header from "@/components/site/top/Header";
 import type { Metadata } from "next";
 
@@ -14,7 +14,7 @@ export default function PublicLayout({
 }>) {
   return (
     <div className={`flex w-full flex-col min-h-screen mx-auto`}>
-      <div className="flex-grow ">
+      <div className="flex-grow">
         <Header />
         <main className=" dark:bg-gray-700">{children}</main>
       </div>

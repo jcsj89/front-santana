@@ -1,6 +1,6 @@
 "use client";
-import AsideMenu from "@/components/site/produtos/AsideMenu";
-import ProductCard from "@/components/site/produtos/ProductCard";
+import AsideMenu from "@/components/site/products/AsideMenu";
+import ProductCard from "@/components/site/products/ProductCard";
 import Product from "@/core/ProductModel";
 import { productsList } from "@/data/ProductsList";
 

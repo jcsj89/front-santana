@@ -2,15 +2,19 @@ import AboutUsSection from "@/components/site/home/sections/AboutUsSection";
 import SectionContact from "@/components/site/home/sections/ContactSection";
 import HeroSection from "@/components/site/home/sections/HeroSection";
 import KindCarsSection from "@/components/site/home/sections/KindCarsSection";
+import SessionBase from "@/components/site/home/SessionBase";
 import { roboto, zilla_Slab } from "@/utils/fonts";
 
 export default function Home() {
   return (
     <main className="flex flex-col items-center justify-center">
-      <div className="flex border-b w-full ">
+      <SessionBase>
         <HeroSection />
-      </div>
+      </SessionBase>
 
+      <SessionBase className="p-8 text-[#282626]">
+        <h2>teste</h2>
+      </SessionBase>
       {/* second section - about kind of cars us worked */}
       <div
         className={`flex border-b w-full

@@ -1,7 +1,7 @@
 "use client";
-import DilutionDescription from "@/components/site/produtos/DilutionDescription";
-import IndicacaoDeUso from "@/components/site/produtos/IndicacaoDeUso";
-import ModoDeUso from "@/components/site/produtos/ModoDeUso";
+import DilutionDescription from "@/components/site/products/DilutionDescription";
+import IndicacaoDeUso from "@/components/site/products/IndicacaoDeUso";
+import ModoDeUso from "@/components/site/products/ModoDeUso";
 import Product from "@/core/ProductModel";
 import { productsList } from "@/data/ProductsList";
 import Image from "next/image";
@@ -45,7 +45,7 @@ const Produto = ({ params }: { params: { id: string } }) => {
             <div className="border w-2/3">
               <ModoDeUso modoDeUso={product.modoDeUso || ""} />
               <IndicacaoDeUso indicacaoDeUso={product.indicacaoDeUso || ""} />
-              <DilutionDescription dilution={product.dilution||''} />
+              <DilutionDescription dilution={product.dilution || ""} />
 
               <h2>Diluicao {product.dilution}</h2>
               <h3>{calculateDiluicao(product.dilutionPercent || 1)}</h3>
