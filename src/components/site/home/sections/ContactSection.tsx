@@ -1,13 +1,14 @@
-'use client'
+"use client";
 
-import ContactForm from '@/components/form/ContactForm';
-import Image from 'next/image';
-import React from 'react'
+import ContactForm from "@/components/form/ContactForm";
+import Image from "next/image";
 
 const SectionContact = () => {
   return (
     <>
-      <h1 className="text-4xl uppercase">Precisa falar conosco ?</h1>
+      <h1 className="text-4xl uppercase border border-red-700">
+        Precisa falar conosco ?
+      </h1>
 
       <div className="flex justify-center items-center w-full p-10 ">
         <div className="flex flex-col w-1/2 justify-center items-center">
@@ -34,6 +35,6 @@ const SectionContact = () => {
       </div>
     </>
   );
-}
+};
 
-export default SectionContact
+export default SectionContact;
