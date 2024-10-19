@@ -1,6 +1,5 @@
-import React from 'react'
-import ImageCard from '../ImageCard';
-import LinkPage from '@/components/UI/LinkPage';
+import LinkPage from "@/components/UI/LinkPage";
+import ImageCard from "../ImageCard";
 
 const KindCarsSection = () => {
   return (
@@ -10,7 +9,7 @@ const KindCarsSection = () => {
           Produtos de lavagem para todos os tipos de veiculos
         </h1>
 
-        <div className="flex p-3 ">
+        <div className="flex justify-center flex-wrap p-3">
           <ImageCard src="/img/car-svgrepo-com.svg" />
           <ImageCard src="/img/bus-svgrepo-com.svg" />
           <ImageCard src="/img/truck-svgrepo-com.svg" />
@@ -39,6 +38,6 @@ const KindCarsSection = () => {
       </div>
     </>
   );
-}
+};
 
-export default KindCarsSection
+export default KindCarsSection;

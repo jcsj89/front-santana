@@ -3,7 +3,6 @@ import SectionContact from "@/components/site/home/sections/ContactSection";
 import HeroSection from "@/components/site/home/sections/HeroSection";
 import KindCarsSection from "@/components/site/home/sections/KindCarsSection";
 import SessionBase from "@/components/site/home/SessionBase";
-import { roboto, zilla_Slab } from "@/utils/fonts";
 
 export default function Home() {
   return (
@@ -12,50 +11,47 @@ export default function Home() {
         <HeroSection />
       </SessionBase>
 
-      <SessionBase className="p-8 text-[#282626]">
+      <SessionBase className="p-8 text-[#26669e]">
         <h2>teste</h2>
       </SessionBase>
-      {/* second section - about kind of cars us worked */}
-      <div
-        className={`flex border-b w-full
-        bg-gray-200 py-14 text-[#282626]
-        ${zilla_Slab.className}`}
-      >
-        <KindCarsSection />
-      </div>
 
-      <div className="flex border my-4 justify-center items-center">
+      {/* second section - about kind of cars us worked */}
+      <SessionBase className="bg-gray-200">
+        <KindCarsSection />
+      </SessionBase>
+
+      <SessionBase>
         <h1 className="text-3xl">work</h1>
-      </div>
-      <div className="flex border my-4 justify-center items-center">
+      </SessionBase>
+
+      <SessionBase>
         <h1 className="text-3xl">help</h1>
-      </div>
-      <div
-        className={`flex flex-col justify-center items-center border-b w-full
-        bg-amber-300 py-14 text-[#282626]
-        ${zilla_Slab.className}`}
-      >
+      </SessionBase>
+
+      <SessionBase className="flex-col justify-center items-center bg-amber-300 text-[#282626]">
         <h1 className="text-3xl">Fornecedores</h1>
         <p>usiquimica</p>
         <p>mundial quimica</p>
         <p>prolink quimica</p>
-      </div>
+      </SessionBase>
 
       {/* section about us */}
-      <div
-        className={`flex flex-col justify-center items-center
-        border-b w-full py-9 pb-14
-        bg-[#4682b4] ${roboto.className}`}
+      <SessionBase
+        className={`flex-col justify-center items-center bg-[#4682b4] `}
+        font={"roboto.className"}
       >
         <AboutUsSection />
-      </div>
-      <div className="flex border my-4 justify-center items-center">
+      </SessionBase>
+
+      <SessionBase>
         <h1 className="text-3xl">video</h1>
-      </div>
-      <div className="flex border my-4 justify-center items-center">
+      </SessionBase>
+
+      <SessionBase>
         <h1 className="text-3xl">why us?</h1>
-      </div>
-      <div className="flex flex-col border my-4 justify-center items-center">
+      </SessionBase>
+
+      <SessionBase>
         <h1 className="text-3xl">quote</h1>
         <h2>parabola do semeador Mateus 13:1-23 </h2>
         <p>
@@ -106,46 +102,16 @@ export default function Home() {
           outras, sessenta; e ainda outras, trinta vezes mais do que foi
           semeado.
         </p>
-      </div>
-      <div className="flex border my-4 justify-center items-center">
+      </SessionBase>
+
+      <SessionBase>
         <h1 className="text-3xl">get in touch</h1>
-      </div>
+      </SessionBase>
 
       {/* section contact */}
-      <div
-        className={`flex flex-col justify-center items-center
-        border-b w-full py-9 pb-14
-         bg-gray-200 ${roboto.className}`}
-      >
+      <SessionBase className="bg-gray-200 flex-col justify-center items-center">
         <SectionContact />
-      </div>
-
-      <div className="flex ">
-        <div className="w-1/3 border p-3">
-          <h2>O que voce pode encontrar na Santana Quimica?</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
-            sit est officia sed ipsam, quos placeat beatae voluptatibus natus
-            aspernatur veritatis, libero molestias possimus quidem asperiores,
-            dolorem non laboriosam atque.
-          </p>
-        </div>
-        <div className="w-1/3 border p-3">
-          <h2>Nosso diferencial</h2>p Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Asperiores, consequatur rem. Ipsa ab sapiente dicta
-          similique fuga aspernatur, consectetur optio quaerat iusto molestias,
-          magnam doloremque vero libero est distinctio quisquam?
-        </div>
-        <div className="w-1/3 border p-3">
-          <h2>O que voce pode encontrar na Santana Quimica?</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor,
-            nulla. Odit consectetur dolorum, assumenda dolore perferendis
-            maxime. Distinctio cumque optio exercitationem nostrum quae natus
-            rerum, officiis ab inventore odio aliquid.
-          </p>
-        </div>
-      </div>
+      </SessionBase>
     </main>
   );
 }
