@@ -1,5 +1,4 @@
 "use client";
-import Button from "@/components/UI/Button";
 import DarkMode from "@/components/UI/DarkMode";
 import { useRouter } from "next/navigation";
 import ContactTopHeader from "./ContactTopHeader";
@@ -22,11 +21,11 @@ const Header = () => {
 
         <div className="hidden md:block">
           <div className="flex justify-center items-center">
-            <Button
+            {/* <Button
               className="flex justify-center items-center p-3 border  border-[#DB4437] bg-[#DB4437] hover:bg-[#fff] hover:text-zinc-900 duration-400 rounded-lg  text-gray-800 uppercase cursor-pointer font-extrabold"
               label="SOLICITE UM ORCAMENTO"
               onClick={() => router.push("/sobre")}
-            />
+            /> */}
             <Login />
             <DarkMode />
           </div>
