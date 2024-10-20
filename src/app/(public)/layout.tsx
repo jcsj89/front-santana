@@ -12,6 +12,7 @@ export default function PublicLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // flex w-full flex-col min-h-screen mx-auto
   return (
     <div className={`flex w-full flex-col min-h-screen mx-auto`}>
       <div className="flex-grow">

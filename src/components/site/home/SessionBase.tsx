@@ -6,9 +6,7 @@ interface ISessionBase {
 
 const SessionBase = (props: ISessionBase) => {
   return (
-    <div
-      className={`${props.className} ${props.font} flex border-b w-full py-10`}
-    >
+    <div className={`${props.className} ${props.font} flex border-b w-full`}>
       {props.children}
     </div>
   );

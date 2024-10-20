@@ -4,21 +4,44 @@ import ImageCard from "../ImageCard";
 const KindCarsSection = () => {
   return (
     <>
+      {/*
+     text-[#5d8aa8] texto titulo
+        border-[#5d8aa8] borda redonda
+
+    */}
       <div className="flex flex-col justify-center items-center w-full">
-        <h1 className="text-4xl my-6 font-bold uppercase text-[#5d8aa8]">
+        <h1 className="text-xl md:text-2xl lg:text-4xl my-8 font-bold uppercase  text-[#1177ba]  text-center">
           Produtos de lavagem para todos os tipos de veiculos
         </h1>
 
-        <div className="flex justify-center flex-wrap p-3">
-          <ImageCard src="/img/car-svgrepo-com.svg" />
-          <ImageCard src="/img/bus-svgrepo-com.svg" />
-          <ImageCard src="/img/truck-svgrepo-com.svg" />
-          <ImageCard src="/img/motorbike-transport-svgrepo-com.svg" />
-          <ImageCard src="/img/tractor-transport-svgrepo-com.svg" />
+        <div
+          className="flex lg:flex-row justify-evenly lg:justify-center flex-wrap
+        lg:my-4 w-full "
+        >
+          <ImageCard
+            className="p-2 lg:mx-6 lg:p-8 border-2 lg:rounded-full border-[#8ccbf5]"
+            src="/img/car-svgrepo-com.svg"
+          />
+          <ImageCard
+            className="p-2 lg:mx-6 lg:p-8 border-2 lg:rounded-full border-[#8ccbf5]"
+            src="/img/bus-svgrepo-com.svg"
+          />
+          <ImageCard
+            className="p-2 lg:mx-6 lg:p-8 border-2 lg:rounded-full border-[#8ccbf5]"
+            src="/img/truck-svgrepo-com.svg"
+          />
+          <ImageCard
+            className="p-2 lg:mx-6 lg:p-8 border-2 lg:rounded-full border-[#8ccbf5]"
+            src="/img/motorbike-transport-svgrepo-com.svg"
+          />
+          <ImageCard
+            className="p-2 lg:mx-6 lg:p-8 border-2 lg:rounded-full border-[#8ccbf5]"
+            src="/img/tractor-transport-svgrepo-com.svg"
+          />
         </div>
 
-        <div className="w-3/6 p-10">
-          <p className="text-sm text-gray-400">
+        <div className="lg:w-3/6 lg:p-10 p-5">
+          <p className="text-sm text-gray-600 text-justify">
             Na vanguarda da inovação na indústria química automotiva, estamos
             orgulhosos de oferecer uma ampla gama de produtos de lavagem para
             atender a todas as necessidades e tipos de veículos. Desde carros de
@@ -31,7 +54,7 @@ const KindCarsSection = () => {
 
         <LinkPage
           href="/produtos"
-          className="border-b border-blue-600 text-[#1DA1F2] hover:text-gray-600"
+          className="border-b border-blue-600 text-[#1DA1F2] hover:text-gray-600 mb-10"
         >
           Conheca nosso produtos
         </LinkPage>

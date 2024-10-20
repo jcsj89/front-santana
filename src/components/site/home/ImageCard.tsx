@@ -5,12 +5,13 @@ interface ImageCardProps {
   alt?: string;
   width?: number;
   height?: number;
+  className?: string;
 }
 
 const ImageCard = (props: ImageCardProps) => {
-  const size = 100;
+  const size = 50;
   return (
-    <div className="mx-6 p-8 border-2 rounded-full border-[#5d8aa8]">
+    <div className={`${props.className} flex items-center justify-center my-2`}>
       <Image
         src={props.src}
         alt={props.alt || "Imagem"}

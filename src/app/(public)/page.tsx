@@ -5,27 +5,32 @@ import KindCarsSection from "@/components/site/home/sections/KindCarsSection";
 import SessionBase from "@/components/site/home/SessionBase";
 
 export default function Home() {
+  // flex flex-col items-center justify-center
   return (
-    <main className="flex flex-col items-center justify-center">
-      <SessionBase>
+    <main className="flex flex-col items-center justify-center lg:bg-repeat-y">
+      <SessionBase className="flex-col lg:flex-row lg:py-6 py-4 dark:bg-slate-600 lg:bg-[url('/img/bg-1.png')] bg-no-repeat">
         <HeroSection />
       </SessionBase>
 
-      <SessionBase className="p-8 text-[#26669e]">
-        <h2>teste</h2>
-      </SessionBase>
-
       {/* second section - about kind of cars us worked */}
-      <SessionBase className="bg-gray-200">
+      <SessionBase className="bg-amber-100 border-amber-300">
         <KindCarsSection />
       </SessionBase>
 
       <SessionBase>
-        <h1 className="text-3xl">work</h1>
+        <h1 className="text-3xl">what we do</h1>
       </SessionBase>
 
       <SessionBase>
         <h1 className="text-3xl">help</h1>
+      </SessionBase>
+
+      {/* section about us */}
+      <SessionBase
+        className={`flex-col justify-center items-center bg-white py-8 border-gray-200`}
+        font={"truculenta.className"}
+      >
+        <AboutUsSection />
       </SessionBase>
 
       <SessionBase className="flex-col justify-center items-center bg-amber-300 text-[#282626]">
@@ -33,14 +38,6 @@ export default function Home() {
         <p>usiquimica</p>
         <p>mundial quimica</p>
         <p>prolink quimica</p>
-      </SessionBase>
-
-      {/* section about us */}
-      <SessionBase
-        className={`flex-col justify-center items-center bg-[#4682b4] `}
-        font={"roboto.className"}
-      >
-        <AboutUsSection />
       </SessionBase>
 
       <SessionBase>
