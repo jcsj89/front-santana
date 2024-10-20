@@ -54,7 +54,7 @@ const AboutUsSection = () => {
         className={`${lato.className} flex flex-col justify-center items-center mx-2 my-5 px-3 lg:w-4/5 2xl:w-3/5  text-justify lg:text-center antialiased lg:text-2xl text-[#4682b4]`}
       >
         <p className="antialiased">
-          Com mais de tres décadas de experiência no mercado, somos uma
+          Com mais de trinta anos de experiência no mercado, somos uma
           indústria líder em produtos químicos, especializada na linha de
           limpeza automotiva. Nossa trajetória é marcada pelo compromisso com a
           excelência e pela busca contínua pela inovação.

@@ -1,4 +1,19 @@
 import LinkPage from "@/components/UI/LinkPage";
+import {
+  IconLetterA,
+  IconLetterB,
+  IconLetterC,
+  IconLetterE,
+  IconLetterH,
+  IconLetterI,
+  IconLetterM,
+  IconLetterN,
+  IconLetterO,
+  IconLetterR,
+  IconLetterS,
+  IconLetterT,
+  IconLetterU,
+} from "@tabler/icons-react";
 import ImageCard from "../ImageCard";
 
 const KindCarsSection = () => {
@@ -15,29 +30,74 @@ const KindCarsSection = () => {
         </h1>
 
         <div
-          className="flex lg:flex-row justify-evenly lg:justify-center flex-wrap
+          className="flex lg:flex-row justify-evenly lg:justify-center items-start flex-wrap
         lg:my-4 w-full "
         >
-          <ImageCard
-            className="p-2 lg:mx-6 lg:p-8 border-2 lg:rounded-full border-[#8ccbf5]"
-            src="/img/car-svgrepo-com.svg"
-          />
-          <ImageCard
-            className="p-2 lg:mx-6 lg:p-8 border-2 lg:rounded-full border-[#8ccbf5]"
-            src="/img/bus-svgrepo-com.svg"
-          />
-          <ImageCard
-            className="p-2 lg:mx-6 lg:p-8 border-2 lg:rounded-full border-[#8ccbf5]"
-            src="/img/truck-svgrepo-com.svg"
-          />
-          <ImageCard
-            className="p-2 lg:mx-6 lg:p-8 border-2 lg:rounded-full border-[#8ccbf5]"
-            src="/img/motorbike-transport-svgrepo-com.svg"
-          />
-          <ImageCard
-            className="p-2 lg:mx-6 lg:p-8 border-2 lg:rounded-full border-[#8ccbf5]"
-            src="/img/tractor-transport-svgrepo-com.svg"
-          />
+          <div className="flex flex-col justify-center items-center">
+            <IconLetterC />
+            <IconLetterA />
+            <IconLetterR />
+            <ImageCard
+              className="p-2 lg:mx-6 lg:p-8 lg:border-2 lg:rounded-full lg:border-[#8ccbf5]"
+              src="/img/car-svgrepo-com.svg"
+            />
+            <IconLetterR />
+            <IconLetterO />
+            <IconLetterS />
+          </div>
+
+          <div className="flex flex-col justify-center items-center">
+            <IconLetterO />
+            <IconLetterN />
+            <IconLetterI />
+            <ImageCard
+              className="p-2 lg:mx-6 lg:p-8 lg:border-2 lg:rounded-full lg:border-[#8ccbf5]"
+              src="/img/bus-svgrepo-com.svg"
+            />
+            <IconLetterB />
+            <IconLetterU />
+            <IconLetterS />
+          </div>
+          <div className="flex flex-col justify-center items-center">
+            <IconLetterC />
+            <IconLetterA />
+            <IconLetterM />
+            <ImageCard
+              className="p-2 lg:mx-6 lg:p-8 lg:border-2 lg:rounded-full lg:border-[#8ccbf5]"
+              src="/img/truck-svgrepo-com.svg"
+            />
+            <IconLetterI />
+            <IconLetterN />
+            <IconLetterH />
+            <IconLetterO />
+            <IconLetterE />
+            <IconLetterS />
+          </div>
+          <div className="flex flex-col justify-center items-center">
+            <IconLetterM />
+            <IconLetterO />
+            <IconLetterT />
+            <ImageCard
+              className="p-2 lg:mx-6 lg:p-8 lg:border-2 lg:rounded-full lg:border-[#8ccbf5]"
+              src="/img/motorbike-transport-svgrepo-com.svg"
+            />
+            <IconLetterO />
+            <IconLetterS />
+          </div>
+          <div className="flex flex-col justify-center items-center">
+            <IconLetterT />
+            <IconLetterR />
+            <IconLetterA />
+            <ImageCard
+              className="p-2 lg:mx-6 lg:p-8 lg:border-2 lg:rounded-full lg:border-[#8ccbf5]"
+              src="/img/tractor-transport-svgrepo-com.svg"
+            />
+            <IconLetterT />
+            <IconLetterO />
+            <IconLetterR />
+            <IconLetterE />
+            <IconLetterS />
+          </div>
         </div>
 
         <div className="lg:w-3/6 lg:p-10 p-5">
