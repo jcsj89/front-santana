@@ -1,11 +1,12 @@
 import {
+  Delius,
   Lato,
   Montserrat,
   Open_Sans,
   Raleway,
   Roboto,
   Truculenta,
-  Zilla_Slab
+  Zilla_Slab,
 } from "next/font/google";
 
 export const roboto = Roboto({
@@ -46,6 +47,12 @@ export const lato = Lato({
 
 export const montserrat = Montserrat({
   weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+export const delius = Delius({
+  weight: ["400"],
   subsets: ["latin"],
   display: "swap",
 });
