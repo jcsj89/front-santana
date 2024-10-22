@@ -9,14 +9,12 @@ const Footer = () => {
         <h2 className={`${truculenta.className} text-4xl`}>santana</h2>
       </div>
 
-      <div className="flex bg-white text-sm border-t border-gray-200 w-full justify-center">
-        <div className="flex justify-center items-center lg:mr-4">
-          <IconCopyright width={16} height={16} className="" />
+      <div className="flex bg-white text-xs border-t border-gray-200 w-full justify-center ">
+        <div className="flex justify-center items-center  py-1">
+          <IconCopyright stroke={1} width={16} height={16} />
           <span className="px-1"> Copyright </span>
-          <span className=""> {year}</span>
-        </div>
-        <div className="flex justify-center items-center  ">
-          <span className="px-1"> Todos direitos reservados. </span>
+          <span className="pr-1">{year}</span>
+          <span className="">- Todos direitos reservados. </span>
         </div>
       </div>
     </footer>
