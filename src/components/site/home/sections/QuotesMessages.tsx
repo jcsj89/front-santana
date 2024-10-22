@@ -12,15 +12,25 @@ const QuotesMessages = () => {
   const day = new Date().getDate();
   const month = new Date().getMonth() + 1;
   const quoteOfDay = getMessage(quotes);
-  
+
   function getMessage(list: IQuote[]): IQuote {
-    let dayQuote;
+    let dayQuote: IQuote | undefined;
 
-    dayQuote = list.filter((quote) => {
-      return quote.month === month && quote.week === getWeek(day);
-    });
+    dayQuote = list.find(
+      (quote) => quote.month === month && quote.week === getWeek(day)
+    );
 
-    return dayQuote[0];
+    // dayQuote = list.filter((quote) => {
+    //   return quote.month === month && quote.week === getWeek(day);
+    // });
+
+    if (dayQuote !== undefined) return dayQuote;
+    return {
+      message: "Não espere. O tempo nunca será o ideal.",
+      ref: "Napoleon Hill",
+      week: 1,
+      month: 2,
+    };
   }
 
   function getWeek(day: number): number {
@@ -363,161 +373,3 @@ const quotes: IQuote[] = [
     month: 12,
   },
 ];
-
-// "O sucesso é ir de fracasso em fracasso sem perder o entusiasmo."
-// — Winston Churchill
-
-// "A única maneira de fazer um ótimo trabalho é amar o que você faz."
-// — Steve Jobs
-
-// "Acredite que você pode, e você já está no meio do caminho."
-// — Theodore Roosevelt
-
-// "O único lugar onde o sucesso vem antes do trabalho é no dicionário."
-// — Vidal Sassoon
-
-// mes 2
-
-// "Não espere. O tempo nunca será o ideal."
-// — Napoleon Hill
-
-// "Você perde 100% dos tiros que não dá."
-// — Wayne Gretzky
-
-// "Grandes realizações não são feitas por impulso, mas por uma soma de pequenas conquistas."
-// — Vincent Van Gogh
-
-// "Se você pode sonhar, pode realizar."
-// — Walt Disney
-
-// "Não é o que acontece com você, mas como você reage a isso que importa."
-// — Epicteto
-
-// "A diferença entre o impossível e o possível está na determinação de uma pessoa."
-// — Tommy Lasorda
-
-// "A melhor maneira de prever o futuro é criá-lo."
-// — Peter Drucker
-
-// "Faça o que você pode, com o que você tem, onde você está."
-// — Theodore Roosevelt
-
-// "A ação é a chave fundamental para todo o sucesso."
-// — Pablo Picasso
-
-// "Coragem é a resistência ao medo, domínio do medo, e não a ausência dele."
-// — Mark Twain
-
-// "A mente é tudo. O que você pensa, você se torna."
-// — Buda
-
-// "O sucesso é a soma de pequenos esforços repetidos dia após dia."
-// — Robert Collier
-
-// "O que você faz hoje pode melhorar todos os seus amanhãs."
-// — Ralph Marston
-
-// "O maior erro que você pode cometer é o de ficar o tempo todo com medo de cometer algum."
-// — Elbert Hubbard
-
-// "Dificuldades preparam pessoas comuns para destinos extraordinários."
-// — C.S. Lewis
-
-// "Você não pode mudar o vento, mas pode ajustar as velas do barco para chegar onde quer."
-// — Confúcio
-
-// "Seja a mudança que você quer ver no mundo."
-// — Mahatma Gandhi
-
-// "A estrada para o sucesso está sempre em construção."
-// — Lily Tomlin
-
-// "Não deixe o que você não pode fazer interferir no que você pode fazer."
-// — John Wooden
-
-// "O único limite para a nossa realização de amanhã são nossas dúvidas de hoje."
-// — Franklin D. Roosevelt
-
-// "Cada sonho que você deixa para trás, é um pedaço do seu futuro que deixa de existir."
-// — Steve Jobs
-
-// "Tudo o que você sempre quis está do outro lado do medo."
-// — George Addair
-
-// "Você é mais corajoso do que pensa, mais forte do que parece e mais inteligente do que acredita."
-// — A.A. Milne
-
-// "O fracasso é apenas a oportunidade de começar de novo, desta vez de forma mais inteligente."
-// — Henry Ford
-
-// "Não basta ter uma boa mente; o principal é usá-la bem."
-// — René Descartes
-
-// "O que você faz hoje determina o seu amanhã."
-// — Ralph Marston
-
-// "Se você não está disposto a arriscar o incomum, você terá que se contentar com o comum."
-// — Jim Rohn
-
-// "Não importa o quão devagar você vá, desde que você não pare."
-// — Confúcio
-
-// "Persistência é o caminho do êxito."
-// — Charles Chaplin
-
-// "A diferença entre as pessoas comuns e as bem-sucedidas é a percepção e resposta ao fracasso."
-// — John C. Maxwell
-
-// "A maior glória em viver não está em nunca cair, mas em nos levantar cada vez que caímos."
-// — Nelson Mandela
-
-// "Não importa o que você decida. O que importa é que isso te faça feliz."
-// — Paulo Coelho
-
-// "Tudo que você sempre quis está do outro lado do medo."
-// — George Addair
-
-// "O futuro pertence àqueles que acreditam na beleza dos seus sonhos."
-// — Eleanor Roosevelt
-
-// "A vida não é sobre esperar a tempestade passar, mas aprender a dançar na chuva."
-// — Vivian Greene
-
-// "Sucesso é a soma de pequenos esforços repetidos diariamente."
-// — Robert Collier
-
-// "Se você está atravessando o inferno, continue."
-// — Winston Churchill
-
-// "Você pode encontrar o sucesso ao fazer o que ama, mas você nunca será feliz até que ame o que faz."
-// — Dale Carnegie
-
-// "Não são os anos da sua vida que contam. É a vida nos seus anos."
-// — Abraham Lincoln
-
-// "Nunca desista de um sonho só por causa do tempo que vai levar para realizá-lo. O tempo vai passar de qualquer maneira."
-// — Earl Nightingale
-
-// "A verdadeira medida de um homem não é como ele se comporta em momentos de conforto, mas como ele se mantém em tempos de controvérsia e desafio."
-// — Martin Luther King Jr.
-
-// "O fracasso não é o oposto do sucesso; é parte dele."
-// — Arianna Huffington
-
-// "Sonhe grande e se atreva a falhar."
-// — Norman Vaughan
-
-// "Acredite que você pode e você já está no meio do caminho."
-// — Theodore Roosevelt
-
-// "Sucesso é gostar de si mesmo, gostar do que você faz, e gostar de como você faz."
-// — Maya Angelou
-
-// "Se você quer ser feliz, defina uma meta que comande seus pensamentos, libere sua energia e inspire suas esperanças."
-// — Andrew Carnegie
-
-// "Acredite em si próprio e chegará um dia em que os outros não terão outra escolha senão acreditar com você."
-// — Cynthia Kersey
-
-// "Sempre parece impossível até que seja feito."
-// — Nelson Mandela
