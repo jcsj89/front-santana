@@ -30,8 +30,7 @@ export default function Home() {
 
       {/* home page fourth section - motivational phrases */}
       <SessionBase
-        className={`flex-col justify-center items-center text-black bg-white py-20 border-gray-200`}
-      >
+        className={`flex-col justify-center items-center text-black bg-white py-20 border-gray-200`}      >
         <QuotesMessages />
       </SessionBase>
 
