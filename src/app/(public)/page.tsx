@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <main className="flex flex-col items-center justify-center lg:bg-repeat-y">
       {/* home page first section - call to orcamento */}
-      <SessionBase className="flex-col lg:flex-row lg:py-6 py-4 dark:bg-slate-600 lg:bg-[url('/img/bg-1.png')] bg-no-repeat">
+      <SessionBase className="flex-col lg:flex-row lg:py-6 py-4  dark:bg-slate-600 lg:bg-[url('/img/bg-1.png')] bg-no-repeat">
         <HeroSection />
       </SessionBase>
 
@@ -20,18 +20,19 @@ export default function Home() {
         <KindCarsSection />
       </SessionBase>
 
+      {/* home page fourth section - motivational phrases */}
+      <SessionBase
+        className={`flex-col justify-center items-center text-black bg-white py-20 border-gray-200`}
+      >
+        <QuotesMessages />
+      </SessionBase>
+
       {/* home page third section - about kind of products us worked */}
       {/* text-black bg-white - trocar bg e cor texto para testar */}
       <SessionBase
         className={`flex-col justify-center items-center text-gray-300 bg-slate-700 py-8 border-slate-900`}
       >
         <WhatWeDo />
-      </SessionBase>
-
-      {/* home page fourth section - motivational phrases */}
-      <SessionBase
-        className={`flex-col justify-center items-center text-black bg-white py-20 border-gray-200`}      >
-        <QuotesMessages />
       </SessionBase>
 
       {/* section about us */}
