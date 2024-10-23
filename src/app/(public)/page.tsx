@@ -48,7 +48,7 @@ export default function Home() {
       </SessionBase>
 
       {/* section contact */}
-      <SessionBase className="bg-gray-200 flex-col justify-center items-center">
+      <SessionBase className="flex-col justify-center items-center">
         <SectionContact />
       </SessionBase>
     </main>
