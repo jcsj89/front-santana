@@ -14,7 +14,7 @@ interface InputComponentProps {
   labelStyle?: string;
   placeholder: string;
   required?: string;
-  type: string;
+  type: 'text'|'number'|'password'|'email';
   value: string;
   disabled?: boolean;
   readOnly?: boolean;
