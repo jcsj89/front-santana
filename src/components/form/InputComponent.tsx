@@ -16,6 +16,11 @@ interface InputComponentProps {
   labelStyle?: string;
   placeholder?: string;
   required?: string;
+<<<<<<< HEAD
+=======
+  type: 'text'|'number'|'password'|'email';
+  value: string;
+>>>>>>> refs/remotes/origin/main
   disabled?: boolean;
   readOnly?: boolean;
   onChange: () => void;
