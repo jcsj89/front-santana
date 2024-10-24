@@ -3,6 +3,9 @@ import { IconMoon } from "@/icons";
 import * as React from "react";
 
 interface InputComponentProps {
+  name: string;
+  type: string;
+  value: string;
   label?: string;
   className?: string;
   containerStyle?: string;
@@ -10,12 +13,9 @@ interface InputComponentProps {
   icon?: React.ReactElement;
   inputStyle?: string;
   iconStyle?: string;
-  name: string;
   labelStyle?: string;
-  placeholder: string;
+  placeholder?: string;
   required?: string;
-  type: string;
-  value: string;
   disabled?: boolean;
   readOnly?: boolean;
   onChange: () => void;
