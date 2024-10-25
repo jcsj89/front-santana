@@ -4,8 +4,6 @@ import * as React from "react";
 
 interface InputComponentProps {
   name: string;
-  type: string;
-  value: string;
   label?: string;
   className?: string;
   containerStyle?: string;
@@ -15,12 +13,9 @@ interface InputComponentProps {
   iconStyle?: string;
   labelStyle?: string;
   placeholder?: string;
-  required?: string;
-<<<<<<< HEAD
-=======
+  required?: 'required';
   type: 'text'|'number'|'password'|'email';
   value: string;
->>>>>>> refs/remotes/origin/main
   disabled?: boolean;
   readOnly?: boolean;
   onChange: () => void;

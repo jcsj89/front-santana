@@ -1,24 +1,19 @@
-import { ChangeEvent, FC } from "react";
-
-enum typeInput {
-  text = "text",
-  number = "number",
-  email = "email",
-  password = "password",
-}
-
+import { ChangeEvent } from "react";
 interface InputProps {
-  type: "text";
-  label: string;
+  type: "text" | "number" | "email" | "password";
+  label?: string;
   value: string | number;
   name: string;
-  placeholder: string;
+  placeholder?: string;
   error: boolean;
   disabled?: boolean;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  containerClassname?: string;
+  labelClassname?: string;
+  inputClassname?: string;
 }
 
-const Input: FC<InputProps> = ({
+const Input = ({
   type,
   label,
   value,
@@ -27,14 +22,20 @@ const Input: FC<InputProps> = ({
   error,
   disabled,
   onChange,
-}) => {
+  containerClassname,
+  labelClassname,
+  inputClassname,
+}: InputProps) => {
   return (
-    <div className="flex gap-3 justify-center border">
-      <label className="text-[#344054] mb-2" htmlFor={label}>
+    <div className={`${containerClassname || ""}`}>
+      <label
+        className={`text-[#344054] ${labelClassname || ""}`}
+        htmlFor={label}
+      >
         {label}
       </label>
       <input
-        className="w-48 text-[#344054] bg-white border border-[#d0d5dd] rounded-lg py-2 px-3"
+        className={`text-[#344054] bg-white border ${inputClassname || ""} `}
         type={type}
         id={label}
         value={value}
@@ -43,7 +44,7 @@ const Input: FC<InputProps> = ({
         onChange={onChange}
         disabled={disabled}
       />
-      {error && <p className="error">Input filed can't be empty!</p>}
+      {error && <p className="error">Input filed cant be empty!</p>}
     </div>
   );
 };
