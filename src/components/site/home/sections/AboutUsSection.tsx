@@ -9,7 +9,7 @@ import {
 const AboutUsSection = () => {
   return (
     <>
-      <div className="mb-10 mt-40 flex w-full justify-center  text-green-700">
+      <div className="mb-10 mt-20 flex w-full justify-center  text-zinc-700">
         <IconLetterH
           width={70}
           height={70}
@@ -53,7 +53,7 @@ const AboutUsSection = () => {
       <div
         className={`${lato.className} flex flex-col justify-center items-center mx-2 mt-14 mb-40 px-3 lg:w-4/5 2xl:w-3/5  text-justify lg:text-center antialiased lg:text-2xl text-black`}
       >
-        <p className="antialiased text-justify">
+        <p className="antialiased text-justify text-gray-300">
           Com mais de trinta anos de experiência no mercado, somos uma indústria
           líder em produtos químicos, especializada na linha de limpeza
           automotiva. Nossa trajetória é marcada pelo compromisso com a

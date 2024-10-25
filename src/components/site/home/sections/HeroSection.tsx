@@ -12,7 +12,7 @@ const HeroSection = () => {
           src={"/img/image11352.png"}
           width={300}
           height={400}
-          alt="Lavando carro"
+          alt="Cientista feliz"
         />
       </div>
 
@@ -27,7 +27,7 @@ const HeroSection = () => {
             className={`text-lg md:text-lg font-bold mb-8 ${raleway.className}`}
           >
             em limpeza{" "}
-            <span className={`${truculenta.className} text-sky-700 text-xl`}>
+            <span className={`${truculenta.className} text-gray-200 text-xl`}>
               automotiva
             </span>
           </h2>
@@ -43,8 +43,8 @@ const HeroSection = () => {
 
           <div className="my-8">
             <Button
-              label="Clique neste botao para fazer um orcamento"
-              className="border rounded-lg bg-orange-600 hover:bg-orange-500 duration-200 text-white p-5"
+              label="Solicite seu orçamento aqui"
+              className="uppercase border border-sky-600 rounded-lg bg-sky-500 hover:bg-sky-600 duration-200 text-white p-5"
             />
           </div>
         </div>

@@ -8,10 +8,11 @@ import SessionBase from "@/components/site/home/SessionBase";
 
 export default function Home() {
   // flex flex-col items-center justify-center
+
   return (
     <main className="flex flex-col items-center justify-center lg:bg-repeat-y">
       {/* home page first section - call to orcamento */}
-      <SessionBase className="flex-col lg:flex-row lg:py-6 py-4  dark:bg-slate-600 lg:bg-[url('/img/bg-1.png')] bg-no-repeat">
+      <SessionBase className="flex-col lg:flex-row py-4 lg:py-10 text-black bg-gradient-to-r from-sky-400 via-sky-500 to-sky-400">
         <HeroSection />
       </SessionBase>
 
@@ -37,13 +38,11 @@ export default function Home() {
 
       {/* section about us */}
       <SessionBase
-        className={`flex-col justify-center items-center bg-white py-8 border-gray-200`}
+        className={`flex-col justify-center items-center bg-zinc-500 py-8 border-gray-200`}
         font={"truculenta.className"}
       >
         <AboutUsSection />
       </SessionBase>
-
-      
 
       {/* section contact */}
       <SessionBase className="flex-col justify-center items-center bg-white text-black">
