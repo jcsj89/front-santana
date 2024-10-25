@@ -9,7 +9,7 @@ import {
 const AboutUsSection = () => {
   return (
     <>
-      <div className="mb-10 flex w-full justify-center  text-green-700">
+      <div className="mb-10 mt-40 flex w-full justify-center  text-green-700">
         <IconLetterH
           width={70}
           height={70}
@@ -51,16 +51,25 @@ const AboutUsSection = () => {
       </div>
 
       <div
-        className={`${lato.className} flex flex-col justify-center items-center mx-2 my-5 px-3 lg:w-4/5 2xl:w-3/5  text-justify lg:text-center antialiased lg:text-2xl text-[#4682b4]`}
+        className={`${lato.className} flex flex-col justify-center items-center mx-2 mt-14 mb-40 px-3 lg:w-4/5 2xl:w-3/5  text-justify lg:text-center antialiased lg:text-2xl text-black`}
       >
-        <p className="antialiased">
-          Com mais de trinta anos de experiência no mercado, somos uma
-          indústria líder em produtos químicos, especializada na linha de
-          limpeza automotiva. Nossa trajetória é marcada pelo compromisso com a
-          excelência e pela busca contínua pela inovação.
+        <p className="antialiased text-justify">
+          Com mais de trinta anos de experiência no mercado, somos uma indústria
+          líder em produtos químicos, especializada na linha de limpeza
+          automotiva. Nossa trajetória é marcada pelo compromisso com a
+          excelência e pela busca contínua pela inovação. Contamos com uma
+          equipe altamente qualificada e dedicada, com vasta expertise em
+          fabricação e comercialização, o que nos permite garantir agilidade e
+          eficiência em todos os processos, desde a produção até a entrega dos
+          nossos produtos em suas mãos. Estamos constantemente atualizados com
+          as demandas do mercado, sempre atentos às últimas tendências e
+          necessidades dos clientes. Com uma linha completa de produtos, estamos
+          prontos para atender às exigências específicas da sua empresa,
+          oferecendo soluções sob medida para todas as suas necessidades de
+          limpeza automotiva.
         </p>
 
-        <p>
+        {/* <p>
           Contamos com uma equipe altamente qualificada e dedicada, com vasta
           expertise em fabricação e comercialização, o que nos permite garantir
           agilidade e eficiência em todos os processos, desde a produção até a
@@ -72,7 +81,7 @@ const AboutUsSection = () => {
           linha completa de produtos, estamos prontos para atender às exigências
           específicas da sua empresa, oferecendo soluções sob medida para todas
           as suas necessidades de limpeza automotiva.
-        </p>
+        </p> */}
       </div>
     </>
   );
