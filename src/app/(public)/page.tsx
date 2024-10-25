@@ -43,12 +43,10 @@ export default function Home() {
         <AboutUsSection />
       </SessionBase>
 
-      <SessionBase>
-        <h1 className="text-3xl">get in touch</h1>
-      </SessionBase>
+      
 
       {/* section contact */}
-      <SessionBase className="flex-col justify-center items-center">
+      <SessionBase className="flex-col justify-center items-center bg-white text-black">
         <SectionContact />
       </SessionBase>
     </main>
