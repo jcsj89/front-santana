@@ -7,9 +7,9 @@ import { productsList } from "@/data/ProductsList";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-const Produto = async ({ params }: { params: Promise<{ id: string }> }) => {
-  const  id = (await params).id;
+const Produto = ({ params }: { params: Promise<{ id: string }> }) => {
   const [product, setProduct] = useState<Product>(Product.createEmpty());
+  const id = params.then((res) => res.id);
 
   useEffect(() => {
     if (productsList.length > 1) {
