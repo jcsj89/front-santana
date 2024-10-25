@@ -3,7 +3,7 @@ import Input from "@/components/form/Input";
 import useInput from "@/hooks/useInput";
 import React from "react";
 
-const page = () => {
+const Page = () => {
   const nameInput = useInput("");
 
   function onChange(e: React.ChangeEvent<HTMLInputElement>) {}
@@ -29,4 +29,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

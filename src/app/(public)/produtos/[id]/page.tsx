@@ -7,15 +7,16 @@ import { productsList } from "@/data/ProductsList";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-const Produto = ({ params }: { params: { id: string } }) => {
+const Produto = async ({ params }: { params: Promise<{ id: string }> }) => {
+  const  id = (await params).id;
   const [product, setProduct] = useState<Product>(Product.createEmpty());
 
   useEffect(() => {
     if (productsList.length > 1) {
-      const prod = productsList.find((prod) => prod.id === params.id);
+      const prod = productsList.find((prod) => prod.id === id);
       prod && setProduct(prod);
     }
-  }, [params.id]);
+  }, [id]);
 
   function calculateDiluicao(value: number) {
     value > 0 && value < 100 ? value : 1;

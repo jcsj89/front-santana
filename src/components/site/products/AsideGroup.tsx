@@ -7,10 +7,11 @@ interface AsideGroupProps {
 }
 
 const AsideGroup = (props: AsideGroupProps) => {
+  
   function renderizarLinksProdutos(classificacao: string) {
     return props.products?.map((prod) =>
       prod.classification === classificacao ? (
-        <li className="text-[#4285F4] hover:text-[#004e98]" key={Math.random()}>
+        <li className="text-[#4285F4] hover:text-[#004e98]" key={prod.id}>
           <Link className="capitalize  " href={`/produtos/${prod.id}`}>
             {prod.description}
           </Link>
@@ -18,7 +19,7 @@ const AsideGroup = (props: AsideGroupProps) => {
       ) : prod.classification && prod.classification?.length < 1 ? (
         <li
           className="text-[#4285F4] hover:text-[#004e98] "
-          key={Math.random()}
+          key={prod.id}
         >
           <Link className="capitalize" href={`/produtos/${prod.id}`}>
             <span>{prod.description}</span>
@@ -41,7 +42,7 @@ const AsideGroup = (props: AsideGroupProps) => {
   }
 
   return (
-    <div>
+    <div key={12}>
       {props.products &&
         Product.getClassification(props.products)?.map((classificacao) => (
           <>
