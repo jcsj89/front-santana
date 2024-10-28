@@ -4,12 +4,14 @@ import Link from "next/link";
 interface ILinks {
   name: string;
   href: string;
+  linkClassname?: string;
 }
 
 const ItemMenu = (props: ILinks) => {
   return (
     <Link
-      className={`${lato.className} sm:text-lg md:text-xl antialiased text-zinc-950  hover:text-[#004e98] duration-150`}
+      className={`${lato.className} ${props.linkClassname || ""}
+      `}
       href={props.href}
     >
       {props.name}

@@ -1,5 +1,6 @@
 interface TagsProductCardProps {
   tags: string[];
+  color?: string;
 }
 
 const TagsProductCard = (props: TagsProductCardProps) => {
@@ -20,13 +21,11 @@ const TagsProductCard = (props: TagsProductCardProps) => {
     return (
       <>
         {tags.length > 0 &&
-          tags?.map((tag) =>
+          tags?.map((tag, index) =>
             tag.length > 0 ? (
               <span
-                className={`font-bold text-center rounded-lg px-1 m-1 border text-sm lowercase ${
-                  colors[Math.floor(Math.random() * colors.length)]
-                }`}
-                key={Math.random() * Math.random()}
+                className={`font-bold text-center rounded-lg px-1 m-1 border text-sm lowercase`}
+                key={index}
               >
                 {tag}
               </span>

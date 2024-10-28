@@ -7,41 +7,44 @@ import WhatWeDo from "@/components/site/home/sections/WhatWeDo";
 import SessionBase from "@/components/site/home/SessionBase";
 
 export default function Home() {
-  // flex flex-col items-center justify-center
-
   return (
-    <main className="flex flex-col items-center justify-center lg:bg-repeat-y">
+    <main className="flex flex-col items-center justify-center ">
       {/* home page first section - call to orcamento */}
-      <SessionBase className="flex-col lg:flex-row py-4 lg:py-10 text-black bg-gradient-to-r from-sky-400 via-sky-500 to-sky-400">
+      <SessionBase className="flex-col lg:flex-row py-4 lg:py-10 text-black bg-gradient-to-r from-sky-600 via-sky-700 to-sky-600">
         <HeroSection />
       </SessionBase>
 
-      {/* home page second section - about kind of cars us worked */}
-      <SessionBase className="bg-amber-100 border-amber-300">
-        <KindCarsSection />
-      </SessionBase>
-
-      {/* home page fourth section - motivational phrases */}
+      {/* home page - motivational phrases */}
       <SessionBase
         className={`flex-col justify-center items-center text-black bg-white py-20 border-gray-200`}
       >
         <QuotesMessages />
       </SessionBase>
 
-      {/* home page third section - about kind of products us worked */}
-      {/* text-black bg-white - trocar bg e cor texto para testar */}
-      <SessionBase
-        className={`flex-col justify-center items-center text-gray-300 bg-slate-700 py-8 border-slate-900`}
-      >
-        <WhatWeDo />
+      {/* home page - about kind of cars us worked */}
+      <SessionBase className="bg-amber-100 text-black border-amber-300">
+        <KindCarsSection />
       </SessionBase>
 
       {/* section about us */}
       <SessionBase
-        className={`flex-col justify-center items-center bg-zinc-500 py-8 border-gray-200`}
+        className={`flex-col justify-center items-center
+            py-14 border-gray-300
+            bg-white
+            `}
         font={"truculenta.className"}
       >
         <AboutUsSection />
+      </SessionBase>
+
+      {/* home page third section - about kind of products us worked */}
+      {/* text-black bg-white - trocar bg e cor texto para testar */}
+      <SessionBase
+        className={`flex-col justify-center items-center
+          bg-gradient-to-r from-sky-600 via-sky-700 to-sky-600
+          text-black `}
+      >
+        <WhatWeDo />
       </SessionBase>
 
       {/* section contact */}

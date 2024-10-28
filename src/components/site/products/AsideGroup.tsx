@@ -1,4 +1,3 @@
-"use client";
 import Product from "@/core/ProductModel";
 import Link from "next/link";
 
@@ -7,19 +6,21 @@ interface AsideGroupProps {
 }
 
 const AsideGroup = (props: AsideGroupProps) => {
-  
   function renderizarLinksProdutos(classificacao: string) {
-    return props.products?.map((prod) =>
+    return props.products?.map((prod, index) =>
       prod.classification === classificacao ? (
-        <li className="text-[#4285F4] hover:text-[#004e98]" key={prod.id}>
-          <Link className="capitalize  " href={`/produtos/${prod.id}`}>
+        <li
+          className="text-[#4285F4] hover:text-[#004e98]"
+          key={"li1" + prod.id}
+        >
+          <Link className="capitalize" href={`/produtos/${prod.id}`}>
             {prod.description}
           </Link>
         </li>
       ) : prod.classification && prod.classification?.length < 1 ? (
         <li
-          className="text-[#4285F4] hover:text-[#004e98] "
-          key={prod.id}
+          className="text-[#4285F4] hover:text-[#004e98]"
+          key={"li2" + prod.id}
         >
           <Link className="capitalize" href={`/produtos/${prod.id}`}>
             <span>{prod.description}</span>
@@ -42,28 +43,33 @@ const AsideGroup = (props: AsideGroupProps) => {
   }
 
   return (
-    <div key={12}>
+    <div key={"agdiv1" + Math.random()} className="p-3">
       {props.products &&
-        Product.getClassification(props.products)?.map((classificacao) => (
-          <>
-            <h1
-              className="text-sm lg:text-base text-slate-950"
-              key={Math.random() * Math.random()}
-            >
-              {classificacao.length > 0 ? (
-                <span>CATEGORIA {classificacao}</span>
-              ) : (
-                false
-              )}
-            </h1>
+        Product.getClassification(props.products)?.map(
+          (classificacao, index) => (
+            <div key={"agdiv2" + index} className="">
+              <h1
+                className="text-sm lg:text-base text-slate-950"
+                key={"agh1" + index}
+              >
+                {classificacao.length > 0 ? (
+                  <span>CATEGORIA {classificacao}</span>
+                ) : (
+                  false
+                )}
+              </h1>
 
-            {renderizarDiluicao(classificacao)}
+              {renderizarDiluicao(classificacao)}
 
-            <div className="mt-2 mb-3 md:mt-3 md:mb-4  lg:text-base ">
-              {renderizarLinksProdutos(classificacao)}
+              <div
+                key={"agdiv3" + index}
+                className="mt-2 mb-3 md:mt-3 md:mb-4 lg:text-base"
+              >
+                {renderizarLinksProdutos(classificacao)}
+              </div>
             </div>
-          </>
-        ))}
+          )
+        )}
     </div>
   );
 };

@@ -10,14 +10,17 @@ const Header = () => {
   const router = useRouter();
 
   return (
-    <div className="flex flex-col border-b border-[#ece9c0] dark:bg-gray-700">
+    <div className="flex flex-col border-b bg-white text-black border-[#ece9c0] dark:bg-gray-700">
       <ContactTopHeader />
       <div className="flex flex-col xl:flex-row justify-center sm:justify-evenly lg:justify-between items-center">
         <div className="lg:w-1/3">
           <Logo className="lg:w-24" />
         </div>
 
-        <NavBar />
+        <NavBar
+          linkClassname="sm:text-lg md:text-xl antialiased text-zinc-950  hover:text-[#004e98] duration-150"
+          navBarClassname="mb-3 sm:my-3"
+        />
 
         <div className="hidden md:block">
           <div className="flex justify-center items-center">

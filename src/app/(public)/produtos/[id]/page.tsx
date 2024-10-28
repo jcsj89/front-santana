@@ -10,12 +10,18 @@ import { useEffect, useState } from "react";
 const Produto = ({ params }: { params: Promise<{ id: string }> }) => {
   const [product, setProduct] = useState<Product>(Product.createEmpty());
   const id = params.then((res) => res.id);
+  console.log(id);
 
   useEffect(() => {
-    if (productsList.length > 1) {
-      const prod = productsList.find((prod) => prod.id === id);
-      prod && setProduct(prod);
+    async function a() {
+      const idd = await id;
+      
+      if (productsList.length > 1) {
+        const prod = productsList.find((prod) => prod.id === idd);
+        prod && setProduct(prod);
+      }
     }
+    a();
   }, [id]);
 
   function calculateDiluicao(value: number) {

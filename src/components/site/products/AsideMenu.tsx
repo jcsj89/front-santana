@@ -1,3 +1,4 @@
+"use client";
 import Product from "@/core/ProductModel";
 import { roboto } from "@/utils/fonts";
 import { useEffect, useState } from "react";
@@ -17,16 +18,16 @@ const AsideMenu = (props: AsideMenuProps) => {
   }, []);
 
   function renderizarMenu() {
-    return Product.getCategory(props.products)?.map((category) => (
-      <div key={Math.random() * Math.random()}>
-        <ul className="border-b pb-3 mb-3">
+    return Product.getCategory(props.products)?.map((category, index) => (
+      <div key={"amdiv1" + index}>
+        <ul key={"ul" + index} className="border-b pb-3 mb-3">
           <div
+            key={"amdiv2" + index}
             className="font-bold text-base lg:text-xl text-zinc-950 capitalize mb-3"
-            key={Math.random() * Math.random()}
           >
             <span className="capitalize">LINHA {category}</span>
           </div>
-          <div>
+          <div key={"amdiv3" + index}>
             <AsideGroup
               products={props.products.filter((p) => p.category === category)}
             />
@@ -37,7 +38,7 @@ const AsideMenu = (props: AsideMenuProps) => {
   }
   return (
     <div
-      className={`h-screen px-3 lg:px-6 border-r mr-2 text-right sm:text-left ${roboto.className}`}
+      className={`h-screen px-3 lg:px-6 mr-2 text-right sm:text-left ${roboto.className}`}
     >
       {loading ? <span>carregando...</span> : renderizarMenu()}
     </div>

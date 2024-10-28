@@ -48,7 +48,7 @@ const ContactForm = () => {
       ></textarea>
 
       <div className="flex justify-end w-full">
-        <span className="border px-16 py-2px-16 py-2 bg-amber-500 text-white">
+        <span className="border px-16 py-2px-16 py-2 bg-[#0F9D58] text-white">
           enviar
         </span>
       </div>

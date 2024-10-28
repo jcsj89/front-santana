@@ -51,7 +51,7 @@ interface IProduct {
 */
 
 type CLASSIFICATION = "COMUM" | "CONCENTRADA" | "SUPER" | "ACABAMENTO" | "";
-type CATEGORY = "AUTOMOTIVA" | "INDUSTRIAL" | "";
+type CATEGORY = "AUTOMOTIVA" | "INDUSTRIAL" | "ACABAMENTO";
 
 class Product {
   static STATUS = { ACTIVE: true, INACTIVE: false, SHOW: true, HIDE: false };

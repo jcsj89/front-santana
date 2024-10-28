@@ -1,59 +1,28 @@
 import { lato, truculenta } from "@/utils/fonts";
-import {
-  IconLetterE,
-  IconLetterH,
-  IconLetterL,
-  IconLetterO,
-} from "@tabler/icons-react";
 
 const AboutUsSection = () => {
   return (
     <>
-      <div className="mb-10 mt-20 flex w-full justify-center  text-zinc-700">
-        <IconLetterH
-          width={70}
-          height={70}
-          className="ease-in duration-300 hover:w-14 hover:h-14"
-        />
-        <IconLetterE
-          width={70}
-          height={70}
-          className="ease-in duration-300 hover:w-14 hover:h-14"
-        />
-        <IconLetterL
-          width={70}
-          height={70}
-          className="ease-in duration-300 hover:w-14 hover:h-14"
-        />
-        <IconLetterL
-          width={70}
-          height={70}
-          className="ease-in duration-300 hover:w-14 hover:h-14"
-        />
-        <IconLetterO
-          width={70}
-          height={70}
-          className="ease-in duration-300 hover:w-14 hover:h-14"
-        />
-      </div>
-      <h1 className="text-center text-black mx-2 text-lg lg:text-3xl  antialiased">
+      <h1 className="text-center mx-2 text-lg lg:text-3xl antialiased">
         Gostaria de conhecer a nossa história?
       </h1>
-      <h3 className="text-center text-black mx-2 text-sm lg:text-lg  antialiased">
+      <h3 className="text-center mx-2 text-sm lg:text-lg  antialiased">
         A essência por trás da nossa jornada
       </h3>
 
       <div className="flex flex-col justify-center items-center my-5 px-3">
-        <h2 className={`text-black text-7xl ${truculenta.className}`}>
+        <h2 className={`text-[#DB4437] text-7xl ${truculenta.className}`}>
           santana
         </h2>
-        <h3 className="text-sm text-black">Industria Quimica | desde 1994 </h3>
+        <h3 className="text-sm text-zinc-500">
+          Industria Quimica | desde 1994{" "}
+        </h3>
       </div>
 
       <div
-        className={`${lato.className} flex flex-col justify-center items-center mx-2 mt-14 mb-40 px-3 lg:w-4/5 2xl:w-3/5  text-justify lg:text-center antialiased lg:text-2xl text-black`}
+        className={`${lato.className} flex flex-col justify-center items-center mx-2 mt-14 px-3 lg:w-4/5 2xl:w-3/5  text-justify lg:text-center antialiased lg:text-2xl text-black`}
       >
-        <p className="antialiased text-justify text-gray-300">
+        <p className="antialiased text-justify text-gray-900">
           Com mais de trinta anos de experiência no mercado, somos uma indústria
           líder em produtos químicos, especializada na linha de limpeza
           automotiva. Nossa trajetória é marcada pelo compromisso com a

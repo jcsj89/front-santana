@@ -10,7 +10,7 @@ const ContactSection = () => {
     >
       <div className="flex flex-col w-full m-8 justify-center items-center">
         <h5
-          className={`${raleway.className} text-5xl xl:text-6xl py-3 mb-2 text-amber-500 w-full sm:w-2/3 md:w-1/2`}
+          className={`${raleway.className} text-5xl xl:text-6xl py-3 mb-2 text-[#0F9D58] w-full sm:w-2/3 md:w-1/2`}
         >
           Olá !
         </h5>

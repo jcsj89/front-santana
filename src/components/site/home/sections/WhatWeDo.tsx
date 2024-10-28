@@ -68,10 +68,10 @@ const WhatWeDo = () => {
           </li>
           <li className="flex items-center justify-center p-2">
             <IconSquareNumber5 className="text-slate-500" />
-            <span className="ml-3">limpeza industrial</span>
+            <span className="ml-3">limpeza industrial </span>
           </li>
         </ul>
-        <p className="antialiased my-10 text-gray-400">
+        <p className="antialiased my-10 ">
           Na Santana Química, somos especializados na fabricação de produtos de
           limpeza automotiva de alta qualidade. Nossa linha abrange soluções
           inovadoras e eficientes para a limpeza, proteção e manutenção de
