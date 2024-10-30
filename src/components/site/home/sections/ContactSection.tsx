@@ -1,7 +1,9 @@
 "use client";
 
 import ContactForm from "@/components/form/ContactForm";
+
 import { raleway } from "@/utils/fonts";
+import { IconMail, IconMap, IconPhone } from "@tabler/icons-react";
 
 const ContactSection = () => {
   return (
@@ -23,6 +25,21 @@ const ContactSection = () => {
         </p>
       </div>
       <ContactForm />
+
+      <address className="">
+        <div className="flex mx-1">
+          <IconMail />
+          <span>vendas@santanaquimica.com.br</span>
+        </div>
+        <div>
+          <IconPhone />
+          <span>+55 (17) 3269-1200</span>
+        </div>
+        <div>
+          <IconMap />
+          <span>Rua Carlos Pagianotto, nº 251 CEP 15109-106 - Ipiguá - SP</span>
+        </div>
+      </address>
     </div>
   );
 };

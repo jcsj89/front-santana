@@ -15,7 +15,7 @@ import {
 const WhatWeDo = () => {
   return (
     <>
-      <div className="mb-10 flex w-full justify-center">
+      <div className="my-10 flex w-full justify-center">
         <IconLetterW
           width={70}
           height={70}
@@ -51,27 +51,27 @@ const WhatWeDo = () => {
             <h4 className="text-slate-400">Produtos para </h4>
           </li>
           <li className="flex items-center justify-center p-2">
-            <IconSquareNumber1 className="text-slate-500" />
+            <IconSquareNumber1 className="text-slate-300" />
             <span className="ml-3">Lavagem profissional de automoveis</span>
           </li>
           <li className="flex items-center justify-center p-2">
-            <IconSquareNumber2 className="text-slate-500" />
+            <IconSquareNumber2 className="text-slate-300" />
             <span className="ml-3">acabamento interno</span>
           </li>
           <li className="flex items-center justify-center p-2">
-            <IconSquareNumber3 className="text-slate-500" />
+            <IconSquareNumber3 className="text-slate-300" />
             <span className="ml-3">acabamento externo</span>
           </li>
           <li className="flex items-center justify-center p-2">
-            <IconSquareNumber4 className="text-slate-500" />
+            <IconSquareNumber4 className="text-slate-300" />
             <span className="ml-3">Lataria dos veiculos</span>
           </li>
           <li className="flex items-center justify-center p-2">
-            <IconSquareNumber5 className="text-slate-500" />
+            <IconSquareNumber5 className="text-slate-300" />
             <span className="ml-3">limpeza industrial </span>
           </li>
         </ul>
-        <p className="antialiased my-10 ">
+        <p className="antialiased my-10 text-gray-200">
           Na Santana Química, somos especializados na fabricação de produtos de
           limpeza automotiva de alta qualidade. Nossa linha abrange soluções
           inovadoras e eficientes para a limpeza, proteção e manutenção de
