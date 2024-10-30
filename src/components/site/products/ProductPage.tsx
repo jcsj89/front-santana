@@ -23,7 +23,7 @@ const ProductPage = (props: IProduct) => {
       <Image
         className="border p-5"
         src={props.product.photos![0]}
-        width={300}
+        width={330}
         height={300}
         alt={props.product.description!}
       />
