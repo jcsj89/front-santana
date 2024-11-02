@@ -1,0 +1,28 @@
+{
+    "files.autoSaveDelay": 3000,
+    "files.autoSave": "afterDelay",
+    "editor.fontSize": 16,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
+    "[typescript]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnPaste": true
+    },
+    "material-icon-theme.folders.associations": {
+        "(dashboard)": "mappings",
+        "dashboard": "mappings",
+        "login": "admin",
+        "(public)": "global",
+        "contatos": "lua",
+        "produtos": "store",
+        "sobre": "pipe",
+        "form": "docs",
+        "contato": "cluster",
+        "footer": "export",
+        "top": "upload",
+        "products": "store",
+        "sections": "resource"
+    }
+}

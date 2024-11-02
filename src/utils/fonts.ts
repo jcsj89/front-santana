@@ -7,6 +7,9 @@ import {
   Roboto,
   Truculenta,
   Zilla_Slab,
+  Source_Code_Pro,
+  Roboto_Mono,
+  Bona_Nova_SC
 } from "next/font/google";
 
 export const roboto = Roboto({
@@ -55,4 +58,22 @@ export const delius = Delius({
   weight: ["400"],
   subsets: ["latin"],
   display: "swap",
+});
+
+export const source_code_pro = Source_Code_Pro({
+    weight: ["400"],
+    subsets: ["latin"],
+    display: "swap",
+});
+
+export const roboto_mono = Roboto_Mono({
+    weight: ["400"],
+    subsets: ["latin"],
+    display: "swap",
+});
+
+export const bona_nova_sc = Bona_Nova_SC({
+    weight: ["400"],
+    subsets: ["latin"],
+    display: "swap",
 });

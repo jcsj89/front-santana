@@ -10,9 +10,10 @@ prod1.dilutionPercent = 10;
 prod1.color = "roxo";
 prod1.tags = ["roxo", "bau", "aluminio"];
 prod1.showInWeb = Product.STATUS.SHOW;
-prod1.classification = "COMUM";
 prod1.category = "AUTOMOTIVA";
 prod1.photos = ["/img/products/at.ls.300.png"];
+prod1.classification = "desincrustante";
+prod1.concentrationLevel = 'comum'
 
 const prod2 = Product.createEmpty();
 productsList.push(prod2);
@@ -23,13 +24,15 @@ prod2.dilutionPercent = 10;
 prod2.color = "azul";
 prod2.showInWeb = Product.STATUS.SHOW;
 prod2.tags = ["azul", "limpa bau", "chassis", "alcalino"];
-prod2.classification = "COMUM";
 prod2.category = "AUTOMOTIVA";
 prod2.modoDeUso =
-  "Aplicar por pulverização sobre toda a superfície desejada. Esfregar-se necessário com o auxílio de um pano ou esfregão, em seguida enxaguar com jatos d'água em abundância até a remoção total dos resíduos. Recomenda-se o uso correto de EPI's.";
+"Aplicar por pulverização sobre toda a superfície desejada. Esfregar-se necessário com o auxílio de um pano ou esfregão, em seguida enxaguar com jatos d'água em abundância até a remoção total dos resíduos. Recomenda-se o uso correto de EPI's.";
 prod2.indicacaoDeUso =
-  "Produto indicado para limpeza atravéz de desincrustação na linha automóveis, tendo como principal função, a remoção de incrustações aderidas em superfícies metálicas.";
+"Produto indicado para limpeza atravéz de desincrustação na linha automóveis, tendo como principal função, a remoção de incrustações aderidas em superfícies metálicas.";
 prod2.photos = ["/img/products/sanq.chassis.110.png"];
+prod2.classification = "desengraxante";
+prod2.concentrationLevel = "comum";
+
 
 const prod3 = Product.createEmpty();
 productsList.push(prod3);
@@ -39,39 +42,44 @@ prod3.dilutionPercent = 10;
 prod3.color = "amarelo";
 prod3.showInWeb = Product.STATUS.SHOW;
 prod3.tags = ["amarelo", "bau", "chassis"];
-prod3.classification = "COMUM";
 prod3.category = "AUTOMOTIVA";
 prod3.photos = ["/img/products/sanq.mol.png"];
+prod3.classification = "neutro";
+prod3.concentrationLevel = "comum";
+
 
 const prod4 = Product.createEmpty();
 productsList.push(prod4);
 prod4.description = "Samix LS";
 prod4.dilution = "1:40";
-prod4.dilutionPercent = 40;
+prod4.dilutionPercent = 2.5;
 prod4.color = "amarelo";
 prod4.showInWeb = Product.STATUS.SHOW;
 prod4.tags = ["azul", "bau", "chassis"];
-prod4.classification = "CONCENTRADA";
 prod4.category = "AUTOMOTIVA";
 prod4.photos = ["/img/products/samix.220.png"];
+prod4.classification = "desengraxante";
+prod4.concentrationLevel = "concentrado";
+
 
 const prod5 = Product.createEmpty();
 productsList.push(prod5);
 prod5.description = "ativado ls";
 prod5.dilution = "1:100";
-prod5.dilutionPercent = 40;
+prod5.dilutionPercent = 2.5;
 prod5.color = "roxo";
 prod5.showInWeb = Product.STATUS.SHOW;
 prod5.tags = ["azul", "bau", "chassis"];
-prod5.classification = "CONCENTRADA";
 prod5.category = "AUTOMOTIVA";
 prod5.photos = ["/img/products/at.ls.300.png"];
+prod5.classification = "CONCENTRADA";
+prod5.concentrationLevel = "concentrado";
 
 const prod6 = Product.createEmpty();
 productsList.push(prod6);
 prod6.description = "Samix 220";
 prod6.dilution = "1:100";
-prod6.dilutionPercent = 100;
+prod6.dilutionPercent = 1;
 prod6.color = "amarelo";
 prod6.showInWeb = Product.STATUS.SHOW;
 prod6.tags = ["azul", "bau", "chassis"];
@@ -83,7 +91,7 @@ const prod7 = Product.createEmpty();
 productsList.push(prod7);
 prod7.description = "ativado 220";
 prod7.dilution = "1:100";
-prod7.dilutionPercent = 100;
+prod7.dilutionPercent = 1;
 prod7.color = "amarelo";
 prod7.showInWeb = Product.STATUS.SHOW;
 prod7.tags = ["azul", "bau", "chassis"];
@@ -125,7 +133,7 @@ prod10.showInWeb = Product.STATUS.SHOW;
 prod10.tags = ["azul", "bau", "chassis"];
 prod10.classification = "";
 prod10.category = "INDUSTRIAL";
-prod9.photos = ["/img/products/site.det.mol.2.png"];
+prod10.photos = ["/img/products/site.det.mol.2.png"];
 
 const prod11 = Product.createEmpty();
 productsList.push(prod11);
