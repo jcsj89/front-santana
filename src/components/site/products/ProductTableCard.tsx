@@ -1,17 +1,18 @@
 import Product from "@/core/ProductModel";
-import { bona_nova_sc, roboto, zilla_Slab } from "@/utils/fonts";
+import { bona_nova, roboto, zilla_Slab } from "@/utils/fonts";
 import { IconPolaroid } from "@tabler/icons-react";
 import Image from "next/image";
 
 interface ProductTableCardProps {
     product: Product;
-    selectProduct?: (product: Product) => void;
+    selectProduct: (product: Product) => void;
 }
 
 const ProductTableCard = (props: ProductTableCardProps) => {
-    const photos = props.product.photos || [""];
+    const photos = props.product.photos || null;
     const description = props.product.description || "produto";
-    const classification = props.product.classification || "geral";
+    const classification = props.product.classification || null;
+    const color = props.product.color || "";
 
     function renderizarImagem(imageUrl: string) {
         if (imageUrl === null || imageUrl === undefined || !imageUrl.length)
@@ -41,40 +42,94 @@ const ProductTableCard = (props: ProductTableCardProps) => {
             .split(" ")
             .map((word) => word[0])
             .join("");
-        return letters;
+        return letters.toLowerCase();
+    }
+
+    function getColor(color: string): string[] {
+        let select = [""];
+
+        switch (color) {
+            case "amarelo":
+                select[0] = "text-amber-500";
+                select[1] = "bg-amber-500";
+                break;
+            case "azul":
+                select[0] = "text-sky-500";
+                select[1] = "bg-sky-500";
+                break;
+            case "verde":
+                select[0] = "text-green-500";
+                select[1] = "bg-green-500";
+                break;
+            case "roxo":
+                select[0] = "text-purple-500";
+                select[1] = "bg-purple-500";
+                break;
+            case "branco":
+                select[0] = "text-zinc-500";
+                select[1] = "bg-zinc-500";
+                break;
+            case "rosa":
+                select[0] = "text-red-500";
+                select[1] = "bg-red-500";
+                break;
+
+            default:
+                select[0] = "text-black";
+                select[1] = "bg-white";
+                break;
+        }
+
+        return select;
     }
 
     return (
         <div
             key={props.product.id}
             className="flex flex-col justify-center min-w-44 max-w-60  md:min-w-60 md:max-w-72 md:min-h-72 md:max-h-72 border m-3"
+            onClick={() => props.selectProduct(props.product)}
         >
             <div
-                className={`${zilla_Slab.className} flex justify-between text-sm  p-1`}
+                className={`${zilla_Slab.className} flex justify-between text-sm p-1`}
             >
-                <div>{description}</div>
-                <div>{`${props.product.dilutionPercent.toFixed(1)} %`}</div>
+                <div className="uppercase">{description}</div>
+                <div className="text-gray-500">{`${props.product.dilutionPercent.toFixed(
+                    1
+                )} %`}</div>
             </div>
+
             <div className="flex flex-col flex-1 justify-center items-center">
                 <div
-                    className={`text-4xl font-black ${bona_nova_sc.className}`}
+                    className={`
+                        text-4xl font-black capitalize
+                        ${bona_nova.className}
+                        ${getColor(color)[0]} `}
                 >
                     {getBriefName(description)}
                 </div>
-                <div className="my-1">
-                    {photos !== null ? (
-                        renderizarImagem(photos[0])
-                    ) : (
+
+                {photos !== null ? (
+                    <div className="my-1">{renderizarImagem(photos[0])}</div>
+                ) : (
+                    <div className="my-1">
                         <IconPolaroid width={80} height={80} />
-                    )}
-                </div>
+                    </div>
+                )}
             </div>
 
-            <div
-                className={`${roboto.className} flex flex-col justify-center items-center bg-amber-400 text-xs p-1 lowercase`}
-            >
-                {renderizarClassificacao(classification)}
-            </div>
+            {classification !== null ? (
+                <div
+                    className={`
+                        ${roboto.className}
+                        ${getColor(color)[1]}
+                        text-white
+                        flex flex-col justify-center items-center text-xs p-1 lowercase`}
+                >
+                    {renderizarClassificacao(classification)}
+                </div>
+            ) : (
+                false
+            )}
         </div>
     );
 };
