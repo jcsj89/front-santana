@@ -16,7 +16,13 @@ const config: Config = {
             },
         },
     },
-    safelist: [],
+    safelist: [
+        "text-2xl",
+        "text-3xl",
+        {
+            pattern: /w-./,
+        },
+    ],
     plugins: [],
 };
 export default config;
