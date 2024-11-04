@@ -13,20 +13,19 @@ interface IProduct {
 }
 
 const ProductPage = (props: IProduct) => {
-
     return (
         <div
             onClick={() => props.unselectProduct()}
-            className="flex justify-center my-3  gap-3"
+            className="flex flex-col lg:flex-row justify-center lg:my-3 gap-3"
         >
-            <div className="flex flex-col  justify-start items-center min-w-[621px] h-96 border p-3 shadow-sm">
+            <div className="flex flex-col justify-start items-center xl:min-w-[621px] h-96 border py-3 shadow-sm">
                 <h2
-                    className={`text-4xl font-black capitalize ${roboto_mono.className}`}
+                    className={`text-lg lg:text-4xl font-black capitalize ${roboto_mono.className}`}
                 >
                     {props.product.description}
                 </h2>
                 <Image
-                    className="flex w-52 p-5 my-4 "
+                    className="flex w-40 lg:w-52 lg:p-5 my-4"
                     src={props.product.photos![0]}
                     width={192}
                     height={192}
@@ -40,7 +39,7 @@ const ProductPage = (props: IProduct) => {
                     percent={props.product.dilutionPercent || 0}
                 />
                 <DilutionDescription dilution={props.product.dilution} />
-                <Phmetro ph={8} icon={<IconArrowDown />}/>
+                <Phmetro ph={8} icon={<IconArrowDown />} />
             </div>
         </div>
     );
