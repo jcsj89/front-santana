@@ -232,7 +232,7 @@ class Product implements IProductProperties {
         if (
             this.#dilutionPercent !== undefined &&
             this.#dilutionPercent >= 0 &&
-            this.#dilutionPercent < 100
+            this.#dilutionPercent <= 100
         ) {
             return this.#dilutionPercent;
         } else {
