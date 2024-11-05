@@ -36,7 +36,7 @@ const Produtos = () => {
             {/* Right Side */}
 
             {productSelected === null ? (
-                <div className="flex flex-col p-3 md:px-3 md:py-0">
+                <div className="flex flex-col md:px-3 md:py-0">
                     <div
                         className={`flex items-center justify-center font-bold text-2xl lg:text-3xl`}
                     >

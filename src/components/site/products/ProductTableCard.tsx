@@ -22,8 +22,8 @@ const ProductTableCard = (props: ProductTableCardProps) => {
         return (
             <Image
                 className="max-h-40"
-                width={100}
-                height={100}
+                width={80}
+                height={80}
                 src={imageUrl}
                 alt=""
             />

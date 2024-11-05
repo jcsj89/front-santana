@@ -47,15 +47,25 @@ const Phmetro = (props: PhmetroProps) => {
                 <h5 className="text-lg font-bold text-gray-500">
                     Escala do pH
                 </h5>
-                <p>
+                <p className="text-xs lg:text-base">
                     O pH é uma medida que indica o nível de acidez ou basicidade
                     de uma solução.
                 </p>
-                <ol>
-                    <li>0 - 6 : ACIDO</li>
-                    <li>7 : NEUTRO</li>
-                    <li>8 - 14 : ALCALINO</li>
-                </ol>
+
+                <div className="flex flex-col items-center lg:items-start my-4">
+                    <div className="flex gap-4 w-">
+                        <div className="text-right border">ACIDO</div>
+                        <div className="text-left border">0 - 6</div>
+                    </div>
+                    <div className="flex gap-4">
+                        <div className="text-right border">NEUTRO</div>
+                        <div className="text-left border">7 - 8</div>
+                    </div>
+                    <div className="flex gap-4">
+                        <div className="text-right border">ACIDO</div>
+                        <div className="text-left border">8 - 14</div>
+                    </div>
+                </div>
             </div>
         </div>
     );

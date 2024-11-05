@@ -17,9 +17,9 @@ const ProductPage = (props: IProduct) => {
     return (
         <div
             onClick={() => props.unselectProduct()}
-            className="flex flex-col lg:flex-row justify-center lg:my-3 gap-2 lg:gap-3"
+            className="flex flex-col lg:flex-row lg:justify-center lg:my-3 gap-2 lg:gap-3"
         >
-            <div className="flex flex-col justify-start items-center xl:w-1/3 lg:h-96 border py-3 shadow-sm p-4 ">
+            <div className="flex flex-col justify-start items-center xl:w-1/3 lg:h-96 border py-3 shadow-sm lg:p-4 ">
                 <h2
                     className={`text-lg lg:text-4xl font-black capitalize ${
                         roboto_mono.className
@@ -35,7 +35,7 @@ const ProductPage = (props: IProduct) => {
                     alt={props.product.description!}
                 />
             </div>
-            <div className="flex flex-col items-center lg:px-5 lg:py-2 border p-4 xl:w-2/3">
+            <div className="flex flex-col items-center lg:px-5 lg:py-2 border p-2 lg:p-4 xl:w-2/3">
                 <h3 className="text-center text-2xl lg:text-3xl font-black">
                     Informacoes do Produto
                 </h3>
