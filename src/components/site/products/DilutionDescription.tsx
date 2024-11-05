@@ -7,8 +7,7 @@ const DilutionDescription = (props: DilutionDescriptionProps) => {
 
     function renderizarDilutionDescription() {
         return (
-            <div className="flex flex-col w-full mb-2">
-
+            <div className="flex w-full text-sm md:text-base text-justify text-zinc-600">
                 <p className="">{props.dilution}</p>
             </div>
         );

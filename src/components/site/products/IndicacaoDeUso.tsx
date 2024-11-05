@@ -1,3 +1,5 @@
+import TitlePageProduct from "./TitlePageProduct";
+
 interface IndicacaoDeUsoProps {
     indicacaoDeUso: string;
 }
@@ -7,10 +9,10 @@ const IndicacaoDeUso = (props: IndicacaoDeUsoProps) => {
     function renderizarIndicacaoDeUso() {
         return (
             <div className="flex flex-col w-full mb-3">
-                <h4 className="uppercase text-xl font-bold mb-1">
-                    INDICAÇÕES DE USO
-                </h4>
-                <p className="">{props.indicacaoDeUso}</p>
+                <TitlePageProduct title="INDICAÇÕES DE USO" />
+                <p className="text-sm md:text-base text-justify">
+                    {props.indicacaoDeUso}
+                </p>
             </div>
         );
     }

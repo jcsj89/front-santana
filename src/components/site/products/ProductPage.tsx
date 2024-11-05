@@ -3,7 +3,6 @@ import { roboto_mono } from "@/utils/fonts";
 import { IconArrowDown } from "@tabler/icons-react";
 import Image from "next/image";
 import { corTexto } from "./cores.phmetro";
-import DilutionDescription from "./DilutionDescription";
 import DilutionPercentageBar from "./DilutionPercentageBar";
 import IndicacaoDeUso from "./IndicacaoDeUso";
 import Phmetro from "./Phmetro";
@@ -35,15 +34,16 @@ const ProductPage = (props: IProduct) => {
                     alt={props.product.description!}
                 />
             </div>
-            <div className="flex flex-col items-center lg:px-5 lg:py-2 border p-2 lg:p-4 xl:w-2/3">
+            <div className="flex flex-col items-center lg:px-5 lg:py-2 border p-2 lg:p-4 xl:w-2/3 gap-3 lg:gap-5">
                 <h3 className="text-center text-2xl lg:text-3xl font-black">
-                    Informacoes do Produto
+                    Informações do Produto
                 </h3>
                 <IndicacaoDeUso indicacaoDeUso={props.product.modoDeUso} />
                 <DilutionPercentageBar
                     percent={props.product.dilutionPercent || 0}
+                    dilution={props.product.dilution}
                 />
-                <DilutionDescription dilution={props.product.dilution} />
+
                 <Phmetro
                     ph={props.product.ph}
                     icon={

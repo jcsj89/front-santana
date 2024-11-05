@@ -38,9 +38,10 @@ const Produtos = () => {
             {productSelected === null ? (
                 <div className="flex flex-col md:px-3 md:py-0">
                     <div
-                        className={`flex items-center justify-center font-bold text-2xl lg:text-3xl`}
+                        className={`flex items-center justify-center
+                            font-bold text-2xl lg:text-3xl`}
                     >
-                        <h2 className={`${roboto_mono.className}`}>
+                        <h2 className={`${roboto_mono.className} text-center`}>
                             Lista de Produtos
                         </h2>
                     </div>
