@@ -5,7 +5,8 @@ const productsList: Product[] = [];
 const prod1 = Product.createEmpty();
 productsList.push(prod1);
 prod1.description = "Ativado 110";
-prod1.dilution = "Para cada 01 litro do produto diluir em até 10 litros de água";
+prod1.dilution =
+    "Para cada 01 litro do produto diluir em até 10 litros de água";
 prod1.dilutionPercent = 10;
 prod1.color = "roxo";
 prod1.tags = ["roxo", "bau", "aluminio"];
@@ -13,7 +14,8 @@ prod1.showInWeb = Product.STATUS.SHOW;
 prod1.photos = ["/img/products/at.ls.300.png"];
 prod1.category = "AUTOMOTIVA";
 prod1.classification = "desincrustante";
-prod1.concentrationLevel = 'comum'
+prod1.concentrationLevel = "comum";
+prod1.ph = 4;
 
 const prod2 = Product.createEmpty();
 productsList.push(prod2);
@@ -27,13 +29,13 @@ prod2.showInWeb = Product.STATUS.SHOW;
 prod2.tags = ["azul", "limpa bau", "chassis", "alcalino"];
 prod2.category = "AUTOMOTIVA";
 prod2.modoDeUso =
-"Aplicar por pulverização sobre toda a superfície desejada. Esfregar-se necessário com o auxílio de um pano ou esfregão, em seguida enxaguar com jatos d'água em abundância até a remoção total dos resíduos. Recomenda-se o uso correto de EPI's.";
+    "Aplicar por pulverização sobre toda a superfície desejada. Esfregar-se necessário com o auxílio de um pano ou esfregão, em seguida enxaguar com jatos d'água em abundância até a remoção total dos resíduos. Recomenda-se o uso correto de EPI's.";
 prod2.indicacaoDeUso =
-"Produto indicado para limpeza atravéz de desincrustação na linha automóveis, tendo como principal função, a remoção de incrustações aderidas em superfícies metálicas.";
+    "Produto indicado para limpeza atravéz de desincrustação na linha automóveis, tendo como principal função, a remoção de incrustações aderidas em superfícies metálicas.";
 prod2.photos = ["/img/products/sanq.chassis.110.png"];
 prod2.classification = "desengraxante";
+prod2.ph = 10;
 prod2.concentrationLevel = "comum";
-
 
 const prod3 = Product.createEmpty();
 productsList.push(prod3);
@@ -48,7 +50,7 @@ prod3.category = "AUTOMOTIVA";
 prod3.photos = ["/img/products/sanq.mol.png"];
 prod3.classification = "neutro";
 prod3.concentrationLevel = "comum";
-
+prod3.ph = 7;
 
 const prod4 = Product.createEmpty();
 productsList.push(prod4);
@@ -63,7 +65,7 @@ prod4.category = "AUTOMOTIVA";
 prod4.photos = ["/img/products/samix.220.png"];
 prod4.classification = "desengraxante";
 prod4.concentrationLevel = "concentrado";
-
+prod4.ph = 11;
 
 const prod5 = Product.createEmpty();
 productsList.push(prod5);
@@ -91,6 +93,7 @@ prod6.classification = "desengraxante";
 prod6.category = "AUTOMOTIVA";
 prod5.concentrationLevel = "super";
 prod6.photos = ["/img/products/mult.max.png"];
+prod6.ph = 13;
 
 const prod7 = Product.createEmpty();
 productsList.push(prod7);
@@ -104,6 +107,7 @@ prod7.classification = "desincrustante";
 prod7.category = "AUTOMOTIVA";
 prod5.concentrationLevel = "super";
 prod7.photos = ["/img/products/pneu.brill.png"];
+prod7.ph = 1;
 
 const prod8 = Product.createEmpty();
 productsList.push(prod8);
@@ -164,7 +168,6 @@ prod12.tags = ["azul", "bau", "chassis"];
 prod12.classification = "";
 prod12.category = "ACABAMENTO";
 prod12.photos = ["/img/products/sanq.mol.png"];
-
 
 const prod13 = Product.createEmpty();
 productsList.push(prod13);

@@ -9,7 +9,7 @@ const DilutionPercentageBar = (props: DilutionPercentageBarProps) => {
 
     function renderizarDilutionPercentageBar() {
         return (
-            <div className="flex flex-col w-full mx-4">
+            <div className="flex flex-col w-full">
                 <h4 className="uppercase text-xl font-bold mb-1">Diluicao</h4>
                 <div className="flex justify-between mb-1 text-base font-medium text-amber-700 dark:text-amber-500">
                     <span className="text-zinc-800">

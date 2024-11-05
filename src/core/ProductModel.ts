@@ -36,6 +36,7 @@ class Product implements IProductProperties {
     #tags: string[] | null; // N:N tabela tags relacionadas ao produto
     #documents: string[] | null; // deve permitir salvar documents ou documentos, ver se pode liberar no site, criar tabela ou url aqui?
     #photos: string[] | null; // tabela 1:N
+    #ph: number;
 
     constructor() {
         this.#id = v4();
@@ -72,6 +73,7 @@ class Product implements IProductProperties {
         this.#tags = [""];
         this.#documents = [""];
         this.#photos = [""];
+        this.#ph = 7;
     }
 
     get id(): string | undefined {
@@ -320,6 +322,13 @@ class Product implements IProductProperties {
     }
     set concentrationLevel(concentrationLevel) {
         this.#concentrationLevel = concentrationLevel;
+    }
+
+    get ph(): number {
+        return this.#ph >= 0 && this.#ph <= 14 ? this.#ph : 7;
+    }
+    set ph(ph) {
+        this.#ph = ph;
     }
 
     static createEmpty() {
