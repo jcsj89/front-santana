@@ -2,7 +2,7 @@
 import AsideMenu from "@/components/site/products/AsideMenu";
 import ProductPage from "@/components/site/products/ProductPage";
 import ProductTableCard from "@/components/site/products/ProductTableCard";
-import Product from "@/core/ProductModel";
+import { Product } from "@/core/ProductModel";
 import { productsList } from "@/data/ProductsList";
 import { roboto_mono } from "@/utils/fonts";
 
@@ -30,7 +30,7 @@ const Produtos = () => {
         <div className="flex justify-center">
             {/* Left Side text-xs sm:text-sm md:text-base min-w-32 sm:min-w-48 lg:min-w-48 */}
             <div className="flex justify-center py-2 min-w-40 sm:min-w-48 lg:min-w-60 xl:min-w-72 border-r ">
-                <AsideMenu products={produtos} />
+                <AsideMenu selectProduct={getProduct} products={produtos} />
             </div>
 
             {/* Right Side */}

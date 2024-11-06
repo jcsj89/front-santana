@@ -33,10 +33,9 @@ export interface IProductProperties {
     tags: string[] | null; // N:N tabela tags relacionadas ao produto
     documents: string[] | null; // deve permitir salvar documents ou documentos, ver se pode liberar no site, criar tabela ou url aqui?
     photos: string[] | null; // tabela 1:N
-    ph: number
+    ph: number;
+    line: string;
 }
-
-
 
 // interface
 

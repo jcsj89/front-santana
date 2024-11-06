@@ -1,379 +1,353 @@
 import { v4 } from "uuid";
 import { IProductProperties } from "./IProductProperties";
-class Product implements IProductProperties {
+
+export class Product implements IProductProperties {
     static STATUS = { ACTIVE: true, INACTIVE: false, SHOW: true, HIDE: false };
+
+    // Propriedades do Produto
     #id?: string;
-    #active: boolean; // esta ativo?
-    #showInWeb: boolean;
-    #description: string; // nome do produto
-    #detailedProductDescription: string;
-    #codeProd: string;
-    #codeNCM: string;
-    #codeEAN: string; // codigo de barras
-    #price: number; // preco do produto
-    #priceUnit: number;
-    #discountValue: number; // desconto no preco
-    #discountPercent: number; // desconto no preco
-    #inventory: number; // estoque do produto
-    #cost: number; // estoque do produto
-    #inventoryCost: number; // custo do estoque do produto
-    #category: string; // categoria do produto //automotiva,industrial,domestica
-    #density: number; // densidade do produto
-    #freeWeight: number; // peso livre
-    #grossWeight: number; //peso bruto
-    #color: string;
-    #validity: string; // validade
-    #brand: string; // marca
-    #size: string;
-    #producer: string; // fabricante
-    #classification: string; // desengraxante, desincrustante, neutro, acabamento
-    #concentrationLevel: string; // comum ou concentrado ou super concentrado
-    #dilution: string; // 1:10
-    #dilutionPercent: number; // 2,5
-    #indicacaoDeUso: string;
-    #modoDeUso: string;
-    #embalagem_id: string; // tabela N:1 embalagens de venda
-    #tags: string[] | null; // N:N tabela tags relacionadas ao produto
-    #documents: string[] | null; // deve permitir salvar documents ou documentos, ver se pode liberar no site, criar tabela ou url aqui?
-    #photos: string[] | null; // tabela 1:N
-    #ph: number;
+    #active = Product.STATUS.ACTIVE;
+    #showInWeb = Product.STATUS.HIDE;
+    #discountPercent = 0;
+    #discountValue = 0;
+    #price = 0;
+    #priceUnit = 0;
+    #description = "";
+    #detailedProductDescription = "";
+    #freeWeight = 0;
+    #grossWeight = 0;
+    #color = "";
+    #embalagem_id = "";
+    #codeEAN = "";
+    #validity = "";
+    #brand = "";
+    #producer = "";
+    #cost = 0;
+    #inventory = 0;
+    #inventoryCost = 0;
+    #size = "";
+    #codeProd = "";
+    #codeNCM = "";
+    #density = 0;
+    #dilution = "";
+    #dilutionPercent = 0;
+    #concentrationLevel = "";
+    #indicacaoDeUso = "";
+    #modoDeUso = "";
+    #line = ""; //automotiva,industrial,domestica
+    #category = ""; //acabamento,geral,desengraxante,desincrustante,neutro
+    #classification = ""; //brilho,geral,comum,concentrado,super
+    #tags: string[] | null = null;
+    #documents: string[] | null = null;
+    #photos: string[] | null = null;
+    #ph = 7;
 
     constructor() {
         this.#id = v4();
-        this.#active = Product.STATUS.ACTIVE;
-        this.#showInWeb = Product.STATUS.HIDE;
-        this.#discountPercent = 0;
-        this.#discountValue = 0;
-        this.#price = 0;
-        this.#priceUnit = 0;
-        this.#description = "";
-        this.#detailedProductDescription = "";
-        this.#freeWeight = 0;
-        this.#grossWeight = 0;
-        this.#color = "";
-        this.#embalagem_id = "";
-        this.#codeEAN = "";
-        this.#validity = "";
-        this.#brand = "";
-        this.#producer = "";
-        this.#cost = 0;
-        this.#inventory = 0;
-        this.#inventoryCost = 0;
-        this.#size = "";
-        this.#codeProd = "";
-        this.#codeNCM = "";
-        this.#density = 0;
-        this.#classification = "";
-        this.#dilution = "";
-        this.#dilutionPercent = 0;
-        this.#concentrationLevel = "";
-        this.#category = "";
-        this.#indicacaoDeUso = "";
-        this.#modoDeUso = "";
-        this.#tags = [""];
-        this.#documents = [""];
-        this.#photos = [""];
-        this.#ph = 7;
     }
 
+    // Getters e Setters
     get id(): string | undefined {
         return this.#id;
-    }
-    set id(id) {
-        this.#id = id;
     }
 
     get active(): boolean {
         return this.#active;
     }
-    set active(active) {
-        this.#active = active;
+    set active(value: boolean) {
+        this.#active = value;
     }
 
     get showInWeb(): boolean {
         return this.#showInWeb;
     }
-    set showInWeb(showInWeb) {
-        this.#showInWeb = showInWeb;
+    set showInWeb(value: boolean) {
+        this.#showInWeb = value;
     }
 
     get description(): string {
         return this.#description;
     }
-    set description(description) {
-        this.#description = description;
+    set description(value: string) {
+        this.#description = value;
     }
 
     get detailedProductDescription(): string {
         return this.#detailedProductDescription;
     }
-    set detailedProductDescription(detailedProductDescription) {
-        this.#detailedProductDescription = detailedProductDescription;
+    set detailedProductDescription(value: string) {
+        this.#detailedProductDescription = value;
     }
 
     get codeProd(): string {
         return this.#codeProd;
     }
-    set codeProd(codeProd) {
-        this.#codeProd = codeProd;
+    set codeProd(value: string) {
+        this.#codeProd = value;
     }
 
     get codeNCM(): string {
         return this.#codeNCM;
     }
-    set codeNCM(codeNCM) {
-        this.#codeNCM = codeNCM;
+    set codeNCM(value: string) {
+        this.#codeNCM = value;
     }
 
     get codeEAN(): string {
         return this.#codeEAN;
     }
-    set codeEAN(codeEAN) {
-        this.#codeEAN = codeEAN;
+    set codeEAN(value: string) {
+        this.#codeEAN = value;
     }
 
     get color(): string {
         return this.#color;
     }
-    set color(color) {
-        this.#color = color;
+    set color(value: string) {
+        this.#color = value;
     }
 
     get validity(): string {
         return this.#validity;
     }
-    set validity(validity) {
-        this.#validity = validity;
+    set validity(value: string) {
+        this.#validity = value;
     }
 
     get size(): string {
         return this.#size;
     }
-    set size(size) {
-        this.#size = size;
+    set size(value: string) {
+        this.#size = value;
     }
 
     get price(): number {
         return this.#price;
     }
-    set price(price) {
-        this.#price = price;
+    set price(value: number) {
+        this.#price = value;
     }
 
     get priceUnit(): number {
         return this.#priceUnit;
     }
-    set priceUnit(priceUnit) {
-        this.#priceUnit = priceUnit;
+    set priceUnit(value: number) {
+        this.#priceUnit = value;
     }
 
     get discountValue(): number {
         return this.#discountValue;
     }
-    set discountValue(discountValue) {
-        this.#discountValue = discountValue;
+    set discountValue(value: number) {
+        this.#discountValue = value;
     }
 
     get discountPercent(): number {
         return this.#discountPercent;
     }
-    set discountPercent(discountPercent) {
-        this.#discountPercent = discountPercent;
+    set discountPercent(value: number) {
+        this.#discountPercent = value;
     }
 
     get cost(): number {
         return this.#cost;
     }
-    set cost(cost) {
-        this.#cost = cost;
+    set cost(value: number) {
+        this.#cost = value;
     }
 
     get inventory(): number {
         return this.#inventory;
     }
-    set inventory(inventory) {
-        this.#inventory = inventory;
+    set inventory(value: number) {
+        this.#inventory = value;
     }
 
     get inventoryCost(): number {
         return this.#inventoryCost;
     }
-    set inventoryCost(inventoryCost) {
-        this.#inventoryCost = inventoryCost;
+    set inventoryCost(value: number) {
+        this.#inventoryCost = value;
     }
 
     get density(): number {
         return this.#density;
     }
-    set density(density) {
-        this.#density = density;
+    set density(value: number) {
+        this.#density = value;
     }
 
     get freeWeight(): number {
         return this.#freeWeight;
     }
-    set freeWeight(freeWeight) {
-        this.#freeWeight = freeWeight;
+    set freeWeight(value: number) {
+        this.#freeWeight = value;
     }
 
     get grossWeight(): number {
         return this.#grossWeight;
     }
-    set grossWeight(grossWeight) {
-        this.#grossWeight = grossWeight;
+    set grossWeight(value: number) {
+        this.#grossWeight = value;
     }
 
     get dilution(): string {
         return this.#dilution;
     }
-    set dilution(dilution) {
-        this.#dilution = dilution;
+    set dilution(value: string) {
+        this.#dilution = value;
     }
 
     get dilutionPercent(): number {
-        if (
-            this.#dilutionPercent !== undefined &&
-            this.#dilutionPercent >= 0 &&
-            this.#dilutionPercent <= 100
-        ) {
-            return this.#dilutionPercent;
-        } else {
-            return 10.0;
-        }
+        return this.#dilutionPercent;
     }
-    set dilutionPercent(dilutionPercent) {
-        this.#dilutionPercent = dilutionPercent;
+    set dilutionPercent(value: number) {
+        this.#dilutionPercent = value;
     }
 
     get classification(): string {
         return this.#classification;
     }
-    set classification(classification) {
-        this.#classification = classification;
+    set classification(value: string) {
+        this.#classification = value.toLowerCase();
+    }
+
+    get line(): string {
+        return this.#line || "geral";
+    }
+    set line(value: string) {
+        this.#line = value.toLowerCase();
     }
 
     get brand(): string {
         return this.#brand;
     }
-    set brand(brand) {
-        this.#brand = brand;
+    set brand(value: string) {
+        this.#brand = value;
     }
 
     get producer(): string {
         return this.#producer;
     }
-    set producer(producer) {
-        this.#producer = producer;
+    set producer(value: string) {
+        this.#producer = value;
     }
 
     get embalagem_id(): string {
         return this.#embalagem_id;
     }
-    set embalagem_id(embalagem_id) {
-        this.#embalagem_id = embalagem_id;
+    set embalagem_id(value: string) {
+        this.#embalagem_id = value;
     }
 
     get category(): string {
         return this.#category;
     }
-    set category(category) {
-        this.#category = category;
+    set category(value: string) {
+        this.#category = value.toLowerCase();
     }
 
     get tags(): string[] | null {
         return this.#tags;
     }
-    set tags(tags) {
-        this.#tags = tags;
+    set tags(value: string[] | null) {
+        this.#tags = value;
     }
 
     get documents(): string[] | null {
         return this.#documents;
     }
-    set documents(documents) {
-        this.#documents = documents;
+    set documents(value: string[] | null) {
+        this.#documents = value;
     }
 
     get photos(): string[] | null {
         return this.#photos;
     }
-    set photos(photos) {
-        this.#photos = photos;
+    set photos(value: string[] | null) {
+        this.#photos = value;
     }
 
     get indicacaoDeUso(): string {
         return this.#indicacaoDeUso;
     }
-    set indicacaoDeUso(indicacaoDeUso) {
-        this.#indicacaoDeUso = indicacaoDeUso;
+    set indicacaoDeUso(value: string) {
+        this.#indicacaoDeUso = value;
     }
 
     get modoDeUso(): string {
         return this.#modoDeUso;
     }
-    set modoDeUso(modoDeUso) {
-        this.#modoDeUso = modoDeUso;
+    set modoDeUso(value: string) {
+        this.#modoDeUso = value;
     }
 
     get concentrationLevel(): string {
-        return this.#concentrationLevel?.length
-            ? this.#concentrationLevel
-            : "geral";
+        return this.#concentrationLevel || "geral";
     }
-    set concentrationLevel(concentrationLevel) {
-        this.#concentrationLevel = concentrationLevel;
+    set concentrationLevel(value: string) {
+        this.#concentrationLevel = value;
     }
 
     get ph(): number {
-        return this.#ph >= 0 && this.#ph <= 14 ? this.#ph : 7;
+        return Math.max(0, Math.min(14, this.#ph));
     }
-    set ph(ph) {
-        this.#ph = ph;
+    set ph(value: number) {
+        this.#ph = value;
     }
 
-    static createEmpty() {
+    // Factory methods
+    static createEmpty(): Product {
         return new Product();
     }
 
-    static create(
-        discountPercent = 0,
-        discountValue = 0,
-        price = 0,
-        priceUnit = 0,
-        description = "",
-        detailedProductDescription = "",
-        category = "",
-        freeWeight = 0,
-        grossWeight = 0,
-        color = "",
-        embalagem_id = "",
-        codeEAN = "",
-        validity = "",
-        brand = "",
-        producer = "",
-        cost = 0,
-        inventory = 0,
-        inventoryCost = 0,
-        size = "",
-        codeProd = "",
-        codeNCM = "",
-        density = 0,
-        tags = [""],
-        documents = [""],
-        photos = [""]
-    ) {
+    static factory(
+        line: string,
+        category: string,
+        discountPercent: number = 0,
+        discountValue: number = 0,
+        price: number = 0,
+        priceUnit: number = 0,
+        description: string = "",
+        detailedProductDescription: string = "",
+        size: string = "",
+        freeWeight: number = 0,
+        grossWeight: number = 0,
+        color: string = "",
+        codeEAN: string = "",
+        validity: string = "",
+        brand: string = "",
+        producer: string = "",
+        cost: number = 0,
+        inventory: number = 0,
+        inventoryCost: number = 0,
+        codeProd: string = "",
+        codeNCM: string = "",
+        concentrationLevel: string = "geral",
+        dilution: string = "",
+        dilutionPercent: number = 10,
+        classification: string = "",
+        indicacaoDeUso: string = "",
+        modoDeUso: string = "",
+        tags: string[] = [],
+        documents: string[] = [],
+        photos: string[] = [],
+        ph: number = 7
+    ): Product {
         const product = new Product();
+
+        product.line = line;
+        product.category = category;
         product.discountPercent = discountPercent;
         product.discountValue = discountValue;
         product.price = price;
         product.priceUnit = priceUnit;
         product.description = description;
         product.detailedProductDescription = detailedProductDescription;
-        product.category = category;
+        product.size = size;
         product.freeWeight = freeWeight;
         product.grossWeight = grossWeight;
         product.color = color;
-        product.embalagem_id = embalagem_id;
         product.codeEAN = codeEAN;
         product.validity = validity;
         product.brand = brand;
@@ -381,54 +355,19 @@ class Product implements IProductProperties {
         product.cost = cost;
         product.inventory = inventory;
         product.inventoryCost = inventoryCost;
-        product.size = size;
         product.codeProd = codeProd;
         product.codeNCM = codeNCM;
-        product.density = density;
+        product.concentrationLevel = concentrationLevel;
+        product.dilution = dilution;
+        product.dilutionPercent = dilutionPercent;
+        product.classification = classification;
+        product.indicacaoDeUso = indicacaoDeUso;
+        product.modoDeUso = modoDeUso;
         product.tags = tags;
         product.documents = documents;
         product.photos = photos;
-    }
+        product.ph = ph;
 
-    // Funcoes help para connstruir menu no  site
-    static getCategory(productsList: Product[]) {
-        const categoryList: string[] = [];
-        productsList.map((p) => {
-            if (p.category !== undefined && p.showInWeb) {
-                !categoryList.includes(p.category)
-                    ? categoryList.push(p.category)
-                    : null;
-            }
-        });
-        return categoryList;
-    }
-
-    // Funcoes help para connstruir menu no  site
-    static getConcentrationLevel(productsList: Product[]) {
-        const concentrationLevelList: string[] = [];
-        productsList.map((p) => {
-            if (p.concentrationLevel !== undefined && p.showInWeb) {
-                !concentrationLevelList.includes(p.concentrationLevel)
-                    ? concentrationLevelList.push(p.concentrationLevel)
-                    : null;
-            }
-        });
-        return concentrationLevelList;
-    }
-
-    static getClassification(productsList: Product[]) {
-        const classificationList: string[] = [];
-        productsList.map((p) => {
-            if (p.classification !== undefined && p.showInWeb) {
-                !classificationList.includes(p.classification)
-                    ? classificationList.push(p.classification)
-                    : null;
-            }
-        });
-        return classificationList;
+        return product;
     }
 }
-
-export default Product;
-
-console.log(new Product());

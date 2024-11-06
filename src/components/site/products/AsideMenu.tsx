@@ -1,10 +1,14 @@
 "use client";
-import Product from "@/core/ProductModel";
+
+import { IProductProperties } from "@/core/IProductProperties";
 import { roboto } from "@/utils/fonts";
+import { ProductUtils } from "@/utils/ProductUtils";
 import { useEffect, useState } from "react";
 import AsideGroup from "./AsideGroup";
+import { Product } from "@/core/ProductModel";
 
 interface AsideMenuProps {
+    selectProduct: (product: Product) => void;
     products: Product[];
 }
 
@@ -18,19 +22,20 @@ const AsideMenu = (props: AsideMenuProps) => {
     }, []);
 
     function renderizarMenu() {
-        return Product.getCategory(props.products)?.map((category, index) => (
+        return ProductUtils.getLine(props.products)?.map((line, index) => (
             <div key={"amdiv1" + index}>
                 <ul key={"ul" + index} className="border-b pb-3 mb-3">
                     <div
                         key={"amdiv2" + index}
                         className="font-bold text-base lg:text-xl text-zinc-950 capitalize mb-3"
                     >
-                        <span className="capitalize">LINHA {category}</span>
+                        <span className="uppercase">LINHA {line}</span>
                     </div>
                     <div key={"amdiv3" + index}>
                         <AsideGroup
+                            selectProduct={props.selectProduct}
                             products={props.products.filter(
-                                (p) => p.category === category
+                                (p) => p.line === line
                             )}
                         />
                     </div>

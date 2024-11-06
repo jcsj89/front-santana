@@ -1,4 +1,4 @@
-import Product from "@/core/ProductModel";
+import {Product} from "@/core/ProductModel";
 import { bona_nova, roboto, zilla_Slab } from "@/utils/fonts";
 import { IconPolaroid } from "@tabler/icons-react";
 import Image from "next/image";
