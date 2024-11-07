@@ -2,7 +2,7 @@
 import DilutionDescription from "@/components/site/products/DilutionDescription";
 import IndicacaoDeUso from "@/components/site/products/IndicacaoDeUso";
 import ModoDeUso from "@/components/site/products/ModoDeUso";
-import Product from "@/core/ProductModel";
+import {Product} from "@/core/ProductModel";
 import { productsList } from "@/data/ProductsList";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -15,7 +15,7 @@ const Produto = ({ params }: { params: Promise<{ id: string }> }) => {
   useEffect(() => {
     async function a() {
       const idd = await id;
-      
+
       if (productsList.length > 1) {
         const prod = productsList.find((prod) => prod.id === idd);
         prod && setProduct(prod);

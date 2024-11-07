@@ -1,4 +1,4 @@
-import Product from "@/core/ProductModel";
+import {Product} from "@/core/ProductModel";
 import { roboto_mono } from "@/utils/fonts";
 import { IconArrowDown } from "@tabler/icons-react";
 import Image from "next/image";

@@ -1,4 +1,4 @@
-import Product from "@/core/ProductModel";
+import {Product} from "@/core/ProductModel";
 import Image from "next/image";
 import TagsProductCard from "./TagsProductCard";
 
