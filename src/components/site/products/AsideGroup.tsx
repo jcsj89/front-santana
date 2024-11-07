@@ -12,7 +12,7 @@ const AsideGroup = (props: AsideGroupProps) => {
         return props.products?.map((prod, index) =>
             prod.category === category ? (
                 <li
-                    className="text-[#4285F4] hover:text-[#004e98]"
+                    className="text-[#4285F4] hover:text-[#004e98] cursor-pointer"
                     key={"li1" + prod.id}
                     onClick={() => props.selectProduct(prod)}
                 >

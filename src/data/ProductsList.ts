@@ -231,7 +231,7 @@ prod16.color = "azul";
 prod16.showInWeb = Product.STATUS.SHOW;
 prod16.tags = ["azul", "bau", "chassis"];
 prod16.line = "automotiva";
-prod16.category = "aromatizante";
+// prod16.category = "aromatizante";
 prod16.classification = "";
 prod16.photos = ["/img/products/sanq.mol.png"];
 
