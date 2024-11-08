@@ -23,6 +23,7 @@ const Form = () => {
                 error={nome.error}
                 onChange={nome.onChange}
                 label="Nome"
+                placeholder="Jose da Silva"
                 containerClassname={containerClassname}
                 labelClassname={labelClassname}
                 inputClassname={inputClassname}
@@ -34,6 +35,7 @@ const Form = () => {
                 error={email.error}
                 onChange={email.onChange}
                 label="Email"
+                placeholder="josedasilva@mail.com"
                 containerClassname={containerClassname}
                 labelClassname={labelClassname}
                 inputClassname={inputClassname}
@@ -45,6 +47,7 @@ const Form = () => {
                 error={telefone.error}
                 onChange={telefone.onChange}
                 label="Telefone"
+                placeholder="(17) 99725-7501"
                 containerClassname={containerClassname}
                 labelClassname={labelClassname}
                 inputClassname={inputClassname}
@@ -56,6 +59,7 @@ const Form = () => {
                 error={cidade.error}
                 onChange={cidade.onChange}
                 label="Cidade"
+                placeholder="Sao Paulo"
                 containerClassname={containerClassname}
                 labelClassname={labelClassname}
                 inputClassname={inputClassname}
@@ -66,12 +70,13 @@ const Form = () => {
                 type="text"
                 error={instagram.error}
                 onChange={instagram.onChange}
-                label="Instagram"
+                label="Instagram @/"
+                placeholder="josedasilva"
                 containerClassname={containerClassname}
                 labelClassname={labelClassname}
                 inputClassname={inputClassname}
             />
-            <Button label="Enviar" className="border"></Button>
+            <Button label="Enviar" className="border p-5 uppercase"></Button>
         </form>
     );
 };
