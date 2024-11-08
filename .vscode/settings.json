@@ -23,6 +23,7 @@
         "footer": "export",
         "top": "upload",
         "products": "store",
-        "sections": "resource"
+        "sections": "resource",
+        "contact": "messages"
     }
 }
