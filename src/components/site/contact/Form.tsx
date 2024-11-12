@@ -15,7 +15,7 @@ const Form = () => {
     const inputClassname = "w-3/4 rounded-lg h-10 px-3";
 
     return (
-        <form className="border p-5 m-5 w-full flex flex-col items-center justify-center gap-4">
+        <form className="p-5 mt-10 w-full flex flex-col items-center justify-center gap-4">
             <Input
                 name="nome"
                 value={nome.value}
@@ -76,7 +76,12 @@ const Form = () => {
                 labelClassname={labelClassname}
                 inputClassname={inputClassname}
             />
-            <Button label="Enviar" className="border p-5 uppercase"></Button>
+            <div className="flex w-3/4 justify-end">
+                <Button
+                    className="text-green-700 hover:text-white border border-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-base px-10 py-6 text-center  dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600 dark:focus:ring-green-800 duration-200"
+                    label="Enviar"
+                />
+            </div>
         </form>
     );
 };
