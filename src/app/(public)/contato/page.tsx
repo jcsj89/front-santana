@@ -1,41 +1,30 @@
 "use client";
 import AddressCard from "@/components/site/contact/AddressCard";
 import Form from "@/components/site/contact/Form";
-import { APIProvider, Map } from "@vis.gl/react-google-maps";
+import MapCard from "@/components/site/contact/MapCard";
 
 const contatos = () => {
     console.log(process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY);
     return (
-        <div className="flex">
+        <div className="flex flex-col lg:flex-row">
             {/* left side */}
-            <div className="flex flex-col w-1/2 items-center">
-                <h2 className="font-black text-4xl mt-4">Contate-nos</h2>
-                <p className="w-1/2 text-justify my-5">
+            <div className="flex flex-col lg:w-1/2 items-center">
+                <h2 className="font-black text-2xl md:text-4xl mt-4">
+                    Contate-nos
+                </h2>
+                <p className="w-3/4 lg:w-1/2 text-justify lg:my-5 p-3 text-sm md:text-base">
                     Você é sempre bem-vindo para entrar em contato conosco.
                     Nosso atendimento ao cliente está disponível de segunda a
-                    sexta, das 9h00 às 20h00. e sábado a domingo, das 10h00 às
-                    18h00. (GMT +3). Estamos ansiosos para ouvir de você!
+                    sexta, das 8h00 às 17h20. Estamos ansiosos para ouvir de
+                    você!
                 </p>
                 <Form></Form>
             </div>
 
             {/* right side */}
-            <div className="flex flex-col w-1/2 ">
+            <div className="flex flex-col lg:w-1/2 ">
                 <AddressCard />
-                <APIProvider
-                    apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!}
-                >
-                    <Map
-                        style={{ width: "400px", height: "400px" }}
-                        defaultCenter={{
-                            lat: -20.6625408464526,
-                            lng: -49.3853346648214,
-                        }}
-                        defaultZoom={15}
-                        gestureHandling={"greedy"}
-                        disableDefaultUI={true}
-                    />
-                </APIProvider>
+                <MapCard />
             </div>
         </div>
     );
