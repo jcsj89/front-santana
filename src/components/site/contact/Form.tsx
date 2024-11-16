@@ -24,10 +24,16 @@ const Form = () => {
     const linkedin = useInput("");
     const mensagem = useInput("");
 
-    const containerClassname = "flex w-3/4 justify-center items-center gap-3";
-    const labelClassname = "w-1/4 text-right";
-    const inputClassname = "w-3/4 rounded-lg h-10 px-3";
-    const textAreaClassname = "w-3/4 rounded-lg p-3";
+    const containerClassname =
+        "flex w-full lg:w-3/4 justify-center items-center lg:gap-3 ";
+    const labelClassname =
+        "w-1/4 text-left lg:text-right text-sm lg:text-base mr-4";
+    const inputClassname = "w-3/4 lg:w-3/4 rounded-lg h-10 px-3";
+    const labelTextAreaClassname =
+        "w-full lg:w-1/4 text-left lg:text-right text-sm lg:text-base lg:mr-4";
+    const textAreaClassname = "w-full lg:w-3/4 rounded-lg p-3";
+    const containerTextAreaClassname =
+        "flex flex-col lg:flex-row w-full lg:w-3/4 justify-center items-center lg:gap-3 gap-1";
 
     // load cities and states
     useEffect(() => {
@@ -59,7 +65,7 @@ const Form = () => {
     }
 
     return (
-        <form className="p-5 mt-10 w-full flex flex-col items-center justify-center gap-4">
+        <form className="p-2 lg:p-5 mt-10 w-full flex flex-col items-center justify-center gap-4 ">
             <Input
                 name="nome"
                 value={nome.value}
@@ -155,8 +161,8 @@ const Form = () => {
                 error={mensagem.error}
                 onChange={mensagem.onChange}
                 placeholder="digite sua mensagem ..."
-                containerClassname={containerClassname}
-                labelClassname={labelClassname}
+                containerClassname={containerTextAreaClassname}
+                labelClassname={labelTextAreaClassname}
                 textAreaClassname={textAreaClassname}
                 rows={6}
                 required
