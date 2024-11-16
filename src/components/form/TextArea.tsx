@@ -1,6 +1,6 @@
 import { ChangeEvent } from "react";
-interface InputProps {
-    type: "text" | "number" | "email" | "password";
+
+interface TextAreaProps {
     label?: string;
     value: string | number;
     name: string;
@@ -8,14 +8,15 @@ interface InputProps {
     error: boolean;
     disabled?: boolean;
     required?: boolean;
-    onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+    onChange: (e: ChangeEvent<HTMLTextAreaElement>) => void;
     containerClassname?: string;
     labelClassname?: string;
-    inputClassname?: string;
+    textAreaClassname?: string;
+    rows: number;
+    cols?: number;
 }
 
-const Input = ({
-    type,
+const TextArea = ({
     label,
     value,
     name,
@@ -26,8 +27,10 @@ const Input = ({
     onChange,
     containerClassname,
     labelClassname,
-    inputClassname,
-}: InputProps) => {
+    textAreaClassname,
+    rows,
+    cols,
+}: TextAreaProps) => {
     return (
         <div className={`${containerClassname || ""}`}>
             <label
@@ -37,22 +40,24 @@ const Input = ({
                 {label}
                 {required && <span className="text-red-700 ml-1">*</span>}
             </label>
-            <input
+            <textarea
                 className={`text-[#344054] bg-white border ${
-                    inputClassname || ""
+                    textAreaClassname || ""
                 } `}
-                type={type}
                 id={label}
                 value={value}
                 name={name}
                 placeholder={placeholder}
                 onChange={onChange}
                 disabled={disabled}
+                rows={rows || 5}
+                cols={cols}
+                maxLength={2048}
                 required={required}
-            />
+            ></textarea>
             {error && <p className="error">Input filed cant be empty!</p>}
         </div>
     );
 };
 
-export default Input;
+export { TextArea };

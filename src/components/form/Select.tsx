@@ -1,33 +1,32 @@
 import { ChangeEvent } from "react";
-interface InputProps {
-    type: "text" | "number" | "email" | "password";
+
+interface TextAreaProps {
     label?: string;
     value: string | number;
     name: string;
-    placeholder?: string;
     error: boolean;
     disabled?: boolean;
-    required?: boolean;
-    onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+    optionDefault: string;
+    options: JSX.Element[] | undefined;
+    onChange: (e: ChangeEvent<HTMLSelectElement>) => void;
     containerClassname?: string;
     labelClassname?: string;
-    inputClassname?: string;
+    selectClassname?: string;
 }
 
-const Input = ({
-    type,
+const Select = ({
     label,
     value,
     name,
-    placeholder,
     error,
     disabled,
-    required,
+    optionDefault,
+    options,
     onChange,
     containerClassname,
     labelClassname,
-    inputClassname,
-}: InputProps) => {
+    selectClassname,
+}: TextAreaProps) => {
     return (
         <div className={`${containerClassname || ""}`}>
             <label
@@ -35,24 +34,26 @@ const Input = ({
                 htmlFor={label}
             >
                 {label}
-                {required && <span className="text-red-700 ml-1">*</span>}
             </label>
-            <input
+            <select
                 className={`text-[#344054] bg-white border ${
-                    inputClassname || ""
+                    selectClassname || ""
                 } `}
-                type={type}
                 id={label}
                 value={value}
                 name={name}
-                placeholder={placeholder}
                 onChange={onChange}
                 disabled={disabled}
-                required={required}
-            />
+            >
+                {options !== undefined ? (
+                    options
+                ) : (
+                    <option value="">{optionDefault}</option>
+                )}
+            </select>
             {error && <p className="error">Input filed cant be empty!</p>}
         </div>
     );
 };
 
-export default Input;
+export { Select };
