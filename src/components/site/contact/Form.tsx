@@ -7,7 +7,7 @@ import Button from "@/components/UI/Button";
 import useInput from "@/hooks/useInput";
 import { Turnstile, TurnstileInstance } from "@marsidev/react-turnstile";
 
-import { useEffect, useRef, useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 
 interface CitiesInterface {
     estados: [{ sigla: string; nome: string; cidades: string[] }];
@@ -67,7 +67,8 @@ const Form = () => {
         }
     }
 
-    const handleSubmit = async () => {
+    const handleSubmit = async (e: FormEvent) => {
+        e.preventDefault();
         refTurnstile.current?.reset(); // <------------- After each submit, recycling turnstile for next usage.
         window.alert("submitted!");
         console.log("submited");
@@ -75,7 +76,8 @@ const Form = () => {
 
     return (
         <form
-            onSubmit={handleSubmit}
+            method="post"
+            onSubmit={(e) => handleSubmit(e)}
             className="p-2 lg:p-5 mt-10 w-full flex flex-col items-center justify-center gap-4 "
         >
             <Input
@@ -179,14 +181,14 @@ const Form = () => {
                 rows={6}
                 required
             />
-            <Turnstile
-                id="turnstile-1"
-                ref={refTurnstile}
-                siteKey="0x4AAAAAAA0K92xyl2-CVboC"
-                onSuccess={() => setCanSubmit(true)}
-                className="cf-turnstile"
-            />
-            <div className="flex w-3/4 justify-end">
+            <div className="flex w-full lg:w-3/4 justify-between">
+                <Turnstile
+                    id="turnstile-1"
+                    ref={refTurnstile}
+                    siteKey="0x4AAAAAAA0K92xyl2-CVboC"
+                    onSuccess={() => setCanSubmit(true)}
+                    className="cf-turnstile lg:ml-20"
+                />
                 <Button
                     className="text-green-700 hover:text-white border border-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-base px-10 py-6 text-center  dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600 dark:focus:ring-green-800 duration-200
                     disabled:text-zinc-700 disabled:bg-white disabled:border-zinc-500 disabled:hover:text-zinc-700"
