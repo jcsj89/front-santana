@@ -9,6 +9,7 @@
         "lint": "next lint"
     },
     "dependencies": {
+        "@marsidev/react-turnstile": "^1.0.2",
         "@tabler/icons-react": "^3.19.0",
         "env": "^0.0.2",
         "next": "^15.0.3",
