@@ -1,123 +1,89 @@
 "use client";
 import useInput from "@/hooks/useInput";
+import { Turnstile, TurnstileInstance } from "@marsidev/react-turnstile";
+import { FormEvent, useRef, useState } from "react";
+import Button from "../UI/Button";
 import Input from "./Input";
 
 const ContactForm = () => {
-  const nome = useInput("");
-  const email = useInput("");
-  const telefone = useInput("");
-  const cidade = useInput("");
+    const refTurnstile = useRef<TurnstileInstance>(null);
+    const [canSubmit, setCanSubmit] = useState(false);
+    const nome = useInput("");
+    const email = useInput("");
+    const telefone = useInput("");
+    const cidade = useInput("");
 
-  const styles = {
-    container: "flex w-full ",
-    input: "w-full h-10 p-3",
-  };
+    const styles = {
+        container: "flex w-full ",
+        input: "w-full h-10 p-3",
+    };
 
-  return (
-    <div className="flex flex-col justify-center gap-2 items-center w-full sm:w-2/3 md:w-1/2">
-      <div className="flex flex-col xl:flex-row  gap-2 w-full">
-        <Input
-          type="text"
-          name="nome"
-          value={nome.value}
-          placeholder="Nome"
-          error={nome.error}
-          onChange={nome.onChange}
-          containerClassname={styles.container}
-          inputClassname={styles.input}
-        />
-        <Input
-          type="text"
-          name="email"
-          value={email.value}
-          placeholder="Email"
-          error={email.error}
-          onChange={email.onChange}
-          containerClassname={styles.container}
-          inputClassname={styles.input}
-        />
-      </div>
-      <textarea
-        id="story"
-        name="story"
-        rows={5}
-        placeholder="Mensagem..."
-        className="w-full p-4 border"
-        maxLength={2048}
-        minLength={5}
-      ></textarea>
+    const handleSubmit = async (e: FormEvent) => {
+        e.preventDefault();
+        refTurnstile.current?.reset(); // <------------- After each submit, recycling turnstile for next usage.
+        window.alert("submitted!");
+        console.log("submited");
+    };
 
-      <div className="flex justify-end w-full">
-        <span className="border px-16 py-2px-16 py-2 bg-[#0F9D58] text-white">
-          enviar
-        </span>
-      </div>
-
-      {/* <div>
-        <InputComponent
-          name="nome"
-          label="Nome"
-          placeholder="Digite seu nome"
-          value=""
-          onChange={onChange}
-          type="text"
-          className={styleInputs.className}
-          containerStyle={styleInputs.containerStyle}
-          labelStyle={styleInputs.labelStyle}
-          inputStyle={styleInputs.inputStyle}
-        />
-        <InputComponent
-          name="email"
-          label="Email"
-          placeholder="Digite seu email"
-          value=""
-          onChange={onChange}
-          type="text"
-          className={styleInputs.className}
-          containerStyle={styleInputs.containerStyle}
-          labelStyle={styleInputs.labelStyle}
-          inputStyle={styleInputs.inputStyle}
-        />
-        <InputComponent
-          name="telefone"
-          label="Telefone"
-          placeholder="Digite seu telefone"
-          value=""
-          onChange={onChange}
-          type="text"
-          className={styleInputs.className}
-          containerStyle={styleInputs.containerStyle}
-          labelStyle={styleInputs.labelStyle}
-          inputStyle={styleInputs.inputStyle}
-        />
-        <InputComponent
-          name="cidade"
-          label="Cidade"
-          placeholder="Digite sua cidade"
-          value=""
-          onChange={onChange}
-          type="text"
-          className={styleInputs.className}
-          containerStyle={styleInputs.containerStyle}
-          labelStyle={styleInputs.labelStyle}
-          inputStyle={styleInputs.inputStyle}
-        />
-        <textarea
-          id="story"
-          name="story"
-          rows={5}
-          placeholder="Escreva aqui sua mensagem..."
-          className="w-full p-2 mt-4 rounded-lg "
-          maxLength={2048}
-          minLength={5}
-        ></textarea>
-      </div>
-      <Button
-        label="Enviar"
-        className="p-5 border my-4 text-white bg-green-500 text-2xl hover:bg-green-700 duration-200"
-      /> */}
-    </div>
-  );
+    return (
+        <form
+            method="post"
+            onSubmit={(e) => handleSubmit(e)}
+            className="flex flex-col justify-center gap-2 items-center w-full sm:w-2/3 md:w-1/2"
+        >
+            <div className="flex flex-col xl:flex-row  gap-2 w-full">
+                <Input
+                    type="text"
+                    name="nome"
+                    value={nome.value}
+                    placeholder="Nome"
+                    error={nome.error}
+                    onChange={nome.onChange}
+                    containerClassname={styles.container}
+                    inputClassname={styles.input}
+                    required
+                />
+                <Input
+                    type="text"
+                    name="email"
+                    value={email.value}
+                    placeholder="Email"
+                    error={email.error}
+                    onChange={email.onChange}
+                    containerClassname={styles.container}
+                    inputClassname={styles.input}
+                    required
+                />
+            </div>
+            <textarea
+                id="story"
+                name="story"
+                rows={5}
+                placeholder="Mensagem..."
+                className="w-full p-4 border"
+                maxLength={2048}
+                minLength={5}
+                required
+            ></textarea>
+            <div className="flex justify-between items-center w-full">
+                <Turnstile
+                    id="turnstile-2"
+                    ref={refTurnstile}
+                    siteKey="0x4AAAAAAA0K92xyl2-CVboC"
+                    onSuccess={() => setCanSubmit(true)}
+                    className="cf-turnstile"
+                />
+                <Button
+                    className="text-green-700 hover:text-white border border-green-700 hover:bg-green-800
+                        focus:ring-1 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-base h-12 px-10 py-1 text-center  dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600 dark:focus:ring-green-800 duration-200
+                    disabled:text-zinc-700 disabled:bg-white disabled:border-zinc-500 disabled:hover:text-zinc-700"
+                    label="Enviar"
+                    // disabled={!canSubmit}
+                    type="submit"
+                />
+            </div>
+        </form>
+    );
 };
 
 export default ContactForm;

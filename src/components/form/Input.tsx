@@ -35,7 +35,9 @@ const Input = ({
                 htmlFor={label}
             >
                 {label}
-                {required && <span className="text-red-700 ml-1">*</span>}
+                {label && required && (
+                    <span className="text-red-700 ml-1">*</span>
+                )}
             </label>
             <input
                 className={`text-[#344054] bg-white border ${
