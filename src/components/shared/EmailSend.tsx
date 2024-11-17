@@ -6,12 +6,18 @@ const EmailSend = () => {
 
     async function teste() {
         await resend.emails.send({
-            from: "santana@santanaquimica.com.br",
-            to: "jcsj2010@gmail.com",
+            from: "Contato Site <noreply@santanadev.com.br>",
+            to: [
+                "jcsj2010@gmail.com",
+                "santanaquimica@terra.com.br",
+                "vendas@santanaquimica.com.br",
+            ],
             subject: "hello world",
             react: <Email url="https://santanaquimica.com.br" />,
         });
+        console.log("envio");
     }
+
     return (
         <div>
             <button onClick={() => teste()}>enviar email</button>

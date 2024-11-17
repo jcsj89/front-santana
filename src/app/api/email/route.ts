@@ -6,9 +6,9 @@ export async function GET(req: NextApiRequest, res: NextApiResponse) {
     const { data, error } = await resend.emails.send({
         from: "Contato Site <noreply@santanadev.com.br>",
         to: ["jcsj2010@gmail.com"],
-        subject: "Waitlist",
+        subject: "Contato Formulario Site",
         react: Email("santanaquimica"),
-        html: "<strong>It works!</strong>",
+        // html: "<strong>It works!</strong>",
     });
 
     if (error) return res.json(error);

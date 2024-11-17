@@ -1,11 +1,14 @@
-import { Button, Html } from "@react-email/components";
+import { Body, Button, Html } from "@react-email/components";
 
 export function Email(props: any) {
     const { url } = props;
 
     return (
-        <Html lang="en">
-            <Button href={url}>Click me</Button>
+        <Html lang="pt-BR">
+            <Body>
+                <Button href={url}>Clique meu site</Button>
+                {url}
+            </Body>
         </Html>
     );
 }
