@@ -2,6 +2,7 @@
 import useInput from "@/hooks/useInput";
 import { Turnstile, TurnstileInstance } from "@marsidev/react-turnstile";
 import { FormEvent, useRef, useState } from "react";
+import EmailSend from "../shared/EmailSend";
 import Button from "../UI/Button";
 import Input from "./Input";
 
@@ -65,7 +66,7 @@ const ContactForm = () => {
                 minLength={5}
                 required
             ></textarea>
-            <div className="flex justify-between items-center w-full">
+            <div className="flex flex-col lg:flex-row justify-between items-center w-full gap-2 lg:gap-4">
                 <Turnstile
                     id="turnstile-2"
                     ref={refTurnstile}
@@ -78,10 +79,11 @@ const ContactForm = () => {
                         focus:ring-1 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-base h-12 px-10 py-1 text-center  dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600 dark:focus:ring-green-800 duration-200
                     disabled:text-zinc-700 disabled:bg-white disabled:border-zinc-500 disabled:hover:text-zinc-700"
                     label="Enviar"
-                    // disabled={!canSubmit}
+                    disabled={!canSubmit}
                     type="submit"
                 />
             </div>
+            <EmailSend />
         </form>
     );
 };
