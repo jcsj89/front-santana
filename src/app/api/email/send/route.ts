@@ -1,19 +1,23 @@
 import { Email } from "@/components/shared/Email";
 import { resend } from "@/config/resend";
+import { EmailInterface } from "@/shared/EmailInterface";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(req: NextRequest): Promise<NextResponse | undefined> {
     try {
-        console.log(req.body())
 
-        const { data, error } = await resend.emails.send({
+        //parei aqui, mandar campos do form no email,
+        // fazer um template tb
+        const formData = req.body
+
+        const sendPromise = await resend.emails.send({
             from: "Contato Site <noreply@santanadev.com.br>",
             to: ["jcsj2010@gmail.com"],
             subject: "Contato Formulario Site",
             react: Email("https://www.santanaquimica.com.br"),
         });
 
-        await Promise.resolve(data);
+        await Promise.resolve(sendPromise);
 
         return NextResponse.json({
             status: 200,

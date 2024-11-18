@@ -1,21 +1,18 @@
 "use client";
-import { GET } from "@/app/api/cities/route";
 import Input from "@/components/form/Input";
 import { Select } from "@/components/form/Select";
 import { TextArea } from "@/components/form/TextArea";
 import Button from "@/components/UI/Button";
 import useInput from "@/hooks/useInput";
 import { Turnstile, TurnstileInstance } from "@marsidev/react-turnstile";
-
-import { FormEvent, useEffect, useRef, useState } from "react";
-
-interface CitiesInterface {
-    estados: [{ sigla: string; nome: string; cidades: string[] }];
-}
+import { FormEvent, useRef, useState } from "react";
+// cities and states object list
+import { citiesAndStates } from "@/data/CitiesAndStatesList";
+import { CitiesInterface } from "@/shared/CitiesAndStatesInterface";
 
 const Form = () => {
     const refTurnstile = useRef<TurnstileInstance>(null);
-    const [data, setData] = useState<CitiesInterface>();
+    const [data, setData] = useState<CitiesInterface>(citiesAndStates);
     const [canSubmit, setCanSubmit] = useState(false);
 
     const nome = useInput("");
@@ -37,13 +34,6 @@ const Form = () => {
     const textAreaClassname = "w-full lg:w-3/4 rounded-lg p-3";
     const containerTextAreaClassname =
         "flex flex-col lg:flex-row w-full lg:w-3/4 justify-center items-center lg:gap-3 gap-1";
-
-    // load cities and states
-    useEffect(() => {
-        (async function () {
-            setData(await GET());
-        })();
-    }, []);
 
     function renderizaEstados() {
         return data?.estados.map((i) => (
@@ -70,7 +60,7 @@ const Form = () => {
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
         refTurnstile.current?.reset(); // <------------- After each submit, recycling turnstile for next usage.
-        window.alert("submitted!");
+
         console.log("submited");
     };
 
