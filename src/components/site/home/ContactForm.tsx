@@ -32,8 +32,8 @@ const ContactForm = () => {
         refTurnstile.current?.reset(); // <------------- After each submit, recycling turnstile for next usage.
 
         const emailAPI = URL.concat("/api/email/send");
-        console.log(emailAPI);
-        const request = new Request(emailAPI, {
+
+        const request = new Request("/api/email/send", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
