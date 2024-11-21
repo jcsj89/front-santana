@@ -4,6 +4,7 @@ import { Turnstile, TurnstileInstance } from "@marsidev/react-turnstile";
 import { FormEvent, useEffect, useRef, useState } from "react";
 
 import RespEmailSent from "@/components/shared/RespEmailSent";
+import { URL } from "@/config/api";
 import Button from "../../UI/Button";
 import Input from "../../form/Input";
 
@@ -30,7 +31,8 @@ const ContactForm = () => {
         e.preventDefault();
         refTurnstile.current?.reset(); // <------------- After each submit, recycling turnstile for next usage.
 
-        const request = new Request("/api/email/send", {
+        const emailAPI = URL.concat("/api/email/send");
+        const request = new Request(emailAPI, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
