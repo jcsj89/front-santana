@@ -1,28 +1,45 @@
 import { Email } from "@/components/shared/Email";
 import { resend } from "@/config/resend";
-import { EmailInterface } from "@/shared/EmailInterface";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function GET(req: NextRequest): Promise<NextResponse | undefined> {
+export async function POST(
+    req: NextRequest
+): Promise<NextResponse | undefined> {
     try {
+        const {
+            nome,
+            cidade,
+            email,
+            estado,
+            mensagem,
+            telefone,
+            instagram,
+            linkedin,
+        } = await req.json();
 
-        //parei aqui, mandar campos do form no email,
-        // fazer um template tb
-        const formData = req.body
-
-        const sendPromise = await resend.emails.send({
-            from: "Contato Site <noreply@santanadev.com.br>",
-            to: ["jcsj2010@gmail.com"],
+        const { data, error } = await resend.emails.send({
+            from: `${process.env.RESEND_FROM}`,
+            to: [`${process.env.RESEND_TO}`],
             subject: "Contato Formulario Site",
-            react: Email("https://www.santanaquimica.com.br"),
+            react: Email({
+                nome,
+                cidade,
+                email,
+                estado,
+                mensagem,
+                telefone,
+                instagram,
+                linkedin,
+            }),
         });
 
-        await Promise.resolve(sendPromise);
+        if (error) {
+            return NextResponse.json({ error }, { status: 500 });
+        }
 
-        return NextResponse.json({
-            status: 200,
-            message: "Email sent correctly.",
-        });
+        // await Promise.resolve(data);
+
+        return NextResponse.json({ data }, { status: 200 });
     } catch (error) {
         if (error instanceof Error) {
             return NextResponse.json({ error: error.message }, { status: 500 });

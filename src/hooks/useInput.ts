@@ -17,6 +17,7 @@ const useInput = (initialValue: string) => {
         error,
         onChange: handleChange,
         setError,
+        setValue
     };
 };
 

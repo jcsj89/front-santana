@@ -1,6 +1,6 @@
 "use client";
 
-import ContactForm from "@/components/form/ContactForm";
+import ContactForm from "@/components/site/home/ContactForm";
 
 import { raleway } from "@/utils/fonts";
 import { IconMail, IconMapPin, IconPhone } from "@tabler/icons-react";
