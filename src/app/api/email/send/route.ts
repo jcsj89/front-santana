@@ -19,7 +19,7 @@ export async function POST(
 
         const { data, error } = await resend.emails.send({
             from: `${process.env.RESEND_FROM}`,
-            to: [`${process.env.RESEND_TO}`],
+            to: [`${process.env.RESEND_TO}`,'santanaquimica@terra.com.br','vendas@santanaquimica.com.br'],
             subject: "Contato Formulario Site",
             react: Email({
                 nome,
