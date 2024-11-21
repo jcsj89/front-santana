@@ -36,10 +36,10 @@ export function Email(props: EmailInterface) {
                             Mensagem recebida pelo site
                         </Heading>
                         {nome && (
-                            <Row>
+                            <Row cellSpacing={8}>
                                 <Column
                                     align="center"
-                                    className="h-[40px] w-1/3 border"
+                                    className="h-[40px] w-1/3 border bg-green-400 "
                                 >
                                     Nome
                                 </Column>
@@ -52,10 +52,10 @@ export function Email(props: EmailInterface) {
                             </Row>
                         )}
                         {email && (
-                            <Row>
+                            <Row cellSpacing={8}>
                                 <Column
                                     align="center"
-                                    className="h-[40px] w-1/3 border"
+                                    className="h-[40px] w-1/3 border bg-green-400"
                                 >
                                     Email
                                 </Column>
@@ -68,10 +68,10 @@ export function Email(props: EmailInterface) {
                             </Row>
                         )}
                         {telefone && (
-                            <Row>
+                            <Row cellSpacing={8}>
                                 <Column
                                     align="center"
-                                    className="h-[40px] w-1/3 border"
+                                    className="h-[40px] w-1/3 border bg-green-400"
                                 >
                                     telefone
                                 </Column>
@@ -84,10 +84,10 @@ export function Email(props: EmailInterface) {
                             </Row>
                         )}
                         {cidade && (
-                            <Row>
+                            <Row cellSpacing={8}>
                                 <Column
                                     align="center"
-                                    className="h-[40px] w-1/3 border"
+                                    className="h-[40px] w-1/3 border bg-green-400"
                                 >
                                     cidade
                                 </Column>
@@ -100,10 +100,10 @@ export function Email(props: EmailInterface) {
                             </Row>
                         )}
                         {estado && (
-                            <Row>
+                            <Row cellSpacing={8}>
                                 <Column
                                     align="center"
-                                    className="h-[40px] w-1/3 border"
+                                    className="h-[40px] w-1/3 border bg-green-400"
                                 >
                                     estado
                                 </Column>
@@ -116,10 +116,10 @@ export function Email(props: EmailInterface) {
                             </Row>
                         )}
                         {instagram && (
-                            <Row>
+                            <Row cellSpacing={8}>
                                 <Column
                                     align="center"
-                                    className="h-[40px] w-1/3 border"
+                                    className="h-[40px] w-1/3 border bg-green-400"
                                 >
                                     instagram
                                 </Column>
@@ -132,10 +132,10 @@ export function Email(props: EmailInterface) {
                             </Row>
                         )}
                         {linkedin && (
-                            <Row>
+                            <Row cellSpacing={8}>
                                 <Column
                                     align="center"
-                                    className="h-[40px] w-1/3 border"
+                                    className="h-[40px] w-1/3 border bg-green-400"
                                 >
                                     linkedin
                                 </Column>
