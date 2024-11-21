@@ -29,6 +29,7 @@ const ContactForm = () => {
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
         refTurnstile.current?.reset(); // <------------- After each submit, recycling turnstile for next usage.
+        setCanSubmit(false)
 
         const request = new Request("/api/email/send", {
             method: "POST",
