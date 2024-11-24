@@ -30,11 +30,13 @@ verde #0F9D58
 cinza claro #c3d5cc
 bege #ece9c0
 ----------------------------------------------
-
+sites modelos
+https://www.easytechshield.com.br/loja/melon/
+---------------------------------------------------
 3f3d56
 6c63ff
 
-texto sobre produtos 
+texto sobre produtos
 
 Na nossa empresa, a valorização da qualidade do nosso produto é um dos princípios fundamentais que norteiam todas as nossas atividades. Reconhecemos que a excelência e a satisfação do cliente são essenciais para o sucesso do nosso negócio, e é por isso que dedicamos recursos significativos para garantir que nossos produtos atendam aos mais altos padrões de qualidade.
 
