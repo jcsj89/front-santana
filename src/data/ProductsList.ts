@@ -1,3 +1,4 @@
+import { DocumentModel } from "@/core/DocumentModel";
 import { Product } from "@/core/ProductModel";
 
 const productsList: Product[] = [];
@@ -251,5 +252,72 @@ prod17.category = "NEUTRO";
 prod17.classification = "concentrado";
 prod17.concentrationLevel = "comum";
 prod17.ph = 7;
+
+const prod18 = Product.createEmpty();
+productsList.push(prod18);
+// prod18.active = Product.STATUS.INACTIVE;
+prod18.description = "Pro Mol";
+prod18.dilution =
+    "Para cada 01 litro do produto diluir em até 100 litros de água";
+prod18.dilutionPercent = 1;
+prod18.color = "amarelo";
+prod18.showInWeb = Product.STATUS.SHOW;
+prod18.tags = ["amarelo", "bau", "chassis"];
+prod18.photos = ["/img/products/800/pro.mol.5.h800.png"]; // ok
+prod18.line = "AUTOMOTIVA";
+prod18.category = "desengraxante";
+prod18.classification = "super";
+prod18.concentrationLevel = "super";
+prod18.ph = 11;
+
+const prod19 = Product.createEmpty();
+productsList.push(prod19);
+// prod19.active = Product.STATUS.INACTIVE;
+prod19.description = "Ativado 220";
+prod19.dilution =
+    "Para cada 01 litro do produto diluir em até 100 litros de água";
+prod19.dilutionPercent = 1;
+prod19.color = "roxo";
+prod19.showInWeb = Product.STATUS.SHOW;
+prod19.tags = ["roxo", "bau", "desincrustante"];
+prod19.photos = ["/img/products/800/at.220.2.h800.png"]; // ok
+prod19.line = "AUTOMOTIVA";
+prod19.category = "desincrustante";
+prod19.classification = "super";
+prod19.concentrationLevel = "super";
+prod19.ph = 2;
+
+const prod20 = Product.createEmpty();
+productsList.push(prod20);
+// prod20.active = Product.STATUS.INACTIVE;
+prod20.description = "Samix 220";
+prod20.dilution =
+    "Para cada 01 litro do produto diluir em até 100 litros de água";
+prod20.dilutionPercent = 1;
+prod20.color = "amarelo";
+prod20.showInWeb = Product.STATUS.SHOW;
+prod20.tags = ["amarelo", "bau", "desengraxante"];
+prod20.photos = ["/img/products/800/samix.220.2.h800.png"]; // ok
+prod20.line = "AUTOMOTIVA";
+prod20.category = "desengraxante";
+prod20.classification = "super";
+prod20.concentrationLevel = "super";
+prod20.ph = 12;
+prod20.documents = [
+    new DocumentModel({
+        type: "FDS",
+        description: "Ficha de Dados com Segurança",
+        version: "1.0",
+        anexo: "/pdf/mult.max.pdf",
+        author: "Jose Carlos",
+    }),
+    new DocumentModel({
+        type: "Ficha Tecnica",
+        description: "Ficha Tecnica Geral",
+        version: "1.0",
+        anexo: "/pdf/mult.max.pdf",
+        author: "Jose Carlos",
+    }),
+];
 
 export { productsList };

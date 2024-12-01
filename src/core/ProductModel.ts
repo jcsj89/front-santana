@@ -1,5 +1,6 @@
 import { v4 } from "uuid";
 import { IProductProperties } from "./IProductProperties";
+import { DocumentModel } from "./DocumentModel";
 
 export class Product implements IProductProperties {
     static STATUS = { ACTIVE: true, INACTIVE: false, SHOW: true, HIDE: false };
@@ -38,7 +39,7 @@ export class Product implements IProductProperties {
     #category = ""; //acabamento,geral,desengraxante,desincrustante,neutro
     #classification = ""; //brilho,geral,comum,concentrado,super
     #tags: string[] | null = null;
-    #documents: string[] | null = null;
+    #documents: DocumentModel[] | null = null;
     #photos: string[] | null = null;
     #ph = 7;
 
@@ -254,10 +255,10 @@ export class Product implements IProductProperties {
         this.#tags = value;
     }
 
-    get documents(): string[] | null {
+    get documents(): DocumentModel[] | null {
         return this.#documents;
     }
-    set documents(value: string[] | null) {
+    set documents(value: DocumentModel[] | null) {
         this.#documents = value;
     }
 
@@ -330,7 +331,7 @@ export class Product implements IProductProperties {
         indicacaoDeUso: string = "",
         modoDeUso: string = "",
         tags: string[] = [],
-        documents: string[] = [],
+        documents: DocumentModel[] = [],
         photos: string[] = [],
         ph: number = 7
     ): Product {

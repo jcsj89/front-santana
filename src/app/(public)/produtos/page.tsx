@@ -41,9 +41,9 @@ const Produtos = () => {
                         className={`flex items-center justify-center
                             font-bold text-2xl lg:text-3xl`}
                     >
-                        <h2 className={`${roboto_mono.className} text-center`}>
+                        {/* <h2 className={`${roboto_mono.className} text-center`}>
                             Lista de Produtos
-                        </h2>
+                        </h2> */}
                     </div>
                     <div className="flex justify-center flex-wrap">
                         {produtos.length &&

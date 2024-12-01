@@ -25,5 +25,9 @@
         "products": "store",
         "sections": "resource",
         "contact": "messages"
+    },
+    "code-runner.executorMap": {
+        "javascript": "node",
+        "typescript": "npx ts-node"
     }
 }

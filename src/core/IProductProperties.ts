@@ -1,3 +1,5 @@
+import { DocumentModel } from "./DocumentModel";
+
 export interface IProductProperties {
     id?: string;
     active: boolean; // esta ativo?
@@ -31,7 +33,7 @@ export interface IProductProperties {
     modoDeUso: string;
     embalagem_id: string; // tabela N:1 embalagens de venda
     tags: string[] | null; // N:N tabela tags relacionadas ao produto
-    documents: string[] | null; // deve permitir salvar documents ou documentos, ver se pode liberar no site, criar tabela ou url aqui?
+    documents: DocumentModel[] | null; // deve permitir salvar documents ou documentos, ver se pode liberar no site, criar tabela ou url aqui?
     photos: string[] | null; // tabela 1:N
     ph: number;
     line: string;
