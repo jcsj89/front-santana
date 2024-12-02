@@ -57,8 +57,32 @@ const ProductPage = (props: IProduct) => {
                     }
                 />
 
-                {/* Outras Embalagems */}
-                <div>Outras Embalagems</div>
+                {/* Outras Embalagems
+                    continuar aqui .......................
+                */}
+                <div className="flex flex-col">
+                    Outras Embalagems
+                    <div className="flex flex-wrap justify-center items-center">
+                        <Image
+                            src={`/img/embalagems/20.litros.png`}
+                            width={100}
+                            height={100}
+                            alt=""
+                        />
+                        <Image
+                            src={`/img/embalagems/50.litros.png`}
+                            width={100}
+                            height={100}
+                            alt=""
+                        />
+                        <Image
+                            src={`/img/embalagems/200.litros.png`}
+                            width={100}
+                            height={100}
+                            alt=""
+                        />
+                    </div>
+                </div>
 
                 {/* Button Orcamento */}
                 <div
