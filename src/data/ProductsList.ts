@@ -1,4 +1,5 @@
 import { DocumentModel } from "@/core/DocumentModel";
+import { PackageModel } from "@/core/PackageModel";
 import { Product } from "@/core/ProductModel";
 
 const productsList: Product[] = [];
@@ -303,21 +304,45 @@ prod20.category = "desengraxante";
 prod20.classification = "super";
 prod20.concentrationLevel = "super";
 prod20.ph = 12;
-prod20.documents = [
-    new DocumentModel({
-        type: "FDS",
-        description: "Ficha de Dados com Segurança",
-        version: "1.0",
-        anexo: "/pdf/mult.max.pdf",
-        author: "Jose Carlos",
-    }),
-    new DocumentModel({
+prod20.addDocument(
+    DocumentModel.create({
         type: "Ficha Tecnica",
         description: "Ficha Tecnica Geral",
         version: "1.0",
         anexo: "/pdf/mult.max.pdf",
         author: "Jose Carlos",
-    }),
-];
+    })
+)
+prod20.addDocument(
+    DocumentModel.create({
+        type: "FDS",
+        description: "Ficha de Dados com Segurança",
+        version: "1.0",
+        anexo: "/pdf/mult.max.pdf",
+        author: "Jose Carlos",
+    })
+);
+
+prod20.addPackage(
+    PackageModel.create({
+        description: "Bombona de 50 Litros",
+        volume: 50,
+        image: "/img/embalagems/50.litros.png",
+    })
+);
+prod20.addPackage(
+    PackageModel.create({
+        description: "Bombona de 20 Litros",
+        volume: 20,
+        image: "/img/embalagems/20.litros.png",
+    })
+);
+prod20.addPackage(
+    PackageModel.create({
+        description: "Bombona de 200 Litros",
+        volume: 200,
+        image: "/img/embalagems/200.litros.png",
+    })
+);
 
 export { productsList };

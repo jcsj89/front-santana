@@ -1,6 +1,7 @@
 import { v4 } from "uuid";
-import { IProductProperties } from "./IProductProperties";
 import { DocumentModel } from "./DocumentModel";
+import { IProductProperties } from "./IProductProperties";
+import { PackageModel } from "./PackageModel";
 
 export class Product implements IProductProperties {
     static STATUS = { ACTIVE: true, INACTIVE: false, SHOW: true, HIDE: false };
@@ -38,13 +39,29 @@ export class Product implements IProductProperties {
     #line = ""; //automotiva,industrial,domestica
     #category = ""; //acabamento,geral,desengraxante,desincrustante,neutro
     #classification = ""; //brilho,geral,comum,concentrado,super
-    #tags: string[] | null = null;
-    #documents: DocumentModel[] | null = null;
-    #photos: string[] | null = null;
     #ph = 7;
+    #tags: string[] | null = null;
+    #photos: string[] | null = null;
+    #documents: DocumentModel[] | null = null;
+    #packages: PackageModel[] | null = null;
 
     constructor() {
         this.#id = v4();
+    }
+
+    // metodos
+    addDocument(document: DocumentModel) {
+        if (!this.#documents) this.#documents = [];
+        if (!document) return;
+        if (!(document instanceof DocumentModel)) return;
+        this.#documents.push(document);
+    }
+
+    addPackage(packageModel: PackageModel) {
+        if (!this.#packages) this.#packages = [];
+        if (!packageModel) return;
+        if (!(packageModel instanceof PackageModel)) return;
+        this.#packages.push(packageModel);
     }
 
     // Getters e Setters
@@ -258,8 +275,25 @@ export class Product implements IProductProperties {
     get documents(): DocumentModel[] | null {
         return this.#documents;
     }
-    set documents(value: DocumentModel[] | null) {
-        this.#documents = value;
+    set documents(list: DocumentModel[] | null) {
+        if (!list) return;
+
+        // add documents
+        list.forEach((document) => {
+            this.addDocument(document);
+        });
+    }
+
+    get packages(): PackageModel[] | null {
+        return this.#packages;
+    }
+    set packages(list: PackageModel[] | null) {
+        if (!list) return;
+
+        // add packages
+        list.forEach((packageModel) => {
+            this.addPackage(packageModel);
+        });
     }
 
     get photos(): string[] | null {
@@ -332,9 +366,10 @@ export class Product implements IProductProperties {
         modoDeUso: string = "",
         tags: string[] = [],
         documents: DocumentModel[] = [],
+        packages: PackageModel[] = [],
         photos: string[] = [],
         ph: number = 7
-    ): Product {
+    ): IProductProperties {
         const product = new Product();
 
         product.line = line;
@@ -366,6 +401,7 @@ export class Product implements IProductProperties {
         product.modoDeUso = modoDeUso;
         product.tags = tags;
         product.documents = documents;
+        product.packages = packages;
         product.photos = photos;
         product.ph = ph;
 

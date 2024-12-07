@@ -2,9 +2,9 @@ import { Product } from "@/core/ProductModel";
 import { roboto_mono } from "@/utils/fonts";
 import { IconArrowDown } from "@tabler/icons-react";
 import Image from "next/image";
-import { corTexto } from "./cores.phmetro";
 import DilutionPercentageBar from "./DilutionPercentageBar";
 import IndicacaoDeUso from "./IndicacaoDeUso";
+import Packaging from "./Packaging";
 import Phmetro from "./Phmetro";
 import ProductDocumentCard from "./ProductDocumentCard";
 
@@ -21,9 +21,7 @@ const ProductPage = (props: IProduct) => {
                 {/* name and image div */}
                 <div className="flex flex-col justify-center items-center w-full lg:h-96 shadow-sm border lg:p-4">
                     <h2
-                        className={`text-lg lg:text-4xl font-black capitalize ${
-                            roboto_mono.className
-                        } ${corTexto(Math.floor(props.product.ph))}`}
+                        className={`text-lg lg:text-4xl font-black capitalize ${roboto_mono.className}  text-black`} //${corTexto(Math.floor(props.product.ph))}
                     >
                         {props.product.description}
                     </h2>
@@ -57,32 +55,11 @@ const ProductPage = (props: IProduct) => {
                     }
                 />
 
-                {/* Outras Embalagems
-                    continuar aqui .......................
-                */}
-                <div className="flex flex-col">
-                    Outras Embalagems
-                    <div className="flex flex-wrap justify-center items-center">
-                        <Image
-                            src={`/img/embalagems/20.litros.png`}
-                            width={100}
-                            height={100}
-                            alt=""
-                        />
-                        <Image
-                            src={`/img/embalagems/50.litros.png`}
-                            width={100}
-                            height={100}
-                            alt=""
-                        />
-                        <Image
-                            src={`/img/embalagems/200.litros.png`}
-                            width={100}
-                            height={100}
-                            alt=""
-                        />
-                    </div>
-                </div>
+                {/* Packaging */}
+                {props.product.packages &&
+                    props.product.packages.length > 0 && (
+                        <Packaging packages={props.product.packages} />
+                    )}
 
                 {/* Button Orcamento */}
                 <div
@@ -96,7 +73,7 @@ const ProductPage = (props: IProduct) => {
                     onClick={() => props.unselectProduct()}
                     className="flex justify-center items-center w-full mt-3 p-3 border cursor-pointer border-zinc-800 uppercase font-black antialiased text-zinc-900 hover:text-[#004e98] hover:border-[#004e98] duration-150 rounded-md"
                 >
-                    Listar Produtos
+                    Voltar para Produtos
                 </div>
             </div>
         </div>

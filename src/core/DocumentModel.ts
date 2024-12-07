@@ -11,23 +11,17 @@ interface IDocumentProperties {
 }
 
 export class DocumentModel {
-    #id: string = v4();
-    #type: string; // fispq, laudo, etc
-    #description: string;
+    #id: string;
+    #type: string = ""; // fispq, laudo, etc
+    #description: string = "";
     #version: string | undefined;
-    #anexo: string;
-    #author: string;
-    #createdAt: Date;
-    #updatedAt: Date;
+    #anexo: string = "";
+    #author: string = "";
+    #createdAt: Date = new Date();
+    #updatedAt: Date = new Date();
 
-    constructor({ type, description, version, anexo, author }: IDocumentProperties) {
-        this.#type = type;
-        this.#description = description;
-        this.#version = version;
-        this.#anexo = anexo;
-        this.#author = author;
-        this.#createdAt = new Date();
-        this.#updatedAt = new Date();
+    constructor() {
+        this.#id = v4();
     }
 
     get description(): string {
@@ -124,9 +118,20 @@ export class DocumentModel {
         this.#updatedAt = updatedAt;
     }
 
-    getSummary(): string {
-        return `${this.description} by ${
-            this.author
-        }, created on ${this.createdAt.toDateString()}`;
+    // factory method
+    static create(props: IDocumentProperties) {
+        const document = new DocumentModel();
+        document.type = props.type;
+        document.description = props.description;
+        document.version = props.version;
+        document.anexo = props.anexo;
+        document.author = props.author;
+        document.createdAt = new Date();
+        document.updatedAt = new Date();
+        return document;
+    }
+
+    static createEmpty() {
+        return new DocumentModel();
     }
 }
