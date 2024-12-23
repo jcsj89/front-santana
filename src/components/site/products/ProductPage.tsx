@@ -62,12 +62,12 @@ const ProductPage = (props: IProduct) => {
                     )}
 
                 {/* Button Orcamento */}
-                <div
+                {/* <div
                     onClick={() => props.unselectProduct()}
                     className="flex justify-center items-center w-full mt-3 p-3 border cursor-pointer border-zinc-800 uppercase font-black antialiased text-zinc-900 hover:text-[#004e98] hover:border-[#004e98] duration-150 rounded-md"
                 >
                     Solicitar Orcamento //fazer form com cards
-                </div>
+                </div> */}
                 {/* Button Voltar */}
                 <div
                     onClick={() => props.unselectProduct()}
