@@ -207,7 +207,7 @@ const Form = () => {
                     rows={6}
                     required
                 />
-                <div className="flex w-full lg:w-3/4 justify-between">
+                <div className="flex flex-col lg:flex-row w-full gap-4 lg:w-3/4 lg:justify-between">
                     <Turnstile
                         id="turnstile-1"
                         ref={refTurnstile}
